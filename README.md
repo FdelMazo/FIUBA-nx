@@ -1,4 +1,4 @@
 ```
-pip install pre-commit
-pre-commit install
+pip install nbdev
+nbdev_install_hooks
 ```
