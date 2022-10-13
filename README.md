@@ -8,7 +8,7 @@ Primero, setupear el repo.
 
 ```zsh
 # (En algun virtualenv)
-pip install -r requirements
+pip install -r requirements.txt
 nbdev_install_hooks
 ```
 
