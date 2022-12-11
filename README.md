@@ -4,12 +4,13 @@ Análisis de los datos del FIUBA-Map.
 
 ---
 
-Primero, setupear el repo.
+Primero, instalar Poetry y setupear el repo.
 
 ```zsh
 # (En algun virtualenv)
-pip install -r requirements.txt
-nbdev_install_hooks
+poetry install
+poetry run nbdev_install_hooks
+poetry run jupyter lab
 ```
 
 ---
