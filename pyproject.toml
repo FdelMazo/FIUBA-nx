@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "fiuba-nx"
 version = "0.1.0"
-description = ""
+description = "Análisis de los datos del FIUBA-Map"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
