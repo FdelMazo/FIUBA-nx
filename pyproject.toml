@@ -5,7 +5,7 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "3.9.*"
+python = ">=3.9,<3.11"
 argon2-cffi = "21.3.0"
 argon2-cffi-bindings = "21.2.0"
 asttokens = "2.0.8"

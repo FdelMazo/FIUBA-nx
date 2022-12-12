@@ -193,11 +193,11 @@ python-versions = ">=3.7"
 numpy = ">=1.16"
 
 [package.extras]
-bokeh = ["bokeh", "selenium"]
-docs = ["docutils (<0.18)", "sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "matplotlib", "pillow", "flake8", "isort"]
+test-no-codebase = ["pillow", "matplotlib", "pytest"]
 test-minimal = ["pytest"]
-test-no-codebase = ["pytest", "matplotlib", "pillow"]
+test = ["isort", "flake8", "pillow", "matplotlib", "pytest"]
+docs = ["sphinx-rtd-theme", "sphinx", "docutils (<0.18)"]
+bokeh = ["selenium", "bokeh"]
 
 [[package]]
 name = "cycler"
@@ -252,7 +252,7 @@ fastcore = ">=1.5.5"
 ipython = "*"
 
 [package.extras]
-dev = ["matplotlib", "pillow"]
+dev = ["pillow", "matplotlib"]
 
 [[package]]
 name = "executing"
@@ -263,7 +263,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-tests = ["asttokens", "pytest", "littleutils", "rich"]
+tests = ["rich", "littleutils", "pytest", "asttokens"]
 
 [[package]]
 name = "fastcore"
@@ -325,7 +325,7 @@ fastcore = ">=1.5.4"
 packaging = "*"
 
 [package.extras]
-dev = ["jsonref", "matplotlib"]
+dev = ["matplotlib", "jsonref"]
 
 [[package]]
 name = "idna"
@@ -758,8 +758,8 @@ nest-asyncio = "*"
 traitlets = ">=5.2.2"
 
 [package.extras]
-sphinx = ["autodoc-traits", "mock", "moto", "myst-parser", "Sphinx (>=1.7)", "sphinx-book-theme"]
-test = ["black", "check-manifest", "flake8", "ipykernel", "ipython", "ipywidgets", "mypy", "nbconvert", "pip (>=18.1)", "pre-commit", "pytest (>=4.1)", "pytest-asyncio", "pytest-cov (>=2.6.1)", "setuptools (>=60.0)", "testpath", "twine (>=1.11.0)", "xmltodict"]
+test = ["xmltodict", "twine (>=1.11.0)", "testpath", "setuptools (>=60.0)", "pytest-cov (>=2.6.1)", "pytest-asyncio", "pytest (>=4.1)", "pre-commit", "pip (>=18.1)", "nbconvert", "mypy", "ipywidgets", "ipython", "ipykernel", "flake8", "check-manifest", "black"]
+sphinx = ["sphinx-book-theme", "Sphinx (>=1.7)", "myst-parser", "moto", "mock", "autodoc-traits"]
 
 [[package]]
 name = "nbconvert"
@@ -928,12 +928,15 @@ optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-numpy = {version = ">=1.20.3", markers = "python_version < \"3.10\""}
+numpy = [
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
+    {version = ">=1.20.3", markers = "python_version < \"3.10\""},
+]
 python-dateutil = ">=2.8.1"
 pytz = ">=2020.1"
 
 [package.extras]
-test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
+test = ["pytest-xdist (>=1.31)", "pytest (>=6.0)", "hypothesis (>=5.5.3)"]
 
 [[package]]
 name = "pandocfilters"
@@ -1290,7 +1293,7 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
+tests = ["cython", "littleutils", "pygments", "typeguard", "pytest"]
 
 [[package]]
 name = "terminado"
@@ -1450,8 +1453,8 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 
 [metadata]
 lock-version = "1.1"
-python-versions = "3.9.*"
-content-hash = "a3fb3c92097189399691cc1529c76d0e8493e3870f6a13bc58cce9eb67a1a23d"
+python-versions = ">=3.9,<3.11"
+content-hash = "4e8798659e29b2283b4c9e7cb417ee5a833b5850091a55cc408c140ab276c9fa"
 
 [metadata.files]
 anyio = []
@@ -1546,11 +1549,7 @@ jinja2 = [
 ]
 json5 = []
 jsonschema = []
-jupyter = [
-    {file = "jupyter-1.0.0-py2.py3-none-any.whl", hash = "sha256:5b290f93b98ffbc21c0c7e749f054b3267782166d72fa5e3ed1ed4eaf34a2b78"},
-    {file = "jupyter-1.0.0.tar.gz", hash = "sha256:d9dc4b3318f310e34c82951ea5d6683f67bed7def4b259fafbfe4f1beb1d8e5f"},
-    {file = "jupyter-1.0.0.zip", hash = "sha256:3e1f86076bbb7c8c207829390305a2b1fe836d471ed54be66a3b8c41e7f46cc7"},
-]
+jupyter = []
 jupyter-client = []
 jupyter-console = []
 jupyter-core = []
@@ -1615,10 +1614,7 @@ nbdev = []
 nbformat = []
 nest-asyncio = []
 networkx = []
-notebook = [
-    {file = "notebook-6.4.12-py3-none-any.whl", hash = "sha256:8c07a3bb7640e371f8a609bdbb2366a1976c6a2589da8ef917f761a61e3ad8b1"},
-    {file = "notebook-6.4.12.tar.gz", hash = "sha256:6268c9ec9048cff7a45405c990c29ac9ca40b0bc3ec29263d218c5e01f2b4e86"},
-]
+notebook = []
 notebook-shim = []
 numpy = []
 packaging = [
