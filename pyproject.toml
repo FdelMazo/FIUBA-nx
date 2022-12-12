@@ -2,7 +2,7 @@
 name = "fiuba-nx"
 version = "0.1.0"
 description = "Análisis de los datos del FIUBA-Map"
-authors = ["Your Name <you@example.com>"]
+authors = ["JDSanto <jdisanto@fi.uba.ar>", "Cami Dvorkin <cdvorkin@fi.uba.ar>", "FdelMazo <FdelMazo@fi.uba.ar>", "Juampi Rombolá <jrombola@fi.uba.ar>"]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
