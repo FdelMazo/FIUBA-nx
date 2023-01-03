@@ -2,3 +2,6 @@
 __pycache__
 .venv
 *.pickle
+bin/
+lib/
+pyvenv.cfg
