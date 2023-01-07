@@ -481,37 +481,37 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>4136</th>
-      <td>106032</td>
+      <th>6152</th>
+      <td>102223</td>
       <td>informatica</td>
-      <td>Gestión Industrial de Sistemas</td>
+      <td>Sistemas Distribuidos</td>
       <td>tpp</td>
-      <td>75.12</td>
-      <td>6.0</td>
-      <td>2021.5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9324</th>
-      <td>107162</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>62.03</td>
+      <td>75.41</td>
       <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9356</th>
-      <td>101570</td>
+      <th>1311</th>
+      <td>106249</td>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
-      <td>CBC27</td>
-      <td>5.0</td>
+      <td>71.40</td>
+      <td>-2.0</td>
+      <td>2023.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16658</th>
+      <td>93042</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>61.09</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -554,7 +554,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1851/894228464.py:1: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1845/894228464.py:1: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
   df_nodes_metadata = df[df.columns &amp; [&quot;Padron&quot;, &quot;Carrera&quot;, &quot;aplazos&quot;, &quot;optativas&quot;, &quot;checkboxes&quot;]]
 </pre></div>
 </div>
@@ -618,7 +618,7 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1851/894228464.py:15: FutureWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1845/894228464.py:15: FutureWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
   .apply(pd.Series)
 </pre></div>
 </div>
@@ -806,7 +806,121 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/grafazo_11_0.png" src="_images/grafazo_11_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">draw_nodes</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">louvaincommunity</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Louvain Communities&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                  <span class="n">nodelist</span><span class="o">=</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span>                  <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> 
+<span class="g g-Whitespace">     </span><span class="mi">18</span>                  <span class="n">width</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> 
+<span class="ne">---&gt; </span><span class="mi">19</span>                  <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>                  <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/networkx/drawing/layout.py:709,</span> in <span class="ni">kamada_kawai_layout</span><span class="nt">(G, dist, pos, weight, scale, center, dim)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>         <span class="n">pos</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">pt</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)))}</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span> <span class="n">pos_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pos</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">709</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">_kamada_kawai_solve</span><span class="p">(</span><span class="n">dist_mtx</span><span class="p">,</span> <span class="n">pos_arr</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">rescale_layout</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">center</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">))</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/networkx/drawing/layout.py:727,</span> in <span class="ni">_kamada_kawai_solve</span><span class="nt">(dist_mtx, pos_arr, dim)</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span> <span class="n">meanwt</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span> <span class="n">costargs</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">dist_mtx</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">dist_mtx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mf">1e-3</span><span class="p">),</span> <span class="n">meanwt</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">727</span> <span class="n">optresult</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">_kamada_kawai_costfn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">729</span>     <span class="n">pos_arr</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">730</span>     <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="n">args</span><span class="o">=</span><span class="n">costargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">jac</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">733</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span> <span class="k">return</span> <span class="n">optresult</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_minimize.py:699,</span> in <span class="ni">minimize</span><span class="nt">(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">696</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">_minimize_newtoncg</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">jac</span><span class="p">,</span> <span class="n">hess</span><span class="p">,</span> <span class="n">hessp</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span>                              <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">698</span> <span class="k">elif</span> <span class="n">meth</span> <span class="o">==</span> <span class="s1">&#39;l-bfgs-b&#39;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">699</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">_minimize_lbfgsb</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">jac</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span>                            <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span> <span class="k">elif</span> <span class="n">meth</span> <span class="o">==</span> <span class="s1">&#39;tnc&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">_minimize_tnc</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">jac</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>                         <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_lbfgsb_py.py:362,</span> in <span class="ni">_minimize_lbfgsb</span><span class="nt">(fun, x0, args, jac, bounds, disp, maxcor, ftol, gtol, eps, maxfun, maxiter, iprint, callback, maxls, finite_diff_rel_step, **unknown_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span> <span class="n">task_str</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="k">if</span> <span class="n">task_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;FG&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="c1"># The minimization routine wants f and g at the current x.</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="c1"># Note that interruptions due to maxfun are postponed</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="c1"># until the completion of the current minimization iteration.</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="c1"># Overwrite f and g:</span>
+<span class="ne">--&gt; </span><span class="mi">362</span>     <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">func_and_grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="k">elif</span> <span class="n">task_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;NEW_X&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="c1"># new iteration</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="n">n_iterations</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py:285,</span> in <span class="ni">ScalarFunction.fun_and_grad</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_x_impl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">285</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_fun</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_grad</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">g</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py:251,</span> in <span class="ni">ScalarFunction._update_fun</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">def</span> <span class="nf">_update_fun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">f_updated</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">251</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_update_fun_impl</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>         <span class="bp">self</span><span class="o">.</span><span class="n">f_updated</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py:155,</span> in <span class="ni">ScalarFunction.__init__.&lt;locals&gt;.update_fun</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">def</span> <span class="nf">update_fun</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">155</span>     <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">fun_wrapped</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py:137,</span> in <span class="ni">ScalarFunction.__init__.&lt;locals&gt;.fun_wrapped</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="bp">self</span><span class="o">.</span><span class="n">nfev</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="c1"># Send a copy because the user may overwrite it.</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="c1"># Overwriting results in undefined behaviour because</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="c1"># fun(self.x) will change self.x, with the two no longer linked.</span>
+<span class="ne">--&gt; </span><span class="mi">137</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="c1"># Make sure the function returns a true scalar</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">fx</span><span class="p">):</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_optimize.py:76,</span> in <span class="ni">MemoizeJac.__call__</span><span class="nt">(self, x, *args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="sd">&quot;&quot;&quot; returns the the function value &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute_if_needed</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/scipy/optimize/_optimize.py:70,</span> in <span class="ni">MemoizeJac._compute_if_needed</span><span class="nt">(self, x, *args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">jac</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">70</span>     <span class="n">fg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="bp">self</span><span class="o">.</span><span class="n">jac</span> <span class="o">=</span> <span class="n">fg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">fg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/networkx/drawing/layout.py:751,</span> in <span class="ni">_kamada_kawai_costfn</span><span class="nt">(pos_vec, np, invdist, meanweight, dim)</span>
+<span class="g g-Whitespace">    </span><span class="mi">748</span> <span class="n">offset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">diag_indices</span><span class="p">(</span><span class="n">nNodes</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">750</span> <span class="n">cost</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">offset</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">751</span> <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ij,ij,ijk-&gt;ik&quot;</span><span class="p">,</span> <span class="n">invdist</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="s2">&quot;ij,ij,ijk-&gt;jk&quot;</span><span class="p">,</span> <span class="n">invdist</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">direction</span>
+<span class="g g-Whitespace">    </span><span class="mi">753</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span> <span class="c1"># Additional parabolic term to encourage mean position to be near origin:</span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span> <span class="n">sumpos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pos_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">einsum</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/numpy/core/einsumfunc.py:1371,</span> in <span class="ni">einsum</span><span class="nt">(out, optimize, *operands, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span>     <span class="k">if</span> <span class="n">specified_out</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span>
+<span class="ne">-&gt; </span><span class="mi">1371</span>     <span class="k">return</span> <span class="n">c_einsum</span><span class="p">(</span><span class="o">*</span><span class="n">operands</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span> <span class="c1"># Check the kwargs to avoid a more cryptic error later, without having to</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span> <span class="c1"># repeat default values here</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span> <span class="n">valid_einsum_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">,</span> <span class="s1">&#39;casting&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<img alt="_images/grafazo_11_1.png" src="_images/grafazo_11_1.png" />
 </div>
 </div>
 <section id="evaluacion-de-comunidades-por-generacion">
@@ -820,16 +934,6 @@ title="Print to PDF"
         <span class="n">louvain_padrones</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">padron</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
 <span class="n">df_comunidades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">louvain_padrones</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;padron&quot;</span><span class="p">,</span> <span class="s2">&quot;comunidad&quot;</span><span class="p">])</span>
 <span class="n">df_comunidades</span><span class="p">[</span><span class="s2">&quot;comunidad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4    122
-3     73
-0     65
-1     64
-2     39
-Name: comunidad, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -851,48 +955,6 @@ Name: comunidad, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>padron</th>
-      <th>comunidad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>103</th>
-      <td>104057</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>102445</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>358</th>
-      <td>106308</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Se puede observar una mínima correlación considerando el intervalo más frecuente de cada comunidad</p>
 <div class="cell docutils container">
@@ -910,9 +972,6 @@ Name: comunidad, dtype: int64
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/grafazo_16_0.png" src="_images/grafazo_16_0.png" />
 </div>
 </div>
 </section>
@@ -947,140 +1006,6 @@ Name: comunidad, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>comunidad</th>
-      <th>materia_cuatrimestre</th>
-      <th>materia_id</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>16</th>
-      <td>0</td>
-      <td>2020.0</td>
-      <td>75.08</td>
-      <td>1804</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0</td>
-      <td>2020.5</td>
-      <td>75.09</td>
-      <td>1845</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0</td>
-      <td>2020.0</td>
-      <td>75.42</td>
-      <td>1848</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1</td>
-      <td>2019.5</td>
-      <td>61.08</td>
-      <td>2448</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1</td>
-      <td>2019.0</td>
-      <td>61.03</td>
-      <td>2499</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>2019.0</td>
-      <td>62.01</td>
-      <td>2860</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>2</td>
-      <td>2021.0</td>
-      <td>75.06</td>
-      <td>693</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>2</td>
-      <td>2019.5</td>
-      <td>75.40</td>
-      <td>700</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>2</td>
-      <td>2020.5</td>
-      <td>75.07</td>
-      <td>775</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>2020.0</td>
-      <td>61.03</td>
-      <td>3360</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>2020.5</td>
-      <td>75.41</td>
-      <td>3904</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>3</td>
-      <td>2020.0</td>
-      <td>75.40</td>
-      <td>4420</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>4</td>
-      <td>2022.0</td>
-      <td>75.07</td>
-      <td>990</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>4</td>
-      <td>2021.5</td>
-      <td>75.41</td>
-      <td>1584</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>4</td>
-      <td>2021.0</td>
-      <td>75.40</td>
-      <td>1716</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 </section>
@@ -1107,139 +1032,10 @@ Name: comunidad, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/grafazo_20_0.png" src="_images/grafazo_20_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subnetwork_louvain</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;101231&#39;,
-  &#39;101698&#39;,
-  &#39;102727&#39;,
-  &#39;102769&#39;,
-  &#39;103942&#39;,
-  &#39;104046&#39;,
-  &#39;104239&#39;,
-  &#39;104928&#39;,
-  &#39;105167&#39;,
-  &#39;105397&#39;,
-  &#39;105552&#39;,
-  &#39;105727&#39;,
-  &#39;106032&#39;,
-  &#39;106099&#39;,
-  &#39;106203&#39;,
-  &#39;106248&#39;,
-  &#39;106308&#39;,
-  &#39;106438&#39;,
-  &#39;106571&#39;,
-  &#39;106699&#39;,
-  &#39;107024&#39;,
-  &#39;107044&#39;,
-  &#39;107080&#39;,
-  &#39;107115&#39;,
-  &#39;107205&#39;,
-  &#39;1072051&#39;,
-  &#39;107378&#39;,
-  &#39;107690&#39;,
-  &#39;108267&#39;,
-  &#39;108317&#39;,
-  &#39;108321&#39;,
-  &#39;976130&#39;,
-  &#39;98592&#39;},
- {&#39;10101010&#39;,
-  &#39;105116&#39;,
-  &#39;105199&#39;,
-  &#39;105600&#39;,
-  &#39;105634&#39;,
-  &#39;105661&#39;,
-  &#39;105974&#39;,
-  &#39;106858&#39;,
-  &#39;107404&#39;,
-  &#39;107413&#39;,
-  &#39;107414&#39;,
-  &#39;107436&#39;,
-  &#39;107536&#39;,
-  &#39;107539&#39;,
-  &#39;107632&#39;,
-  &#39;107662&#39;,
-  &#39;107677&#39;,
-  &#39;107705&#39;,
-  &#39;107710&#39;,
-  &#39;107741&#39;,
-  &#39;107748&#39;,
-  &#39;107754&#39;,
-  &#39;107938&#39;,
-  &#39;107951&#39;,
-  &#39;107964&#39;,
-  &#39;107990&#39;,
-  &#39;108000&#39;,
-  &#39;108018&#39;,
-  &#39;108026&#39;,
-  &#39;108056&#39;,
-  &#39;108100&#39;,
-  &#39;108111&#39;,
-  &#39;108127&#39;,
-  &#39;108183&#39;,
-  &#39;108193&#39;,
-  &#39;108215a&#39;,
-  &#39;108225&#39;,
-  &#39;108244&#39;,
-  &#39;108294&#39;,
-  &#39;108485&#39;,
-  &#39;434032020&#39;,
-  &#39;44356227&#39;,
-  &#39;68100&#39;,
-  &#39;97976&#39;,
-  &#39;A106421GAF&#39;},
- {&#39;0000008&#39;,
-  &#39;104023&#39;,
-  &#39;104286&#39;,
-  &#39;104880&#39;,
-  &#39;105190&#39;,
-  &#39;105696&#39;,
-  &#39;105827&#39;,
-  &#39;106295&#39;,
-  &#39;106675&#39;,
-  &#39;106943&#39;,
-  &#39;107084&#39;,
-  &#39;107396&#39;,
-  &#39;107896&#39;,
-  &#39;108014&#39;,
-  &#39;108219&#39;,
-  &#39;108295&#39;,
-  &#39;108327&#39;,
-  &#39;108524&#39;,
-  &#39;108645&#39;,
-  &#39;108755&#39;,
-  &#39;108800&#39;,
-  &#39;108901&#39;,
-  &#39;108924&#39;,
-  &#39;108951&#39;,
-  &#39;109071&#39;,
-  &#39;109131&#39;,
-  &#39;109164&#39;,
-  &#39;109338&#39;,
-  &#39;109404&#39;,
-  &#39;109418&#39;,
-  &#39;109555&#39;,
-  &#39;109588&#39;,
-  &#39;109667&#39;,
-  &#39;109721&#39;,
-  &#39;109734&#39;,
-  &#39;109951&#39;,
-  &#39;110091&#39;,
-  &#39;110099&#39;,
-  &#39;110310&#39;,
-  &#39;14413433542805822509&#39;,
-  &#39;41548940&#39;,
-  &#39;44100672&#39;,
-  &#39;98600&#39;,
-  &#39;Mximo&#39;}]
 </pre></div>
 </div>
 </div>
