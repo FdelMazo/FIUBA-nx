@@ -1,0 +1,14 @@
+title: FIUBA-nx
+author: FIUBA-nx
+
+execute:
+  execute_notebooks: auto
+  timeout: 300
+
+repository:
+  url: https://github.com/FdelMazo/FIUBA-nx
+  branch: master
+
+html:
+  use_issues_button: true
+  use_repository_button: true

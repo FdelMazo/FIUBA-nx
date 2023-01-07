@@ -1,0 +1,17 @@
+name: 'Jupyter Book to Github Pages'
+on:
+  push:
+    branches: [master]
+
+jobs:
+  jupyter-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip install -r requirements.txt
+      - run: pip install jupyter-book
+      - run: make book -B
+      - run: touch book/_build/html/.nojekyll
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: book/_build/html
