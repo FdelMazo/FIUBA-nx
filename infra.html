@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Infra &#8212; FIUBA-nx</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Grafazo: Con que otros alumnos puedo hacer TPs en un futuro?" href="grafazo.html" />
+    <link rel="prev" title="FIUBA-nx" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">FIUBA-nx</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    FIUBA-nx
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Infra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="grafazo.html">
+   Grafazo: Con que otros alumnos puedo hacer TPs en un futuro?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="graphito.html">
+   Graphito
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="grafon.html">
+   Grafon
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/FdelMazo/FIUBA-nx/master?urlpath=tree/./infra.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/FdelMazo/FIUBA-nx"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/FdelMazo/FIUBA-nx/issues/new?title=Issue%20on%20page%20%2Finfra.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/infra.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Infra</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="infra">
+<h1>Infra<a class="headerlink" href="#infra" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Traer los datos del FMap</p></li>
+<li><p>Convertirlos en un dataframe de pandas manejable</p></li>
+<li><p>Ponerlo en un pickle</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tqdm</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">SHEET_ID</span> <span class="o">=</span> <span class="s1">&#39;1b6h2RApBs2xbN6-eGVvxH68EALKDklvS91fb7d_IVz4&#39;</span>
+<span class="n">SHEET_TABS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;REGISTROS&#39;</span><span class="p">:</span> <span class="mi">2103959160</span><span class="p">,</span>
+    <span class="s1">&#39;USUARIOS&#39;</span><span class="p">:</span> <span class="mi">102021014</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">REGISTROS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://docs.google.com/spreadsheets/d/</span><span class="si">{</span><span class="n">SHEET_ID</span><span class="si">}</span><span class="s1">/export?format=csv&amp;gid=</span><span class="si">{</span><span class="n">SHEET_TABS</span><span class="p">[</span><span class="s2">&quot;REGISTROS&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">USUARIOS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://docs.google.com/spreadsheets/d/</span><span class="si">{</span><span class="n">SHEET_ID</span><span class="si">}</span><span class="s1">/export?format=csv&amp;gid=</span><span class="si">{</span><span class="n">SHEET_TABS</span><span class="p">[</span><span class="s2">&quot;USUARIOS&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="c1"># Vamos a hacer un grafo por carrera... hay que setupearla aca!</span>
+<span class="c1"># sistemas informatica agrimensura alimentos civil electricista electronica </span>
+<span class="c1"># industrial mecanica naval petroleo quimica sistemasviejo</span>
+<span class="n">CARRERA</span> <span class="o">=</span> <span class="s1">&#39;informatica&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Empezamos cargando todos los datos (los usuarios y los mapas estan en dos tablas distintas)</span>
+<span class="n">df_registros</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">REGISTROS_URL</span><span class="p">)</span>
+<span class="n">df_registros</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_registros</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">df_registros</span> <span class="o">=</span> <span class="n">df_registros</span><span class="p">[</span><span class="n">df_registros</span><span class="p">[</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">CARRERA</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_registros</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">df_usuarios</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">USUARIOS_URL</span><span class="p">)</span>
+<span class="n">df_usuarios</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_usuarios</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<span class="n">df_usuarios</span> <span class="o">=</span> <span class="n">df_usuarios</span><span class="p">[</span><span class="n">df_usuarios</span><span class="p">[</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">CARRERA</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_usuarios</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Mapa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4544</th>
+      <td>444111222</td>
+      <td>informatica</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"61.0...</td>
+    </tr>
+    <tr>
+      <th>4545</th>
+      <td>101805</td>
+      <td>informatica</td>
+      <td>{"materias":[{"id":"CBC","nota":0}]}</td>
+    </tr>
+    <tr>
+      <th>4559</th>
+      <td>42116191</td>
+      <td>informatica</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"61.0...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12019</th>
+      <td>98625</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+    </tr>
+    <tr>
+      <th>12020</th>
+      <td>105815</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+    </tr>
+    <tr>
+      <th>12035</th>
+      <td>99732</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Testing purposes: en vez de laburar con toooodos los datos, laburemos solo con los integrantes del grupo</span>
+<span class="c1"># df_usuarios = df_usuarios[df_usuarios[&#39;Padron&#39;].isin([&quot;100029&quot;, &quot;101696&quot;, &quot;101109&quot;, &quot;0000&quot;])]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mergeamos!</span>
+<span class="n">df_mergeado</span> <span class="o">=</span> <span class="n">df_usuarios</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_registros</span><span class="p">)</span>
+<span class="n">df_mergeado</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+      <th>Mapa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>950</th>
+      <td>datatouilleesdelrojo</td>
+      <td>informatica</td>
+      <td>Sistemas de Producción</td>
+      <td>tpp</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"62.0...</td>
+    </tr>
+    <tr>
+      <th>952</th>
+      <td>98625</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>{"materias":[{"id":"CBC","nota":0,"cuatri":-1}...</td>
+    </tr>
+    <tr>
+      <th>953</th>
+      <td>99732</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>{"materias":[{"id":"CBC28","nota":7},{"id":"CB...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mergeado</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+      <th>Mapa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1012</td>
+      <td>1012</td>
+      <td>588</td>
+      <td>606</td>
+      <td>1012</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>1012</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>909</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>102141</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>{"materias":[{"id":"CBC","nota":0,"cuatri":-1}...</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+      <td>1012</td>
+      <td>301</td>
+      <td>474</td>
+      <td>39</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ahora, desempaquetamos la columna &quot;Mapa&quot; (un JSON que contiene notas, metadata, de todo...) </span>
+<span class="c1">#   y finalmente lleguemos al df que vamos a usar durante todo el tp</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_mergeado</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">json_mapa</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="s1">&#39;Mapa&#39;</span><span class="p">])</span>
+    
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">json_mapa</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">json_mapa</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span> 
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;materias&quot;</span><span class="p">:</span>
+            <span class="n">df_json</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">json_mapa</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">record_prefix</span><span class="o">=</span><span class="s2">&quot;materia_&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_json</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">json_mapa</span><span class="p">[</span><span class="n">k</span><span class="p">]]})</span>
+        <span class="n">df_json</span><span class="p">[</span><span class="s2">&quot;Padron&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span>
+        <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">new_df</span><span class="p">,</span> <span class="n">df_json</span><span class="p">])</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">new_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Mapa&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Hace mucho tiempo, el fiuba map tenia un feature que se llamaba &quot;materia_cuatri&quot; (en vez del nuevo &quot;materia_cuatrimestre&quot;)</span>
+<span class="c1"># En donde el usuario seteaba en cuantos N cuatris iba a cursar X materia, en vez de setear el cuatri exacto</span>
+<span class="c1"># Como ya no se usa en el upstream, no es lo correcto que lo utilicemos en el analisis de datos</span>
+<span class="k">if</span> <span class="s1">&#39;materia_cuatri&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;materia_cuatri&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1012 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 51/1012 [00:00&lt;00:01, 506.87it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|█         | 102/1012 [00:00&lt;00:02, 454.52it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▍        | 148/1012 [00:00&lt;00:01, 451.82it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | 194/1012 [00:00&lt;00:01, 441.06it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██▍       | 243/1012 [00:00&lt;00:01, 455.74it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|██▊       | 289/1012 [00:00&lt;00:01, 455.64it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 335/1012 [00:00&lt;00:01, 448.87it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 380/1012 [00:00&lt;00:01, 440.89it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|████▏     | 426/1012 [00:00&lt;00:01, 445.64it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 473/1012 [00:01&lt;00:01, 451.09it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████▏    | 519/1012 [00:01&lt;00:01, 441.07it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | 567/1012 [00:01&lt;00:00, 450.27it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 61%|██████    | 614/1012 [00:01&lt;00:00, 454.01it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 65%|██████▌   | 660/1012 [00:01&lt;00:00, 445.67it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|██████▉   | 705/1012 [00:01&lt;00:00, 443.62it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | 750/1012 [00:01&lt;00:00, 440.66it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▊  | 795/1012 [00:01&lt;00:00, 430.11it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 839/1012 [00:01&lt;00:00, 429.71it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 883/1012 [00:01&lt;00:00, 424.79it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 927/1012 [00:02&lt;00:00, 427.78it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| 973/1012 [00:02&lt;00:00, 435.60it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1012/1012 [00:02&lt;00:00, 443.72it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+      <th>materia_id</th>
+      <th>materia_nota</th>
+      <th>materia_cuatrimestre</th>
+      <th>aplazos</th>
+      <th>optativas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14539</th>
+      <td>96629</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>61.10</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15994</th>
+      <td>92558</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>75.44</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15854</th>
+      <td>103156</td>
+      <td>informatica</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>75.08</td>
+      <td>-2.0</td>
+      <td>2021.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exportamos todo a un hermoso pickle</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">FIUBA-nx</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="grafazo.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Grafazo: Con que otros alumnos puedo hacer TPs en un futuro?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By FIUBA-nx<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
