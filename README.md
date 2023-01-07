@@ -9,7 +9,7 @@ Primero, instalar Poetry y setupear el repo.
 ```zsh
 # (En algun virtualenv)
 poetry install
-poetry run nbdev_install_hooks
+poetry run pre-commit install
 poetry run jupyter lab
 ```
 
