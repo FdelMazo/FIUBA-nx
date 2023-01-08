@@ -52,8 +52,8 @@ mistune==2.0.4
 nbclassic==0.4.8; python_version >= "3.7"
 nbclient==0.7.0; python_full_version >= "3.7.0"
 nbconvert==7.2.1; python_version >= "3.7"
-nbdev==2.3.7; python_version >= "3.7"
 nbformat==5.6.1; python_version >= "3.7"
+nbstripout==0.6.1; python_version >= "3.7"
 nest-asyncio==1.5.6; python_version >= "3.5"
 networkx==2.8.7; python_version >= "3.8"
 notebook-shim==0.2.2; python_version >= "3.7"
@@ -66,6 +66,7 @@ parso==0.8.3; python_version >= "3.6"
 pexpect==4.8.0
 pickleshare==0.7.5
 pillow==9.2.0; python_version >= "3.7"
+pre-commit==2.21.0 ; python_version >= "3.7"
 prometheus-client==0.14.1; python_version >= "3.6"
 prompt-toolkit==3.0.31; python_full_version >= "3.6.2"
 psutil==5.9.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0")
