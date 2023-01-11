@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Graphito" href="graphito.html" />
@@ -115,7 +117,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grafazo.html">
-   Grafazo: Con que otros alumnos puedo hacer TPs en un futuro?
+   Grafazo: Con que alumnos puedo hacer TPs en un futuro?
   </a>
  </li>
  <li class="toctree-l1">
@@ -496,13 +498,13 @@ title="Print to PDF"
       <th>materia_id</th>
       <th>materia_nota</th>
       <th>materia_cuatrimestre</th>
-      <th>aplazos</th>
       <th>optativas</th>
+      <th>aplazos</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>21327</th>
+      <th>21336</th>
       <td>42116191</td>
       <td>informatica</td>
       <td>NaN</td>
@@ -514,7 +516,7 @@ title="Print to PDF"
       <td>NaN</td>
     </tr>
     <tr>
-      <th>21328</th>
+      <th>21337</th>
       <td>42116191</td>
       <td>informatica</td>
       <td>NaN</td>
@@ -526,7 +528,7 @@ title="Print to PDF"
       <td>NaN</td>
     </tr>
     <tr>
-      <th>21329</th>
+      <th>21338</th>
       <td>42116191</td>
       <td>informatica</td>
       <td>NaN</td>
@@ -603,62 +605,62 @@ title="Print to PDF"
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>102141</td>
-      <td>CBC28</td>
-      <td>10.0</td>
-      <td>7.307692</td>
-      <td>2</td>
-      <td>104639</td>
-      <td>9.0</td>
-      <td>7.105263</td>
+      <td>mequierorecibir</td>
+      <td>62.01</td>
+      <td>7.0</td>
+      <td>7.950000</td>
+      <td>1</td>
+      <td>95897</td>
+      <td>7.0</td>
+      <td>6.230769</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>102141</td>
-      <td>CBC28</td>
-      <td>10.0</td>
-      <td>7.307692</td>
-      <td>2</td>
-      <td>111111</td>
-      <td>8.0</td>
-      <td>8.142857</td>
+      <td>mequierorecibir</td>
+      <td>62.01</td>
+      <td>7.0</td>
+      <td>7.950000</td>
+      <td>1</td>
+      <td>101109</td>
+      <td>7.0</td>
+      <td>6.156250</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>102141</td>
-      <td>CBC28</td>
-      <td>10.0</td>
-      <td>7.307692</td>
-      <td>2</td>
-      <td>107539</td>
-      <td>8.0</td>
-      <td>7.352941</td>
+      <td>mequierorecibir</td>
+      <td>62.01</td>
+      <td>7.0</td>
+      <td>7.950000</td>
+      <td>1</td>
+      <td>103348</td>
+      <td>7.0</td>
+      <td>5.166667</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>102141</td>
-      <td>CBC28</td>
-      <td>10.0</td>
-      <td>7.307692</td>
-      <td>2</td>
-      <td>108441</td>
-      <td>9.0</td>
-      <td>8.000000</td>
+      <td>mequierorecibir</td>
+      <td>62.01</td>
+      <td>7.0</td>
+      <td>7.950000</td>
+      <td>1</td>
+      <td>106099</td>
+      <td>6.0</td>
+      <td>7.142857</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>102141</td>
-      <td>CBC28</td>
-      <td>10.0</td>
-      <td>7.307692</td>
-      <td>2</td>
-      <td>103713</td>
-      <td>8.0</td>
-      <td>7.074074</td>
+      <td>mequierorecibir</td>
+      <td>62.01</td>
+      <td>7.0</td>
+      <td>7.950000</td>
+      <td>1</td>
+      <td>103942</td>
+      <td>7.0</td>
+      <td>5.500000</td>
     </tr>
     <tr>
       <th>...</th>
@@ -673,8 +675,8 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
-      <th>1415143</th>
-      <td>1425533</td>
+      <th>1416975</th>
+      <td>1427375</td>
       <td>99627</td>
       <td>75.48</td>
       <td>7.0</td>
@@ -685,8 +687,8 @@ title="Print to PDF"
       <td>7.317073</td>
     </tr>
     <tr>
-      <th>1415144</th>
-      <td>1425534</td>
+      <th>1416976</th>
+      <td>1427376</td>
       <td>93445</td>
       <td>75.48</td>
       <td>7.0</td>
@@ -697,8 +699,8 @@ title="Print to PDF"
       <td>7.553191</td>
     </tr>
     <tr>
-      <th>1415145</th>
-      <td>1425536</td>
+      <th>1416977</th>
+      <td>1427378</td>
       <td>93445</td>
       <td>75.48</td>
       <td>7.0</td>
@@ -709,8 +711,8 @@ title="Print to PDF"
       <td>7.317073</td>
     </tr>
     <tr>
-      <th>1415146</th>
-      <td>1425537</td>
+      <th>1416978</th>
+      <td>1427379</td>
       <td>98338</td>
       <td>75.48</td>
       <td>7.0</td>
@@ -721,8 +723,8 @@ title="Print to PDF"
       <td>7.553191</td>
     </tr>
     <tr>
-      <th>1415147</th>
-      <td>1425538</td>
+      <th>1416979</th>
+      <td>1427380</td>
       <td>98338</td>
       <td>75.48</td>
       <td>7.0</td>
@@ -734,7 +736,7 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-<p>1415148 rows × 9 columns</p>
+<p>1416980 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>Esto resultaría en un grafo con pocos nodos y 1407892 de aristas, es decir demasiadas aristas. Por eso se busca un enfoque de unificar aristas mediante algún tipo de criterio y de esta forma tener sólo una arista entre padrones.</p>
@@ -844,8 +846,8 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
-      <th>176716</th>
-      <td>351688</td>
+      <th>176777</th>
+      <td>351810</td>
       <td>sadfsdfsdfgfasdfdsgsdfg</td>
       <td>tplink</td>
       <td>4</td>
@@ -854,8 +856,8 @@ title="Print to PDF"
       <td>32</td>
     </tr>
     <tr>
-      <th>176717</th>
-      <td>351689</td>
+      <th>176778</th>
+      <td>351811</td>
       <td>sadfsdfsdfgfasdfdsgsdfg</td>
       <td>xasdasdasd</td>
       <td>13</td>
@@ -864,8 +866,8 @@ title="Print to PDF"
       <td>23</td>
     </tr>
     <tr>
-      <th>176718</th>
-      <td>352278</td>
+      <th>176779</th>
+      <td>352400</td>
       <td>sadfsdfsdfgfdsgsdfg</td>
       <td>tplink</td>
       <td>4</td>
@@ -874,8 +876,8 @@ title="Print to PDF"
       <td>32</td>
     </tr>
     <tr>
-      <th>176719</th>
-      <td>352279</td>
+      <th>176780</th>
+      <td>352401</td>
       <td>sadfsdfsdfgfdsgsdfg</td>
       <td>xasdasdasd</td>
       <td>13</td>
@@ -884,8 +886,8 @@ title="Print to PDF"
       <td>23</td>
     </tr>
     <tr>
-      <th>176720</th>
-      <td>352852</td>
+      <th>176781</th>
+      <td>352974</td>
       <td>tplink</td>
       <td>xasdasdasd</td>
       <td>3</td>
@@ -895,7 +897,7 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-<p>176721 rows × 7 columns</p>
+<p>176782 rows × 7 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -934,8 +936,8 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>13214</th>
-      <td>13467</td>
+      <th>13217</th>
+      <td>13470</td>
       <td>100687</td>
       <td>99732</td>
       <td>35</td>
@@ -944,8 +946,8 @@ title="Print to PDF"
       <td>1</td>
     </tr>
     <tr>
-      <th>176402</th>
-      <td>338834</td>
+      <th>176463</th>
+      <td>338954</td>
       <td>99616</td>
       <td>99732</td>
       <td>32</td>
@@ -954,8 +956,8 @@ title="Print to PDF"
       <td>4</td>
     </tr>
     <tr>
-      <th>12692</th>
-      <td>12945</td>
+      <th>12695</th>
+      <td>12948</td>
       <td>100687</td>
       <td>102145</td>
       <td>31</td>
@@ -964,8 +966,8 @@ title="Print to PDF"
       <td>5</td>
     </tr>
     <tr>
-      <th>37637</th>
-      <td>39981</td>
+      <th>37647</th>
+      <td>39991</td>
       <td>102145</td>
       <td>102192</td>
       <td>30</td>
@@ -974,48 +976,8 @@ title="Print to PDF"
       <td>6</td>
     </tr>
     <tr>
-      <th>12698</th>
-      <td>12951</td>
-      <td>100687</td>
-      <td>102192</td>
-      <td>29</td>
-      <td>100687</td>
-      <td>102192</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>12753</th>
-      <td>13006</td>
-      <td>100687</td>
-      <td>103371</td>
-      <td>29</td>
-      <td>100687</td>
-      <td>103371</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>29072</th>
-      <td>30470</td>
-      <td>101601</td>
-      <td>102145</td>
-      <td>29</td>
-      <td>101601</td>
-      <td>102145</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>12071</th>
-      <td>12302</td>
-      <td>100680</td>
-      <td>101483</td>
-      <td>29</td>
-      <td>100680</td>
-      <td>101483</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>174004</th>
-      <td>310377</td>
+      <th>174065</th>
+      <td>310485</td>
       <td>95897</td>
       <td>99423</td>
       <td>29</td>
@@ -1024,18 +986,48 @@ title="Print to PDF"
       <td>7</td>
     </tr>
     <tr>
-      <th>175314</th>
-      <td>322523</td>
-      <td>98124</td>
-      <td>98591</td>
-      <td>28</td>
-      <td>98124</td>
-      <td>98591</td>
-      <td>8</td>
+      <th>12701</th>
+      <td>12954</td>
+      <td>100687</td>
+      <td>102192</td>
+      <td>29</td>
+      <td>100687</td>
+      <td>102192</td>
+      <td>7</td>
     </tr>
     <tr>
-      <th>37639</th>
-      <td>39983</td>
+      <th>12074</th>
+      <td>12305</td>
+      <td>100680</td>
+      <td>101483</td>
+      <td>29</td>
+      <td>100680</td>
+      <td>101483</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>29081</th>
+      <td>30479</td>
+      <td>101601</td>
+      <td>102145</td>
+      <td>29</td>
+      <td>101601</td>
+      <td>102145</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>12756</th>
+      <td>13009</td>
+      <td>100687</td>
+      <td>103371</td>
+      <td>29</td>
+      <td>100687</td>
+      <td>103371</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>37649</th>
+      <td>39993</td>
       <td>102145</td>
       <td>102198</td>
       <td>28</td>
@@ -1044,8 +1036,8 @@ title="Print to PDF"
       <td>8</td>
     </tr>
     <tr>
-      <th>12669</th>
-      <td>12922</td>
+      <th>12672</th>
+      <td>12925</td>
       <td>100687</td>
       <td>101483</td>
       <td>28</td>
@@ -1054,68 +1046,48 @@ title="Print to PDF"
       <td>8</td>
     </tr>
     <tr>
-      <th>37672</th>
-      <td>40016</td>
-      <td>102145</td>
-      <td>102749</td>
-      <td>27</td>
-      <td>102145</td>
-      <td>102749</td>
-      <td>9</td>
+      <th>175375</th>
+      <td>322638</td>
+      <td>98124</td>
+      <td>98591</td>
+      <td>28</td>
+      <td>98124</td>
+      <td>98591</td>
+      <td>8</td>
     </tr>
     <tr>
-      <th>25402</th>
-      <td>26452</td>
-      <td>101483</td>
-      <td>102358</td>
-      <td>27</td>
-      <td>101483</td>
-      <td>102358</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25387</th>
-      <td>26437</td>
-      <td>101483</td>
-      <td>102192</td>
-      <td>27</td>
-      <td>101483</td>
-      <td>102192</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>13205</th>
-      <td>13458</td>
+      <th>13211</th>
+      <td>13464</td>
       <td>100687</td>
-      <td>99469</td>
+      <td>99616</td>
       <td>27</td>
       <td>100687</td>
-      <td>99469</td>
+      <td>99616</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>12048</th>
-      <td>12279</td>
+      <th>176402</th>
+      <td>337573</td>
+      <td>99469</td>
+      <td>99732</td>
+      <td>27</td>
+      <td>99469</td>
+      <td>99732</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>12629</th>
+      <td>12860</td>
       <td>100680</td>
-      <td>100687</td>
+      <td>99732</td>
       <td>27</td>
       <td>100680</td>
-      <td>100687</td>
+      <td>99732</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>37706</th>
-      <td>40050</td>
-      <td>102145</td>
-      <td>103784</td>
-      <td>27</td>
-      <td>102145</td>
-      <td>103784</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>35885</th>
-      <td>37965</td>
+      <th>35895</th>
+      <td>37975</td>
       <td>102103</td>
       <td>200793</td>
       <td>27</td>
@@ -1124,63 +1096,93 @@ title="Print to PDF"
       <td>9</td>
     </tr>
     <tr>
-      <th>176341</th>
-      <td>337453</td>
-      <td>99469</td>
+      <th>12051</th>
+      <td>12282</td>
+      <td>100680</td>
+      <td>100687</td>
+      <td>27</td>
+      <td>100680</td>
+      <td>100687</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>25395</th>
+      <td>26445</td>
+      <td>101483</td>
+      <td>102192</td>
+      <td>27</td>
+      <td>101483</td>
+      <td>102192</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>25918</th>
+      <td>26968</td>
+      <td>101483</td>
       <td>99732</td>
       <td>27</td>
-      <td>99469</td>
+      <td>101483</td>
       <td>99732</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>37682</th>
+      <td>40026</td>
+      <td>102145</td>
+      <td>102749</td>
+      <td>27</td>
+      <td>102145</td>
+      <td>102749</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>37716</th>
+      <td>40060</td>
+      <td>102145</td>
+      <td>103784</td>
+      <td>27</td>
+      <td>102145</td>
+      <td>103784</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>12081</th>
+      <td>12312</td>
+      <td>100680</td>
+      <td>101601</td>
+      <td>27</td>
+      <td>100680</td>
+      <td>101601</td>
       <td>9</td>
     </tr>
     <tr>
       <th>13208</th>
       <td>13461</td>
       <td>100687</td>
-      <td>99616</td>
+      <td>99469</td>
       <td>27</td>
       <td>100687</td>
-      <td>99616</td>
+      <td>99469</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>12078</th>
-      <td>12309</td>
-      <td>100680</td>
+      <th>25410</th>
+      <td>26460</td>
+      <td>101483</td>
+      <td>102358</td>
+      <td>27</td>
+      <td>101483</td>
+      <td>102358</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>29087</th>
+      <td>30485</td>
       <td>101601</td>
-      <td>27</td>
-      <td>100680</td>
-      <td>101601</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25910</th>
-      <td>26960</td>
-      <td>101483</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>101483</td>
-      <td>99732</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>12626</th>
-      <td>12857</td>
-      <td>100680</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>100680</td>
-      <td>99732</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25815</th>
-      <td>26865</td>
-      <td>101483</td>
-      <td>200793</td>
+      <td>102192</td>
       <td>26</td>
-      <td>101483</td>
-      <td>200793</td>
+      <td>101601</td>
+      <td>102192</td>
       <td>10</td>
     </tr>
   </tbody>
@@ -1201,7 +1203,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 643 nodes and 176721 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 643 nodes and 176782 edges
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1249,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  El diámetro de la red: 3
-  El grado promedio de la red: 549.68
+  El grado promedio de la red: 549.87
   TODO: Los allegados promedio de la red: 
   Puentes globales: []
 </pre></div>
@@ -1272,7 +1274,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
 </pre></div>
 </div>
 </div>
