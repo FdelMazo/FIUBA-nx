@@ -3,5 +3,6 @@ root: README
 chapters:
 - file: infra
 - file: grafazo
-- file: graphito
 - file: grafon
+- file: graphito
+
