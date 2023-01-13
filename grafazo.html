@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Graphito" href="graphito.html" />
+    <link rel="next" title="Grafón: Qué electivas me conviene cursar?" href="grafon.html" />
     <link rel="prev" title="Infra" href="infra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -122,13 +122,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="graphito.html">
-   Graphito
+  <a class="reference internal" href="grafon.html">
+   Grafón: Qué electivas me conviene cursar?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="grafon.html">
-   Grafon
+  <a class="reference internal" href="graphito.html">
+   Graphito
   </a>
  </li>
 </ul>
@@ -428,6 +428,7 @@ title="Print to PDF"
 <p>Por ejemplo: como juampi y yo cursamos las mismas materias por dos años, somos de la misma camada. Y encima, como siempre nos sacamos notas parecidas, debe ser un buen compañero de TP para mí.</p>
 <section id="como-es-el-grafo">
 <h2>Cómo es el grafo?<a class="headerlink" href="#como-es-el-grafo" title="Permalink to this headline">#</a></h2>
+<p>El grafo analizado va a ser un multigrafo: entre cada par de alumnos puede haber varias aristas</p>
 <ul class="simple">
 <li><p>Nodos: alumnos</p></li>
 <li><p>Aristas: conectar dos alumnos que hayan cursado la misma materia el mismo cuatrimestre</p></li>
@@ -480,38 +481,38 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>9638</th>
-      <td>99177</td>
+      <th>1426</th>
+      <td>107632</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>75.74</td>
+      <td>-2.0</td>
+      <td>2025.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4320</th>
+      <td>101651</td>
       <td>informatica</td>
       <td>Gestión Industrial de Sistemas</td>
       <td>tpp</td>
-      <td>75.08</td>
-      <td>4.0</td>
-      <td>NaN</td>
+      <td>75.15</td>
+      <td>-1.0</td>
+      <td>2021.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>12731</th>
-      <td>103745</td>
+      <th>6294</th>
+      <td>103852</td>
       <td>informatica</td>
       <td>Gestión Industrial de Sistemas</td>
-      <td>tesis</td>
-      <td>75.06</td>
-      <td>6.0</td>
-      <td>2020.5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10441</th>
-      <td>871529</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>61.07</td>
-      <td>4.0</td>
-      <td>NaN</td>
+      <td>tpp</td>
+      <td>75.15</td>
+      <td>8.0</td>
+      <td>2022.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -564,7 +565,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1872/614348558.py:7: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1848/614348558.py:7: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
   df_nodes_metadata = df[df.columns &amp; [&quot;Padron&quot;, &quot;Carrera&quot;, &quot;aplazos&quot;, &quot;optativas&quot;, &quot;checkboxes&quot;]]
 </pre></div>
 </div>
@@ -603,19 +604,19 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
+      <th>101508</th>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>[{'id': 1, 'nombre': 'Materia Optativa', 'cred...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
       <th>103785</th>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
       <td>[{'id': 1, 'nombre': 'Aprendizaje Estadistico'...</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>100566</th>
-      <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
-      <td>tpp</td>
-      <td>[{'id': 1, 'nombre': 'Materia Optativa', 'cred...</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -628,7 +629,7 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1872/614348558.py:21: FutureWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1848/614348558.py:21: FutureWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
   .apply(pd.Series)
 </pre></div>
 </div>
@@ -661,34 +662,34 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>109676</th>
-      <td>105853</td>
-      <td>106352</td>
-      <td>2020.5</td>
-      <td>75.41</td>
-      <td>9.0</td>
-      <td>8.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>54048</th>
-      <td>103745</td>
-      <td>102342</td>
-      <td>2020.5</td>
-      <td>75.06</td>
+      <th>62425</th>
+      <td>105964</td>
+      <td>105147</td>
+      <td>2021.0</td>
+      <td>75.07</td>
       <td>6.0</td>
       <td>8.0</td>
       <td>2.0</td>
     </tr>
     <tr>
-      <th>14480</th>
-      <td>102210</td>
-      <td>95772</td>
-      <td>2019.5</td>
-      <td>61.09</td>
+      <th>114676</th>
+      <td>104057</td>
+      <td>102848</td>
+      <td>2020.5</td>
+      <td>75.42</td>
       <td>9.0</td>
-      <td>-1.0</td>
       <td>7.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>31312</th>
+      <td>103942</td>
+      <td>106393</td>
+      <td>2021.0</td>
+      <td>62.03</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -723,11 +724,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiGraph with 371 nodes and 73663 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiGraph with 371 nodes and 73719 edges
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  El diámetro de la red: 4
-  El grado promedio de la red: 397.11
+  El grado promedio de la red: 397.41
   Puentes globales: []
 </pre></div>
 </div>
@@ -736,7 +737,9 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Solo como demo para cuando tenemos pocos nodos: ahora veamos el grafo, pero dibujemos todas las aristas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ToDo: graficar un sample con esto!</span>
+
+<span class="c1"># # Solo como demo para cuando tenemos pocos nodos: ahora veamos el grafo, pero dibujemos todas las aristas</span>
 <span class="c1"># # Robadisimo de: https://stackoverflow.com/a/60638452</span>
 <span class="c1"># pos = nx.random_layout(G)</span>
 <span class="c1"># nx.draw_networkx_nodes(G, pos)</span>
@@ -773,7 +776,7 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">louvaincommunity</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">louvain</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
     <span class="n">draw_nodes</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">louvaincommunity</span><span class="p">})</span>
     
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Louvain Communities&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">)</span><span class="si">}</span><span class="s2"> Louvain Communities&quot;</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> 
                  <span class="n">nodelist</span><span class="o">=</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> 
                  <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> 
@@ -852,19 +855,19 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>368</th>
-      <td>108901</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>99999</td>
+      <th>157</th>
+      <td>104505</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>323</th>
-      <td>107741</td>
-      <td>3</td>
+      <th>19</th>
+      <td>102674</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>106223</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1060,11 +1063,11 @@ title="Print to PDF"
       <td>1120</td>
     </tr>
     <tr>
-      <th>29</th>
+      <th>26</th>
       <td>3</td>
       <td>2021.5</td>
       <td>75.41</td>
-      <td>1584</td>
+      <td>1665</td>
     </tr>
     <tr>
       <th>24</th>
@@ -1086,10 +1089,10 @@ title="Print to PDF"
 <p>todo: deberiamos, de la misma forma que lo hacemos con las comunidades, confirmar que estas subcomunidades tambien se clasifican segun algo (por ejemplo, calcular el avg y std de corrnotas de cada subcomunidad y mostrar que son distintos)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PADRON</span> <span class="o">=</span> <span class="s2">&quot;100029&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setup</span> <span class="kn">import</span> <span class="n">PADRON</span>
 
 <span class="k">def</span> <span class="nf">nestedsearch</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lst_of_sets</span> <span class="k">if</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">l</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">lst</span><span class="p">:</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">armar_grupo</span><span class="p">(</span><span class="n">padron</span><span class="p">):</span>
     <span class="n">camada</span> <span class="o">=</span> <span class="n">nestedsearch</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">louvain</span><span class="p">)</span>       
@@ -1099,10 +1102,16 @@ title="Print to PDF"
     
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">grupo</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max_iteraciones</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">min_alumnos</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grupo</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_alumnos</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iteraciones</span><span class="p">):</span>
         <span class="n">sublouvains</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">subnetwork</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;corrnotas&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mf">0.01</span><span class="p">))</span>
-        <span class="n">grupo</span> <span class="o">=</span> <span class="n">nestedsearch</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">sublouvains</span><span class="p">)</span>
+        <span class="n">comunidad</span> <span class="o">=</span> <span class="n">nestedsearch</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">sublouvains</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">min_alumnos</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_alumnos</span><span class="p">:</span>
+            <span class="n">grupo</span> <span class="o">=</span> <span class="n">comunidad</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">grupo</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_alumnos</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">-</span> <span class="n">max_alumnos</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grupo</span><span class="p">)</span> <span class="o">-</span> <span class="n">max_alumnos</span><span class="p">)):</span>
+            <span class="n">grupo</span> <span class="o">=</span> <span class="n">comunidad</span>
         <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+
     <span class="k">return</span> <span class="n">grupo</span>
 
 <span class="n">grupo</span> <span class="o">=</span> <span class="n">armar_grupo</span><span class="p">(</span><span class="n">PADRON</span><span class="p">)</span>
@@ -1142,43 +1151,43 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>103371</td>
+      <td>101109</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>100029</td>
+      <td>101591</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>919191</td>
+      <td>102740</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>102654</td>
+      <td>101696</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>102361</td>
+      <td>100029</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>100445</td>
+      <td>99732</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>102141</td>
+      <td>101483</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>102981</td>
+      <td>100687</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>102103</td>
+      <td>fsrrafpp</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>102342</td>
+      <td>100016</td>
     </tr>
     <tr>
       <th>10</th>
@@ -1186,11 +1195,15 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>11</th>
-      <td>102740</td>
+      <td>101302</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>102674</td>
+      <td>100680</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>101018</td>
     </tr>
   </tbody>
 </table>
@@ -1234,10 +1247,10 @@ title="Print to PDF"
             <p class="prev-next-title">Infra</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="graphito.html" title="next page">
+    <a class='right-next' id="next-link" href="grafon.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Graphito</p>
+        <p class="prev-next-title">Grafón: Qué electivas me conviene cursar?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

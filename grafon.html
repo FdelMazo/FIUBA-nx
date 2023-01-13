@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Grafon &#8212; FIUBA-nx</title>
+    <title>Grafón: Qué electivas me conviene cursar? &#8212; FIUBA-nx</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Graphito" href="graphito.html" />
+    <link rel="next" title="Graphito" href="graphito.html" />
+    <link rel="prev" title="Grafazo: Con que alumnos puedo hacer TPs en un futuro?" href="grafazo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,14 +121,14 @@ const thebe_selector_output = ".output, .cell_output"
    Grafazo: Con que alumnos puedo hacer TPs en un futuro?
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Grafón: Qué electivas me conviene cursar?
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="graphito.html">
    Graphito
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Grafon
   </a>
  </li>
 </ul>
@@ -337,34 +338,16 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-va-a-analizar-nuestro-grafo">
-   Qué va a analizar nuestro grafo?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-queremos-responder">
-   Qué queremos responder?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-es-el-grafo">
    Cómo es el grafo?
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
-   Dos formas de armar el análisis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplo-de-conexion">
-   Ejemplo de conexión:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stats-generales-del-grafo">
-   Stats generales del grafo
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
+     Dos formas de armar el análisis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comunidades">
@@ -380,7 +363,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Grafon</h1>
+                <h1>Grafón: Qué electivas me conviene cursar?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -391,34 +374,16 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-va-a-analizar-nuestro-grafo">
-   Qué va a analizar nuestro grafo?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-queremos-responder">
-   Qué queremos responder?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-es-el-grafo">
    Cómo es el grafo?
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
-   Dos formas de armar el análisis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplo-de-conexion">
-   Ejemplo de conexión:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stats-generales-del-grafo">
-   Stats generales del grafo
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
+     Dos formas de armar el análisis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comunidades">
@@ -435,40 +400,38 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="grafon">
-<h1>Grafon<a class="headerlink" href="#grafon" title="Permalink to this headline">#</a></h1>
-<section id="que-va-a-analizar-nuestro-grafo">
-<h2>Qué va a analizar nuestro grafo?<a class="headerlink" href="#que-va-a-analizar-nuestro-grafo" title="Permalink to this headline">#</a></h2>
-<p>Analizar “gente que haya tenido experiencias facultativas similares” -&gt; sacamos el factor temporal</p>
-</section>
-<section id="que-queremos-responder">
-<h2>Qué queremos responder?<a class="headerlink" href="#que-queremos-responder" title="Permalink to this headline">#</a></h2>
-<p>Qué electivas curso?</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="grafon-que-electivas-me-conviene-cursar">
+<h1>Grafón: Qué electivas me conviene cursar?<a class="headerlink" href="#grafon-que-electivas-me-conviene-cursar" title="Permalink to this headline">#</a></h1>
+<p>Este grafo se encarga de analizar “gente que haya tenido experiencias facultativas similares”, sin importar en que año o cuatrimestre fue. La idea es que si me fue parecido en varias materias a alguna otra persona, y esa persona curso alguna electiva que yo no, entonces esa materia es una buena candidata para mí.</p>
+<p>Por ejemplo: Por más que Juan se haya recibido el año pasado, es una persona que se parece mucho a mí porque nos sacamos las mismas notas en muchas materias. Probablemente las electivas que Juan eligió, me sirvan a mí como guía.</p>
 <section id="como-es-el-grafo">
 <h2>Cómo es el grafo?<a class="headerlink" href="#como-es-el-grafo" title="Permalink to this headline">#</a></h2>
+<p>El grafo analizado va a ser un grafo simple, y no un multigrafo: entre cada par de alumnos solo puede haber una arista. Manejamos la cardinalidad en el peso, en vez de tener múltiples aristas.</p>
 <ul class="simple">
-<li><p>Nodos: usuarios</p></li>
-<li><p>Aristas: cursar misma materia y “les fue parecido” -&gt; -1 (en el final), 4-5, 6-7, 8-10</p></li>
-<li><p>Peso: porcentaje de similitud de materia+nota</p></li>
+<li><p>Nodos: alumnos</p></li>
+<li><p>Aristas: conectar dos alumnos que hayan cursado misma materia y “les fue parecido”.</p>
+<ul>
+<li><p>A los dos nos fue muy bien (nos sacamos entre 8 y 10)</p></li>
+<li><p>A los dos nos fue más o menos (nos sacamos un 6 o un 7)</p></li>
+<li><p>A los dos nos fue mal (nos sacamos un 4 o un 5)</p></li>
 </ul>
-</section>
+</li>
+<li><p>Peso: La inversa* de la cantidad de materias en donde somos similares</p></li>
+</ul>
+<p>*Calculamos la inversa porque mientras mas similares son, menor peso queremos que haya entre la arista, para que más cercanos esten</p>
 <section id="dos-formas-de-armar-el-analisis">
-<h2>Dos formas de armar el análisis<a class="headerlink" href="#dos-formas-de-armar-el-analisis" title="Permalink to this headline">#</a></h2>
+<h3>Dos formas de armar el análisis<a class="headerlink" href="#dos-formas-de-armar-el-analisis" title="Permalink to this headline">#</a></h3>
+<p>// ToDo: que hacemos aca? Elegimos uno, o presentamos ambos en el mismo notebook?</p>
 <ul class="simple">
 <li><p>sólo correr sobre materias electivas</p></li>
 <li><p>correr sobre todas las materias, pero filtrar el output por electivas</p></li>
 </ul>
-</section>
-<section id="ejemplo-de-conexion">
-<h2>Ejemplo de conexión:<a class="headerlink" href="#ejemplo-de-conexion" title="Permalink to this headline">#</a></h2>
-<p>X y yo cursamos …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -504,38 +467,38 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>21336</th>
-      <td>42116191</td>
+      <th>1886</th>
+      <td>108193</td>
       <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>71.14</td>
+      <td>-2.0</td>
+      <td>2024.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>61.03</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>20436</th>
+      <td>loading</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>75.42</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>21337</th>
-      <td>42116191</td>
+      <th>19594</th>
+      <td>102342</td>
       <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>62.01</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>21338</th>
-      <td>42116191</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>75.40</td>
-      <td>0.0</td>
-      <td>NaN</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>66.02</td>
+      <td>6.0</td>
+      <td>2019.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -559,15 +522,21 @@ title="Print to PDF"
 
 <span class="c1"># Sacamos materias en final y a cursar</span>
 <span class="n">df_rel</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">]</span>
-<span class="c1"># Sacamos gente que no le pone la nota a su fiubamap</span>
-<span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;promedio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rel</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Padron&#39;</span><span class="p">)[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
-<span class="n">df_rel</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;promedio&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
 
-<span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;materia_categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">categories</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-<span class="n">df_simil</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_rel</span><span class="p">,</span> <span class="n">df_rel</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_categoria&#39;</span><span class="p">])</span>
+<span class="c1"># Sacamos gente que no le pone la nota a su fiubamap y deja que se saco (casi) todos 4s directamente</span>
+<span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;mediana&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rel</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Padron&#39;</span><span class="p">)[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="n">df_rel</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;mediana&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;nota_categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">categories</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+
+<span class="c1"># Juntamos el grafo con si mismo para tener la similiritud entre cada par de padrones</span>
+<span class="n">df_simil</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_rel</span><span class="p">,</span> <span class="n">df_rel</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;nota_categoria&#39;</span><span class="p">])</span>
 <span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[</span><span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span>
 <span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">df_simil</span>
+
+<span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;nota_categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota_y&#39;</span><span class="p">]]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_simil</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df_simil</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -590,169 +559,67 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>index</th>
-      <th>Padron_x</th>
       <th>materia_id</th>
+      <th>nota_categoria</th>
+      <th>Padron_x</th>
       <th>materia_nota_x</th>
-      <th>promedio_x</th>
-      <th>materia_categoria</th>
       <th>Padron_y</th>
       <th>materia_nota_y</th>
-      <th>promedio_y</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>mequierorecibir</td>
+      <th>994225</th>
       <td>62.01</td>
-      <td>7.0</td>
-      <td>7.950000</td>
-      <td>1</td>
-      <td>95897</td>
-      <td>7.0</td>
-      <td>6.230769</td>
+      <td>0</td>
+      <td>105064</td>
+      <td>5.0</td>
+      <td>100033</td>
+      <td>5.0</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>347030</th>
+      <td>61.08</td>
       <td>2</td>
-      <td>mequierorecibir</td>
-      <td>62.01</td>
-      <td>7.0</td>
-      <td>7.950000</td>
-      <td>1</td>
-      <td>101109</td>
-      <td>7.0</td>
-      <td>6.156250</td>
+      <td>103371</td>
+      <td>9.0</td>
+      <td>231</td>
+      <td>9.0</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>mequierorecibir</td>
-      <td>62.01</td>
-      <td>7.0</td>
-      <td>7.950000</td>
-      <td>1</td>
-      <td>103348</td>
-      <td>7.0</td>
-      <td>5.166667</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>mequierorecibir</td>
-      <td>62.01</td>
-      <td>7.0</td>
-      <td>7.950000</td>
-      <td>1</td>
-      <td>106099</td>
-      <td>6.0</td>
-      <td>7.142857</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>mequierorecibir</td>
-      <td>62.01</td>
-      <td>7.0</td>
-      <td>7.950000</td>
-      <td>1</td>
-      <td>103942</td>
-      <td>7.0</td>
-      <td>5.500000</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1416975</th>
-      <td>1427375</td>
-      <td>99627</td>
-      <td>75.48</td>
-      <td>7.0</td>
-      <td>7.553191</td>
-      <td>1</td>
-      <td>98338</td>
-      <td>7.0</td>
-      <td>7.317073</td>
-    </tr>
-    <tr>
-      <th>1416976</th>
-      <td>1427376</td>
-      <td>93445</td>
-      <td>75.48</td>
-      <td>7.0</td>
-      <td>6.974359</td>
-      <td>1</td>
-      <td>99627</td>
-      <td>7.0</td>
-      <td>7.553191</td>
-    </tr>
-    <tr>
-      <th>1416977</th>
-      <td>1427378</td>
-      <td>93445</td>
-      <td>75.48</td>
-      <td>7.0</td>
-      <td>6.974359</td>
-      <td>1</td>
-      <td>98338</td>
-      <td>7.0</td>
-      <td>7.317073</td>
-    </tr>
-    <tr>
-      <th>1416978</th>
-      <td>1427379</td>
-      <td>98338</td>
-      <td>75.48</td>
-      <td>7.0</td>
-      <td>7.317073</td>
-      <td>1</td>
-      <td>99627</td>
-      <td>7.0</td>
-      <td>7.553191</td>
-    </tr>
-    <tr>
-      <th>1416979</th>
-      <td>1427380</td>
-      <td>98338</td>
-      <td>75.48</td>
-      <td>7.0</td>
-      <td>7.317073</td>
-      <td>1</td>
-      <td>93445</td>
-      <td>7.0</td>
-      <td>6.974359</td>
+      <th>1021178</th>
+      <td>75.42</td>
+      <td>2</td>
+      <td>100866</td>
+      <td>8.0</td>
+      <td>102654</td>
+      <td>9.0</td>
     </tr>
   </tbody>
 </table>
-<p>1416980 rows × 9 columns</p>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1386586, 6)
+</pre></div>
 </div>
-<p>Esto resultaría en un grafo con pocos nodos y 1407892 de aristas, es decir demasiadas aristas. Por eso se busca un enfoque de unificar aristas mediante algún tipo de criterio y de esta forma tener sólo una arista entre padrones.</p>
+</div>
+</div>
+<p>Esto resultaría en un grafo con pocos nodos y millones de aristas. Por eso se busca un enfoque de unificar aristas mediante algún tipo de criterio y de esta forma tener sólo una arista entre padrones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">df_simil_agg</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="n">df_simil_agg</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_materias_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
 <span class="n">df_simil_agg</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
 <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;Padron_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;Padron_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_simil_agg</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s1">&#39;Padron_min&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_max&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-<span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;inv_cant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;cant&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;cant&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="n">df_simil_agg</span>
+<span class="c1"># ToDo: fijarse si elevar a un K acá</span>
+<span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_simil_agg</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">df_simil_agg</span> <span class="o">=</span> <span class="n">df_simil_agg</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> <span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df_simil_agg</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df_simil_agg</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -775,134 +642,44 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>index</th>
       <th>Padron_x</th>
       <th>Padron_y</th>
-      <th>cant</th>
-      <th>Padron_min</th>
-      <th>Padron_max</th>
-      <th>inv_cant</th>
+      <th>cant_materias_similares</th>
+      <th>inv_cant_materias_similares</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>-1</td>
-      <td>0000</td>
-      <td>10</td>
-      <td>-1</td>
-      <td>0000</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>-1</td>
-      <td>02902</td>
+      <th>51267</th>
+      <td>102547</td>
+      <td>110409</td>
       <td>2</td>
-      <td>-1</td>
-      <td>02902</td>
       <td>34</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>-1</td>
-      <td>100016</td>
-      <td>9</td>
-      <td>-1</td>
-      <td>100016</td>
-      <td>27</td>
+      <th>108677</th>
+      <td>105576</td>
+      <td>Mximo</td>
+      <td>5</td>
+      <td>31</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>-1</td>
-      <td>100029</td>
-      <td>12</td>
-      <td>-1</td>
-      <td>100029</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>4</th>
+      <th>126011</th>
+      <td>106136</td>
+      <td>107662</td>
       <td>4</td>
-      <td>-1</td>
-      <td>100029asdasdasdasd</td>
-      <td>4</td>
-      <td>-1</td>
-      <td>100029asdasdasdasd</td>
       <td>32</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>176777</th>
-      <td>351810</td>
-      <td>sadfsdfsdfgfasdfdsgsdfg</td>
-      <td>tplink</td>
-      <td>4</td>
-      <td>sadfsdfsdfgfasdfdsgsdfg</td>
-      <td>tplink</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>176778</th>
-      <td>351811</td>
-      <td>sadfsdfsdfgfasdfdsgsdfg</td>
-      <td>xasdasdasd</td>
-      <td>13</td>
-      <td>sadfsdfsdfgfasdfdsgsdfg</td>
-      <td>xasdasdasd</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>176779</th>
-      <td>352400</td>
-      <td>sadfsdfsdfgfdsgsdfg</td>
-      <td>tplink</td>
-      <td>4</td>
-      <td>sadfsdfsdfgfdsgsdfg</td>
-      <td>tplink</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>176780</th>
-      <td>352401</td>
-      <td>sadfsdfsdfgfdsgsdfg</td>
-      <td>xasdasdasd</td>
-      <td>13</td>
-      <td>sadfsdfsdfgfdsgsdfg</td>
-      <td>xasdasdasd</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>176781</th>
-      <td>352974</td>
-      <td>tplink</td>
-      <td>xasdasdasd</td>
-      <td>3</td>
-      <td>tplink</td>
-      <td>xasdasdasd</td>
-      <td>33</td>
     </tr>
   </tbody>
 </table>
-<p>176782 rows × 7 columns</p>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(170337, 4)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_simil_agg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_simil_agg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -925,265 +702,117 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>index</th>
       <th>Padron_x</th>
       <th>Padron_y</th>
-      <th>cant</th>
-      <th>Padron_min</th>
-      <th>Padron_max</th>
-      <th>inv_cant</th>
+      <th>cant_materias_similares</th>
+      <th>inv_cant_materias_similares</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>13217</th>
-      <td>13470</td>
+      <th>12600</th>
       <td>100687</td>
       <td>99732</td>
       <td>35</td>
-      <td>100687</td>
-      <td>99732</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>176463</th>
-      <td>338954</td>
+      <th>170018</th>
       <td>99616</td>
       <td>99732</td>
       <td>32</td>
-      <td>99616</td>
-      <td>99732</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>12695</th>
-      <td>12948</td>
+      <th>12089</th>
       <td>100687</td>
       <td>102145</td>
       <td>31</td>
-      <td>100687</td>
-      <td>102145</td>
       <td>5</td>
     </tr>
     <tr>
-      <th>37647</th>
-      <td>39991</td>
+      <th>36545</th>
       <td>102145</td>
       <td>102192</td>
       <td>30</td>
-      <td>102145</td>
-      <td>102192</td>
       <td>6</td>
     </tr>
     <tr>
-      <th>174065</th>
-      <td>310485</td>
-      <td>95897</td>
-      <td>99423</td>
-      <td>29</td>
-      <td>95897</td>
-      <td>99423</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>12701</th>
-      <td>12954</td>
-      <td>100687</td>
-      <td>102192</td>
-      <td>29</td>
-      <td>100687</td>
-      <td>102192</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>12074</th>
-      <td>12305</td>
-      <td>100680</td>
-      <td>101483</td>
-      <td>29</td>
-      <td>100680</td>
-      <td>101483</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>29081</th>
-      <td>30479</td>
-      <td>101601</td>
-      <td>102145</td>
-      <td>29</td>
-      <td>101601</td>
-      <td>102145</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>12756</th>
-      <td>13009</td>
+      <th>12148</th>
       <td>100687</td>
       <td>103371</td>
       <td>29</td>
-      <td>100687</td>
-      <td>103371</td>
       <td>7</td>
     </tr>
     <tr>
-      <th>37649</th>
-      <td>39993</td>
-      <td>102145</td>
-      <td>102198</td>
-      <td>28</td>
-      <td>102145</td>
-      <td>102198</td>
-      <td>8</td>
+      <th>11480</th>
+      <td>100680</td>
+      <td>101483</td>
+      <td>29</td>
+      <td>7</td>
     </tr>
     <tr>
-      <th>12672</th>
-      <td>12925</td>
+      <th>12095</th>
+      <td>100687</td>
+      <td>102192</td>
+      <td>29</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>167653</th>
+      <td>95897</td>
+      <td>99423</td>
+      <td>29</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>28159</th>
+      <td>101601</td>
+      <td>102145</td>
+      <td>29</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>12066</th>
       <td>100687</td>
       <td>101483</td>
       <td>28</td>
-      <td>100687</td>
-      <td>101483</td>
       <td>8</td>
     </tr>
     <tr>
-      <th>175375</th>
-      <td>322638</td>
+      <th>168955</th>
       <td>98124</td>
       <td>98591</td>
       <td>28</td>
-      <td>98124</td>
-      <td>98591</td>
       <td>8</td>
     </tr>
     <tr>
-      <th>13211</th>
-      <td>13464</td>
-      <td>100687</td>
-      <td>99616</td>
-      <td>27</td>
-      <td>100687</td>
-      <td>99616</td>
-      <td>9</td>
+      <th>36547</th>
+      <td>102145</td>
+      <td>102198</td>
+      <td>28</td>
+      <td>8</td>
     </tr>
     <tr>
-      <th>176402</th>
-      <td>337573</td>
-      <td>99469</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>99469</td>
-      <td>99732</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>12629</th>
-      <td>12860</td>
-      <td>100680</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>100680</td>
-      <td>99732</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>35895</th>
-      <td>37975</td>
+      <th>34831</th>
       <td>102103</td>
       <td>200793</td>
       <td>27</td>
-      <td>102103</td>
-      <td>200793</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>12051</th>
-      <td>12282</td>
-      <td>100680</td>
-      <td>100687</td>
-      <td>27</td>
-      <td>100680</td>
-      <td>100687</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25395</th>
-      <td>26445</td>
-      <td>101483</td>
-      <td>102192</td>
-      <td>27</td>
-      <td>101483</td>
-      <td>102192</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25918</th>
-      <td>26968</td>
-      <td>101483</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>101483</td>
-      <td>99732</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>37682</th>
-      <td>40026</td>
-      <td>102145</td>
-      <td>102749</td>
-      <td>27</td>
-      <td>102145</td>
-      <td>102749</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>37716</th>
-      <td>40060</td>
-      <td>102145</td>
-      <td>103784</td>
-      <td>27</td>
-      <td>102145</td>
-      <td>103784</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>12081</th>
-      <td>12312</td>
-      <td>100680</td>
-      <td>101601</td>
-      <td>27</td>
-      <td>100680</td>
-      <td>101601</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>13208</th>
-      <td>13461</td>
-      <td>100687</td>
-      <td>99469</td>
-      <td>27</td>
-      <td>100687</td>
-      <td>99469</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>25410</th>
-      <td>26460</td>
+      <th>24560</th>
       <td>101483</td>
       <td>102358</td>
       <td>27</td>
-      <td>101483</td>
-      <td>102358</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>29087</th>
-      <td>30485</td>
+      <th>11487</th>
+      <td>100680</td>
       <td>101601</td>
-      <td>102192</td>
-      <td>26</td>
-      <td>101601</td>
-      <td>102192</td>
-      <td>10</td>
+      <td>27</td>
+      <td>9</td>
     </tr>
   </tbody>
 </table>
@@ -1192,206 +821,214 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_simil_agg</span><span class="p">,</span> 
                             <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> 
                             <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> 
-                            <span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;inv_cant&#39;</span><span class="p">,</span>
+                            <span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">,</span>
                             <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">())</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 643 nodes and 176782 edges
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[(</span><span class="s1">&#39;-1&#39;</span><span class="p">,</span> <span class="s1">&#39;0000&#39;</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;inv_cant&#39;: 26}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Veamos el grafo</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/grafon_8_0.png" src="_images/grafon_8_0.png" />
-</div>
-</div>
-</section>
-<section id="stats-generales-del-grafo">
-<h2>Stats generales del grafo<a class="headerlink" href="#stats-generales-del-grafo" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">  El diámetro de la red: </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">  El grado promedio de la red: </span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">  TODO: Los allegados promedio de la red: </span>
 <span class="s2">  Puentes globales: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># ToDo: Elegir un randomsample (si? no?) para graficar y que se entienda mejor el grafico. Tal vez el grupo del tp puede ser el sample</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spiral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span>   <span class="n">width</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>  <span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 629 nodes and 170337 edges
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  El diámetro de la red: 3
-  El grado promedio de la red: 549.87
-  TODO: Los allegados promedio de la red: 
+  El grado promedio de la red: 541.61
   Puentes globales: []
 </pre></div>
 </div>
+<img alt="_images/grafon_7_2.png" src="_images/grafon_7_2.png" />
 </div>
 </div>
+</section>
 </section>
 <section id="comunidades">
 <h2>Comunidades<a class="headerlink" href="#comunidades" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="kn">import</span> <span class="n">community</span>
-<span class="n">louvain</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;inv_cant&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">louvain</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">)</span>
+<span class="n">draw_nodes</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mcolors</span><span class="o">.</span><span class="n">CSS4_COLORS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">louvaincommunity</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">louvain</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="n">draw_nodes</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">louvaincommunity</span><span class="p">})</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">)</span><span class="si">}</span><span class="s2"> Louvain Communities&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> 
+                 <span class="n">nodelist</span><span class="o">=</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> 
+                 <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> 
+                 <span class="n">width</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span> 
+                 <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+                 <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
+<img alt="_images/grafon_9_0.png" src="_images/grafon_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">padrones_similares</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
-    <span class="n">louvain</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;inv_cant&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">padron</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">louvain</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setup</span> <span class="kn">import</span> <span class="n">PADRON</span><span class="p">,</span> <span class="n">CARRERA</span><span class="p">,</span> <span class="n">plan_estudios</span>
+
+<span class="k">def</span> <span class="nf">nestedsearch</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">lst</span><span class="p">:</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">materias_padron</span><span class="p">(</span><span class="n">padron</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">padron</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)][</span><span class="s1">&#39;materia_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
-<span class="k">def</span> <span class="nf">sugerir_electivas</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">padrones</span> <span class="o">=</span> <span class="n">padrones_similares</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
-    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">padrones</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">sugerir_electivas</span><span class="p">(</span><span class="n">padron</span><span class="p">):</span>
+    <span class="n">min_alumnos</span><span class="p">,</span> <span class="n">max_alumnos</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">20</span>
+    <span class="n">max_iteraciones</span> <span class="o">=</span> <span class="mi">25</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">grupo</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iteraciones</span><span class="p">):</span>
+        <span class="n">louvain</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mf">0.01</span><span class="p">))</span>
+        <span class="n">comunidad</span> <span class="o">=</span> <span class="n">nestedsearch</span><span class="p">(</span><span class="n">padron</span><span class="p">,</span> <span class="n">louvain</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">min_alumnos</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_alumnos</span><span class="p">:</span>
+            <span class="n">grupo</span> <span class="o">=</span> <span class="n">comunidad</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">grupo</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_alumnos</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">comunidad</span><span class="p">)</span> <span class="o">-</span> <span class="n">max_alumnos</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grupo</span><span class="p">)</span> <span class="o">-</span> <span class="n">max_alumnos</span><span class="p">)):</span>
+            <span class="n">grupo</span> <span class="o">=</span> <span class="n">comunidad</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+    
+    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">grupo</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_alumnos_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
     <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[</span><span class="o">~</span><span class="n">df_sugerencias</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">materias_padron</span><span class="p">(</span><span class="n">padron</span><span class="p">))]</span>
     
-    <span class="n">df_materias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;informatica.csv&#39;</span><span class="p">)</span>
-    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sugerencias</span><span class="p">,</span> <span class="n">df_materias</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span>
+    <span class="n">df_materias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">plan_estudios</span><span class="p">(</span><span class="n">CARRERA</span><span class="p">))</span>
+    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sugerencias</span><span class="p">,</span> <span class="n">df_materias</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
     <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[</span><span class="n">df_sugerencias</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Materias Electivas&#39;</span><span class="p">]</span>
-    
-    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;creditos&#39;</span><span class="p">,</span> <span class="s1">&#39;cant&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia&#39;</span><span class="p">,</span> <span class="s1">&#39;creditos&#39;</span><span class="p">,</span> <span class="s1">&#39;cant_alumnos_similares&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant_alumnos_similares&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df_sugerencias</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">sugerir_electivas</span><span class="p">(</span><span class="s1">&#39;100687&#39;</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">)</span>
+<span class="n">electivas</span> <span class="o">=</span> <span class="n">sugerir_electivas</span><span class="p">(</span><span class="n">PADRON</span><span class="p">)</span>
+<span class="n">electivas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">20</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;creditos&#39;</span><span class="p">,</span> <span class="s1">&#39;cant&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">return</span> <span class="n">df_sugerencias</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">sugerir_electivas</span><span class="p">(</span><span class="s1">&#39;100687&#39;</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">Cell In [11], line 13,</span> in <span class="ni">sugerir_electivas</span><span class="nt">(padron, resolution)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">padrones</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[</span><span class="o">~</span><span class="n">df_sugerencias</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">materias_padron</span><span class="p">(</span><span class="n">padron</span><span class="p">))]</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">df_materias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;informatica.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sugerencias</span><span class="p">,</span> <span class="n">df_materias</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[</span><span class="n">df_sugerencias</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Materias Electivas&#39;</span><span class="p">]</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/util/_decorators.py:317,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()),</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">317</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1729,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1727</span>     <span class="n">is_text</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span>     <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;rb&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1729</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1731</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1732</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1738</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1739</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1740</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/common.py:857,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">852</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">853</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">854</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">855</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">857</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;informatica.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>materia</th>
+      <th>creditos</th>
+      <th>cant_alumnos_similares</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78.xx</td>
+      <td>Idioma</td>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>71.12</td>
+      <td>Estructura de las Organizaciones</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>61.10</td>
+      <td>Análisis Matemático III A</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>62.15</td>
+      <td>Física III D</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>66.20</td>
+      <td>Organización de Computadoras</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>66.69</td>
+      <td>Criptografía y Seguridad Informática</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>75.26</td>
+      <td>Simulación</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>66.06</td>
+      <td>Análisis de Circuitos</td>
+      <td>10</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>67.61</td>
+      <td>Fundamentos Matemáticos de la Visión en Robótica</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>71.18</td>
+      <td>Estructura Económica Argentina</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1423,12 +1060,19 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="graphito.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="grafazo.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Graphito</p>
+            <p class="prev-next-title">Grafazo: Con que alumnos puedo hacer TPs en un futuro?</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="graphito.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Graphito</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
