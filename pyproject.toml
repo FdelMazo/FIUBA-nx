@@ -5,7 +5,7 @@ description = "Análisis de los datos del FIUBA-Map"
 authors = ["JDSanto <jdisanto@fi.uba.ar>", "Cami Dvorkin <cdvorkin@fi.uba.ar>", "FdelMazo <FdelMazo@fi.uba.ar>", "Juampi Rombolá <jrombola@fi.uba.ar>"]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.9,<=3.12"
 argon2-cffi = "21.3.0"
 argon2-cffi-bindings = "21.2.0"
 asttokens = "2.0.8"
@@ -77,7 +77,7 @@ PyYAML = "6.0"
 pyzmq = "24.0.1"
 qtconsole = "5.3.2"
 QtPy = "2.2.1"
-scipy = "1.9.1"
+scipy = "^1.9.1"
 Send2Trash = "1.8.0"
 six = "1.16.0"
 soupsieve = "2.3.2.post1"
