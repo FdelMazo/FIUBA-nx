@@ -36,6 +36,32 @@ DIFFERENT_WALKS = { # incluye bucles
 
 LENGHTS = [5, 6, 7]
 
+# Imprime las estadísticas que nos interesan de un grafo
+def stats(G):
+    print(G)
+    print(f"""
+      El diámetro de la red: {nx.diameter(G)}
+      El grado promedio de la red: {sum([n[1] for n in G.degree()]) / len(G):.2f}
+      Puentes globales: {list(nx.bridges(G))}
+    """)
+
+# Plotea un grafo en dos gráficos side by side
+def plot(G, edge_width=0.005):
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(30,10))
+    ax = axes.flatten()
+    # Un plot circular, para darnos una idea de cuan completo es (a ojo)
+    nx.draw_networkx(G, pos=nx.circular_layout(G), width=edge_width, node_size=50, with_labels=False, ax=ax[0])
+
+    # Un plot que nos muestre el diametro en rojo
+    shortest_paths = nx.shortest_path(G, source=random.choice(list(G.nodes)))
+    target = max(shortest_paths, key=lambda i: len(shortest_paths[i]))
+    diameter = shortest_paths[target]
+    diameter_edges = list(zip(diameter, diameter[1:]))
+
+    pos = nx.spiral_layout(G)
+    nx.draw(G, pos=pos, with_labels=True, width=edge_width, node_size=5, font_size=6)
+    nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=5, node_color='r')
+    nx.draw_networkx_edges(G, edge_color='r', width=2.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
 def generar_subdf_materias_electivas(df):
     df_materias = pd.read_json(plan_estudios(CARRERA))
@@ -179,17 +205,6 @@ def plot_distribucion_grados(grafos):
         ax.set_xlabel("Distribución")
         ax.set_ylabel("# de Nodos")
         i += 3    
-
-def plot_diametro(G):
-    shortest_paths = nx.shortest_path(G, source=random.choice(list(G.nodes)))
-    target = max(shortest_paths, key=lambda i: len(shortest_paths[i]))
-    diameter = shortest_paths[target]
-    diameter_edges = list(zip(diameter, diameter[1:]))
-
-    pos = nx.spiral_layout(G)
-    nx.draw(G, pos=pos, with_labels=True, width=0.005, node_size=5, font_size=6)
-    nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=10, node_color='r')
-    nx.draw_networkx_edges(G, edge_color='r', width=4.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
 # Traer el plan de estudios del FIUBA-Map (y rezar que nunca cambie tanto como para que se rompa la interfaz)
 def plan_estudios(carrera):
