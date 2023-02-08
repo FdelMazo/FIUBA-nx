@@ -4,7 +4,7 @@ import random
 import matplotlib.pyplot as plt
 import networkx as nx
 
-from config import PADRON, CARRERA, plan_estudios
+from config import PADRON, CARRERA
 from math import log, e, ceil
 from numpy import linalg as LA
 
@@ -190,3 +190,23 @@ def plot_diametro(G):
     nx.draw(G, pos=pos, with_labels=True, width=0.005, node_size=5, font_size=6)
     nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=10, node_color='r')
     nx.draw_networkx_edges(G, edge_color='r', width=4.0, edgelist=diameter_edges, pos=pos, node_size=30)
+
+# Traer el plan de estudios del FIUBA-Map (y rezar que nunca cambie tanto como para que se rompa la interfaz)
+def plan_estudios(carrera):
+    # Hardcodear los planes, por si algun dia el fiuba map sube los planes 2020
+    PLANES = {
+        'informatica': 'informatica-1986',
+        'agrimensura': 'agrimensura-2006',
+        'alimentos': 'alimentos-2000',
+        'civil': 'civil-2009',
+        'electricista': 'electricista-2009',
+        'electronica': 'electronica-2009',
+        'industrial': 'industrial-2011',
+        'mecanica': 'mecanica-1986',
+        'naval': 'naval-1986',
+        'petroleo': 'petroleo-2015',
+        'quimica': 'quimica-1986',
+        'sistemas': 'sistemas-2014',
+        'sistemasviejo': 'sistemas-1986'
+    }
+    return f'https://raw.githubusercontent.com/fdelmazo/FIUBA-Map/master/src/data/{PLANES[carrera]}.json'
