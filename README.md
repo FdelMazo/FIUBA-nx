@@ -40,6 +40,6 @@ poetry run jupyter lab
 
 Ahora si:
 
-- Modificar `setup.py` para que tenga tu carrera y padrón
+- Modificar `config.py` para que tenga tu carrera y padrón
 - Correr `infra.ipynb` primero, asi se genera el pickle de la base de datos
 - Correr cualquiera de los notebooks de análisis
