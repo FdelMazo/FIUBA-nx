@@ -2,13 +2,14 @@ import pandas as pd
 import numpy as np
 import random
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 import networkx as nx
 
 from config import PADRON, CARRERA
 from math import log, e, ceil
 from numpy import linalg as LA
 
-
+plt.rcParams['figure.figsize'] = (30,10)
 pd.set_option('mode.chained_assignment', None)
 categories = {
     4: 0,
@@ -47,7 +48,7 @@ def stats(G):
 
 # Plotea un grafo en dos gráficos side by side
 def plot(G, edge_width=0.005):
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(30,10))
+    fig, axes = plt.subplots(nrows=1, ncols=2)
     ax = axes.flatten()
     # Un plot circular, para darnos una idea de cuan completo es (a ojo)
     nx.draw_networkx(G, pos=nx.circular_layout(G), width=edge_width, node_size=50, with_labels=False, ax=ax[0])
