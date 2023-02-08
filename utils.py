@@ -64,6 +64,21 @@ def plot(G, edge_width=0.005):
     nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=5, node_color='r')
     nx.draw_networkx_edges(G, edge_color='r', width=2.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
+# Plotea cada comunidad en un color distinto
+def plot_communities(G, louvain):
+    draw_nodes = {}
+    colors = random.sample(list(mcolors.CSS4_COLORS), len(louvain))
+    for louvaincommunity, color in zip(louvain, colors):
+        draw_nodes.update({n: color for n in louvaincommunity})
+
+    plt.title(f"{len(louvain)} Louvain Communities")
+    nx.draw_networkx(G,
+                     nodelist=draw_nodes.keys(),
+                     node_color=list(draw_nodes.values()),
+                     width=0.005,
+                     pos=nx.kamada_kawai_layout(G),
+                     font_size=10)
+
 def generar_subdf_materias_electivas(df):
     df_materias = pd.read_json(plan_estudios(CARRERA))
     df_alumnos = pd.merge(df, df_materias, left_on='materia_id', right_on="id")
