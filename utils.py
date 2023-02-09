@@ -11,15 +11,6 @@ from numpy import linalg as LA
 
 plt.rcParams['figure.figsize'] = (30,10)
 pd.set_option('mode.chained_assignment', None)
-categories = {
-    4: 0,
-    5: 0,
-    6: 1,
-    7: 1,
-    8: 2,
-    9: 2,
-    10: 2
-}
 
 DIFFERENT_WALKS = { # incluye bucles
     2: 2,
@@ -85,36 +76,6 @@ def generar_subdf_materias_electivas(df):
     df_alumnos = df_alumnos[df_alumnos['categoria'] == 'Materias Electivas'][['Padron', 'materia_id', 'materia_nota']]
 
     return df_alumnos[['Padron', 'materia_id', 'materia_nota']].copy()
-
-def curar_data(df):
-    # Sacamos materias en final y a cursar
-    df_alumnos = df[df['materia_nota'] >= 4]
-
-    # Sacamos gente que no le pone la nota a su fiubamap y deja que se saco (casi) todos 4s directamente
-    df_alumnos['mediana'] = df_alumnos.groupby('Padron')['materia_nota'].transform('median')
-    df_alumnos = df_alumnos[df_alumnos['mediana'] > 5]
-
-    df_alumnos['nota_categoria'] = df_alumnos['materia_nota'].apply(lambda x: categories[x])
-
-    # Juntamos el grafo con si mismo para tener la similiritud entre cada par de padrones
-    df_simil = pd.merge(df_alumnos, df_alumnos, on=['materia_id', 'nota_categoria'])
-    df_simil = df_simil[df_simil['Padron_x'] != df_simil['Padron_y']]
-    df_simil = df_simil.reset_index()
-
-    df_simil = df_simil[['materia_id', 'nota_categoria', 'Padron_x', 'materia_nota_x', 'Padron_y', 'materia_nota_y']]
-
-    # Unificar aristas ( con el objetivo de no tener pocos nodos y millones de aristas )
-    df_simil_agg = df_simil.groupby(['Padron_x', 'Padron_y']).agg(cant_materias_similares=('materia_id', 'count'))
-    df_simil_agg = df_simil_agg.reset_index()
-
-    df_simil_agg['Padron_min'] = df_simil_agg[['Padron_x', 'Padron_y']].min(axis=1)
-    df_simil_agg['Padron_max'] = df_simil_agg[['Padron_x', 'Padron_y']].max(axis=1)
-    df_simil_agg = df_simil_agg.drop_duplicates(['Padron_min', 'Padron_max']).reset_index()
-
-    # ToDo: fijarse si elevar a un K acá
-    df_simil_agg['inv_cant_materias_similares'] = df_simil_agg['cant_materias_similares'].max() - df_simil_agg['cant_materias_similares'] + 1
-    return df_simil_agg[['Padron_x', 'Padron_y', 'cant_materias_similares', 'inv_cant_materias_similares']]
-
 
 def ln(num):
     return log(num, e)
