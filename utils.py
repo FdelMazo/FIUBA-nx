@@ -70,6 +70,15 @@ def plot_communities(G, louvain):
                      pos=nx.kamada_kawai_layout(G),
                      font_size=10)
 
+def plot_distribucion_grado(G):
+    # TODO: Unificar con plot_distribucion_grados
+    distribucion = [G.degree(n) for n in G.nodes()]
+    plt.figure(figsize=(10, 4)) 
+    plt.bar(*np.unique(distribucion, return_counts=True))
+    plt.xlabel("Grado")
+    plt.ylabel("# of Nodos")
+    plt.show()
+
 def generar_subdf_materias_electivas(df):
     df_materias = pd.read_json(plan_estudios(CARRERA))
     df_alumnos = pd.merge(df, df_materias, left_on='materia_id', right_on="id")
