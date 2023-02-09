@@ -43,17 +43,8 @@ def plot(G, edge_width=0.005):
     ax = axes.flatten()
     # Un plot circular, para darnos una idea de cuan completo es (a ojo)
     nx.draw_networkx(G, pos=nx.circular_layout(G), width=edge_width, node_size=50, with_labels=False, ax=ax[0])
+    nx.draw_networkx(G, pos=nx.spiral_layout(G), width=edge_width, node_size=50, with_labels=False, ax=ax[1])
 
-    # Un plot que nos muestre el diametro en rojo
-    shortest_paths = nx.shortest_path(G, source=random.choice(list(G.nodes)))
-    target = max(shortest_paths, key=lambda i: len(shortest_paths[i]))
-    diameter = shortest_paths[target]
-    diameter_edges = list(zip(diameter, diameter[1:]))
-
-    pos = nx.spiral_layout(G)
-    nx.draw(G, pos=pos, with_labels=True, width=edge_width, node_size=5, font_size=6)
-    nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=5, node_color='r')
-    nx.draw_networkx_edges(G, edge_color='r', width=2.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
 # Plotea cada comunidad en un color distinto
 def plot_communities(G, louvain):
@@ -191,6 +182,18 @@ def plot_clustering(G):
     plt.xlabel("Clustering coefficient (k)")
     plt.grid(True)
     plt.show()
+    
+def plot_diametro(G, edge_width=0.005):
+    # Un plot que nos muestre el diametro en rojo
+    shortest_paths = nx.shortest_path(G, source=random.choice(list(G.nodes)))
+    target = max(shortest_paths, key=lambda i: len(shortest_paths[i]))
+    diameter = shortest_paths[target]
+    diameter_edges = list(zip(diameter, diameter[1:]))
+
+    pos = nx.spiral_layout(G)
+    nx.draw(G, pos=pos, with_labels=True, width=edge_width, node_size=5, font_size=6)
+    nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=5, node_color='r')
+    nx.draw_networkx_edges(G, edge_color='r', width=2.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
 # Traer el plan de estudios del FIUBA-Map (y rezar que nunca cambie tanto como para que se rompa la interfaz)
 def plan_estudios(carrera):
