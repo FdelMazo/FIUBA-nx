@@ -70,15 +70,6 @@ def plot_communities(G, louvain):
                      pos=nx.kamada_kawai_layout(G),
                      font_size=10)
 
-def plot_distribucion_grado(G):
-    # TODO: Unificar con plot_distribucion_grados
-    distribucion = [G.degree(n) for n in G.nodes()]
-    plt.figure(figsize=(10, 4)) 
-    plt.bar(*np.unique(distribucion, return_counts=True))
-    plt.xlabel("Grado")
-    plt.ylabel("# of Nodos")
-    plt.show()
-
 def generar_subdf_materias_electivas(df):
     df_materias = pd.read_json(plan_estudios(CARRERA))
     df_alumnos = pd.merge(df, df_materias, left_on='materia_id', right_on="id")
@@ -190,7 +181,16 @@ def plot_distribucion_grados(grafos):
         ax.set_title("Histograma " + names[j])
         ax.set_xlabel("Distribución")
         ax.set_ylabel("# de Nodos")
-        i += 3    
+        i += 3   
+
+def plot_clustering(G):
+    local_clustering = [v for v in nx.clustering(G).values()]
+    plt.hist(local_clustering, bins  = 15, color = 'blue')
+    plt.title("Distribution of the clustering coefficient")
+    plt.ylabel("P(k)")
+    plt.xlabel("Clustering coefficient (k)")
+    plt.grid(True)
+    plt.show()
 
 # Traer el plan de estudios del FIUBA-Map (y rezar que nunca cambie tanto como para que se rompa la interfaz)
 def plan_estudios(carrera):
@@ -211,3 +211,14 @@ def plan_estudios(carrera):
         'sistemasviejo': 'sistemas-1986'
     }
     return f'https://raw.githubusercontent.com/fdelmazo/FIUBA-Map/master/src/data/{PLANES[carrera]}.json'
+
+
+def construir_df_pareando_padrones_por(df, sep):
+    df_nodos = pd.merge(df, df, on=['materia_id', sep])
+    df_nodos = df_nodos[df_nodos['Padron_x'] != df_nodos['Padron_y']]
+    df_nodos = df_nodos.reset_index()
+
+    df_nodos['Padron_min'] = df_nodos[['Padron_x', 'Padron_y']].min(axis=1)
+    df_nodos['Padron_max'] = df_nodos[['Padron_x', 'Padron_y']].max(axis=1)
+    df_nodos = df_nodos.drop_duplicates(['Padron_min', 'Padron_max']).reset_index()
+    return df_nodos
