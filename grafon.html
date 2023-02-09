@@ -426,7 +426,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="grafon-que-electivas-me-conviene-cursar">
 <h1>Grafón: Qué electivas me conviene cursar?<a class="headerlink" href="#grafon-que-electivas-me-conviene-cursar" title="Permalink to this headline">#</a></h1>
-<p>Este grafo se encarga de analizar “gente que haya tenido experiencias facultativas similares”, sin importar en que año o cuatrimestre fue. La idea es que si me fue parecido en varias materias a alguna otra persona, y esa persona curso alguna electiva que yo no, entonces esa materia es una buena candidata para mí.</p>
+<p>Este grafo se encarga de analizar “gente que haya tenido experiencias facultativas similares”, sin importar en que año o cuatrimestre fue.</p>
+<p>La idea es que si me fue parecido en varias materias a alguna otra persona, y esa persona curso alguna electiva que yo no, entonces esa materia es una buena candidata para mí.</p>
 <p>Por ejemplo: Por más que Juan se haya recibido el año pasado, es una persona que se parece mucho a mí porque nos sacamos las mismas notas en muchas materias. Probablemente las electivas que Juan eligió, me sirvan a mí como guía.</p>
 <section id="como-es-el-grafo">
 <h2>Cómo es el grafo?<a class="headerlink" href="#como-es-el-grafo" title="Permalink to this headline">#</a></h2>
@@ -442,7 +443,7 @@ title="Print to PDF"
 </li>
 <li><p>Peso: La inversa* de la cantidad de materias en donde somos similares</p></li>
 </ul>
-<p>*Calculamos la inversa porque mientras mas similares son, menor peso queremos que haya entre la arista, para que más cercanos esten</p>
+<p>* Calculamos la inversa porque mientras mas similares son, menor peso queremos que haya entre la arista, para que más cercanos esten</p>
 <section id="dos-formas-de-armar-el-analisis">
 <h3>Dos formas de armar el análisis<a class="headerlink" href="#dos-formas-de-armar-el-analisis" title="Permalink to this headline">#</a></h3>
 <p>// ToDo: que hacemos aca? Elegimos uno, o presentamos ambos en el mismo notebook?
@@ -493,37 +494,37 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>7024</th>
-      <td>105742</td>
+      <th>15813</th>
+      <td>1015909</td>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
-      <td>71.15</td>
-      <td>-2.0</td>
-      <td>2024.5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7298</th>
-      <td>108275</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>62.01</td>
+      <td>66.47</td>
       <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>18365</th>
-      <td>101127</td>
+      <th>12165</th>
+      <td>99840</td>
       <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>75.31</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>75.52</td>
-      <td>-2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3451</th>
+      <td>123123</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>75.40</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -534,9 +535,49 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_simil</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">curar_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Armamos las categorias de que les haya hido parecido a dos alumnos</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="mi">10</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="c1"># Sacamos materias en final y a cursar</span>
+<span class="n">df_alumnos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># Sacamos gente que no le pone la nota a su fiubamap y deja que se saco (casi) todos 4s directamente</span>
+<span class="n">df_alumnos</span><span class="p">[</span><span class="s1">&#39;mediana&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_alumnos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Padron&#39;</span><span class="p">)[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="n">df_alumnos</span> <span class="o">=</span> <span class="n">df_alumnos</span><span class="p">[</span><span class="n">df_alumnos</span><span class="p">[</span><span class="s1">&#39;mediana&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">df_alumnos</span><span class="p">[</span><span class="s1">&#39;nota_categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_alumnos</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">categories</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+
+<span class="c1"># Juntamos el grafo con si mismo para tener la similiritud entre cada par de padrones</span>
+<span class="n">df_simil_sinagg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_alumnos</span><span class="p">,</span> <span class="n">df_alumnos</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;nota_categoria&#39;</span><span class="p">])</span>
+<span class="n">df_simil_sinagg</span> <span class="o">=</span> <span class="n">df_simil_sinagg</span><span class="p">[</span><span class="n">df_simil_sinagg</span><span class="p">[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_simil_sinagg</span><span class="p">[</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span>
+<span class="n">df_simil_sinagg</span> <span class="o">=</span> <span class="n">df_simil_sinagg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">df_simil_sinagg</span> <span class="o">=</span> <span class="n">df_simil_sinagg</span><span class="p">[[</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;nota_categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota_y&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Unificar aristas ( con el objetivo de no tener pocos nodos y millones de aristas )</span>
+<span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil_sinagg</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_materias_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;Padron_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;Padron_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s1">&#39;Padron_min&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_max&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># ToDo: fijarse si elevar a un K acá</span>
+<span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">df_simil</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> <span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]]</span>
+
+
+<span class="c1"># Nota: Al no tener en cuenta el factor temporal en este grafo (en que cuatri cursó cada alumno), esta vez no se aplica el filtro de &quot;sacar todos los alumnos que no setean el cuatrimestre&quot;</span>
+<span class="c1"># Ese filtro es considerable, por lo que tiene sentido que este grafo sea bastante mas grande que grafazo</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_simil</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">df_simil</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -559,44 +600,54 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>Padron_x</th>
       <th>Padron_y</th>
       <th>cant_materias_similares</th>
+      <th>Padron_min</th>
+      <th>Padron_max</th>
       <th>inv_cant_materias_similares</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>111652</th>
-      <td>105558</td>
-      <td>108327</td>
-      <td>3</td>
-      <td>33</td>
+      <th>143618</th>
+      <td>199708</td>
+      <td>107115</td>
+      <td>99642</td>
+      <td>2</td>
+      <td>107115</td>
+      <td>99642</td>
+      <td>34</td>
     </tr>
     <tr>
-      <th>103065</th>
-      <td>105110</td>
-      <td>108014</td>
+      <th>210</th>
+      <td>210</td>
+      <td>-1</td>
+      <td>105103</td>
       <td>4</td>
+      <td>-1</td>
+      <td>105103</td>
       <td>32</td>
     </tr>
     <tr>
-      <th>73309</th>
-      <td>103775</td>
-      <td>109605</td>
-      <td>7</td>
-      <td>29</td>
+      <th>113801</th>
+      <td>142473</td>
+      <td>105604</td>
+      <td>106295</td>
+      <td>3</td>
+      <td>105604</td>
+      <td>106295</td>
+      <td>33</td>
     </tr>
   </tbody>
 </table>
-</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(177722, 4)
-</pre></div>
-</div>
-</div>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_simil</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Veamos los padrones más parecidos entre sí</span>
+<span class="n">df_simil</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -619,117 +670,115 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>Padron_x</th>
       <th>Padron_y</th>
       <th>cant_materias_similares</th>
+      <th>Padron_min</th>
+      <th>Padron_max</th>
       <th>inv_cant_materias_similares</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>12878</th>
+      <td>13116</td>
       <td>100687</td>
       <td>99732</td>
       <td>35</td>
+      <td>100687</td>
+      <td>99732</td>
       <td>1</td>
     </tr>
     <tr>
       <th>177403</th>
+      <td>340791</td>
       <td>99616</td>
       <td>99732</td>
       <td>32</td>
+      <td>99616</td>
+      <td>99732</td>
       <td>4</td>
     </tr>
     <tr>
       <th>12355</th>
+      <td>12593</td>
       <td>100687</td>
       <td>102145</td>
       <td>31</td>
+      <td>100687</td>
+      <td>102145</td>
       <td>5</td>
     </tr>
     <tr>
       <th>37903</th>
+      <td>40271</td>
       <td>102145</td>
       <td>102192</td>
       <td>30</td>
+      <td>102145</td>
+      <td>102192</td>
       <td>6</td>
     </tr>
     <tr>
       <th>11732</th>
+      <td>11949</td>
       <td>100680</td>
       <td>101483</td>
       <td>29</td>
+      <td>100680</td>
+      <td>101483</td>
       <td>7</td>
     </tr>
     <tr>
       <th>12361</th>
+      <td>12599</td>
       <td>100687</td>
       <td>102192</td>
       <td>29</td>
+      <td>100687</td>
+      <td>102192</td>
       <td>7</td>
     </tr>
     <tr>
       <th>12414</th>
+      <td>12652</td>
       <td>100687</td>
       <td>103371</td>
       <td>29</td>
+      <td>100687</td>
+      <td>103371</td>
       <td>7</td>
     </tr>
     <tr>
       <th>175038</th>
+      <td>312511</td>
       <td>95897</td>
       <td>99423</td>
       <td>29</td>
+      <td>95897</td>
+      <td>99423</td>
       <td>7</td>
     </tr>
     <tr>
       <th>28788</th>
+      <td>30151</td>
       <td>101601</td>
       <td>102145</td>
       <td>29</td>
+      <td>101601</td>
+      <td>102145</td>
       <td>7</td>
     </tr>
     <tr>
       <th>176340</th>
+      <td>324642</td>
       <td>98124</td>
       <td>98591</td>
       <td>28</td>
+      <td>98124</td>
+      <td>98591</td>
       <td>8</td>
-    </tr>
-    <tr>
-      <th>12331</th>
-      <td>100687</td>
-      <td>101483</td>
-      <td>28</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>37905</th>
-      <td>102145</td>
-      <td>102198</td>
-      <td>28</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>25623</th>
-      <td>101483</td>
-      <td>99732</td>
-      <td>27</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>11709</th>
-      <td>100680</td>
-      <td>100687</td>
-      <td>27</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>38068</th>
-      <td>102145</td>
-      <td>105646</td>
-      <td>27</td>
-      <td>9</td>
     </tr>
   </tbody>
 </table>
@@ -740,84 +789,60 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_simil_agg</span><span class="p">,</span> 
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_simil</span><span class="p">,</span> 
                             <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> 
                             <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> 
                             <span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">,</span>
                             <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">  El diámetro de la red: </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">  El grado promedio de la red: </span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">  Puentes globales: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-<span class="c1"># ToDo: Elegir un randomsample (si? no?) para graficar y que se entienda mejor el grafico. Tal vez el grupo del tp puede ser el sample</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spiral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span>   <span class="n">width</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>  <span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge_width</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_simil_agg</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                             <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                             <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                             <span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                             <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2">   El diámetro de la red: </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">   El grado promedio de la red: </span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"></span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2">   Puentes globales: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="si">}</span><span class="s2"></span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2"> &quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df_simil_agg&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 643 nodes and 177722 edges
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      El diámetro de la red: 3
+      El grado promedio de la red: 552.79
+      Puentes globales: []
+    
+</pre></div>
+</div>
+<img alt="_images/grafon_5_2.png" src="_images/grafon_5_2.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="comunidades">
 <h2>Comunidades<a class="headerlink" href="#comunidades" title="Permalink to this headline">#</a></h2>
+<p># ToDo: explicar que pretendemos ver acá
+# ToDo: Explicar que a diferencia de grafazo, aca estamos viendo cosas un poco mas subjetivas, entonces no tenemos validación de homofilia para hacer</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="kn">import</span> <span class="n">community</span>
-<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
-<span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="n">louvain</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">)</span>
-<span class="n">draw_nodes</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mcolors</span><span class="o">.</span><span class="n">CSS4_COLORS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">louvaincommunity</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">louvain</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
-    <span class="n">draw_nodes</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">n</span><span class="p">:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">louvaincommunity</span><span class="p">})</span>
-    
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">louvain</span><span class="p">)</span><span class="si">}</span><span class="s2"> Louvain Communities&quot;</span><span class="p">)</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> 
-                 <span class="n">nodelist</span><span class="o">=</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> 
-                 <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">draw_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> 
-                 <span class="n">width</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span> 
-                 <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
-                 <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">plot_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">louvain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/grafon_7_0.png" src="_images/grafon_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ToDo: Ver de agregarle logica a las subcomunidades, para que no se sienta que es nada mas correr el algoritmo generico original hasta que nos de algo que nos guste</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setup</span> <span class="kn">import</span> <span class="n">PADRON</span><span class="p">,</span> <span class="n">CARRERA</span><span class="p">,</span> <span class="n">plan_estudios</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">PADRON</span><span class="p">,</span> <span class="n">CARRERA</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">plan_estudios</span>
 
 <span class="k">def</span> <span class="nf">nestedsearch</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">lst</span><span class="p">:</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">,</span> <span class="n">lst_of_sets</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
@@ -841,7 +866,7 @@ title="Print to PDF"
             <span class="n">grupo</span> <span class="o">=</span> <span class="n">comunidad</span>
         <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
     
-    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_rel</span><span class="p">[</span><span class="n">df_rel</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">grupo</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_alumnos_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+    <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_alumnos</span><span class="p">[</span><span class="n">df_alumnos</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">grupo</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_alumnos_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
     <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[</span><span class="o">~</span><span class="n">df_sugerencias</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">materias_padron</span><span class="p">(</span><span class="n">padron</span><span class="p">))]</span>
     
     <span class="n">df_materias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">plan_estudios</span><span class="p">(</span><span class="n">CARRERA</span><span class="p">))</span>
@@ -850,16 +875,120 @@ title="Print to PDF"
     <span class="n">df_sugerencias</span> <span class="o">=</span> <span class="n">df_sugerencias</span><span class="p">[[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia&#39;</span><span class="p">,</span> <span class="s1">&#39;creditos&#39;</span><span class="p">,</span> <span class="s1">&#39;cant_alumnos_similares&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cant_alumnos_similares&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df_sugerencias</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top 10 electivas sugeridas a </span><span class="si">{</span><span class="n">PADRON</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">electivas</span> <span class="o">=</span> <span class="n">sugerir_electivas</span><span class="p">(</span><span class="n">PADRON</span><span class="p">)</span>
 <span class="n">electivas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top 10 electivas sugeridas a 100029
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>materia</th>
+      <th>creditos</th>
+      <th>cant_alumnos_similares</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78.xx</td>
+      <td>Idioma</td>
+      <td>4</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>61.10</td>
+      <td>Análisis Matemático III A</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>62.15</td>
+      <td>Física III D</td>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>71.12</td>
+      <td>Estructura de las Organizaciones</td>
+      <td>6</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>66.20</td>
+      <td>Organización de Computadoras</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>71.18</td>
+      <td>Estructura Económica Argentina</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>75.26</td>
+      <td>Simulación</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>75.71</td>
+      <td>Seminario de Ingeniería en Informática I</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>66.06</td>
+      <td>Análisis de Circuitos</td>
+      <td>10</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>66.69</td>
+      <td>Criptografía y Seguridad Informática</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="aleatoriedad-del-grafo">
 <h1>Aleatoriedad del grafo<a class="headerlink" href="#aleatoriedad-del-grafo" title="Permalink to this headline">#</a></h1>
+<p># ToDo: mover esta parte a una introducción general de los datos, y no dejarla específica de grafon</p>
 <p>Para esta parte del análisis, vamos a remover todas las aristas que conectan a los alumnos que no sean de electivas. De esta manera, vamos a tener una mejor visibilidad y mejores resultados, ya que el grafo anterior es casi completo, lo cual es difícil de comparar con los modelos vistos en clase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -881,6 +1010,22 @@ title="Print to PDF"
 <span class="s2">  Puentes globales: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G_electivas</span><span class="p">))</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">  </span><span class="si">{</span><span class="s2">&quot;Es conexa&quot;</span> <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G_electivas</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;No es conexa&quot;</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_electivas</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">curar_data</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">generar_subdf_materias_electivas</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">G_electivas</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_electivas</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                             <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                             <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                             <span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                             <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">G_electivas</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;utils&#39; has no attribute &#39;curar_data&#39;
 </pre></div>
 </div>
 </div>
