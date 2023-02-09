@@ -32,10 +32,10 @@ LENGHTS = [5, 6, 7]
 def stats(G):
     print(G)
     print(f"""
-      El diámetro de la red: {nx.diameter(G)}
-      El grado promedio de la red: {sum([n[1] for n in G.degree()]) / len(G):.2f}
-      Puentes globales: {list(nx.bridges(G))}
-    """)
+  El diámetro de la red: {nx.diameter(G)}
+  El grado promedio de la red: {sum([n[1] for n in G.degree()]) / len(G):.2f}
+  Puentes globales: {list(nx.bridges(G))}
+""")
 
 # Plotea un grafo en dos gráficos side by side
 def plot(G, edge_width=0.005):
