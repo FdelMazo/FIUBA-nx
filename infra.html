@@ -127,8 +127,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="graphito.html">
-   Graphito
+  <a class="reference internal" href="grafote.html">
+   Grafote: Cuáles son mis notas menos confiables?
   </a>
  </li>
 </ul>
@@ -367,13 +367,11 @@ title="Print to PDF"
 <span class="n">df_registros</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">REGISTROS_URL</span><span class="p">)</span>
 <span class="n">df_registros</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df_registros</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
-<span class="n">df_registros</span> <span class="o">=</span> <span class="n">df_registros</span><span class="p">[</span><span class="n">df_registros</span><span class="p">[</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">CARRERA</span><span class="p">]</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_registros</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="n">df_usuarios</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">USUARIOS_URL</span><span class="p">)</span>
 <span class="n">df_usuarios</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df_usuarios</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
-<span class="n">df_usuarios</span> <span class="o">=</span> <span class="n">df_usuarios</span><span class="p">[</span><span class="n">df_usuarios</span><span class="p">[</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">CARRERA</span><span class="p">]</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_usuarios</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -404,21 +402,21 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>4608</th>
-      <td>444111222</td>
-      <td>informatica</td>
-      <td>{"materias":[{"id":"CBC","nota":0},{"id":"61.0...</td>
+      <th>4626</th>
+      <td>10007</td>
+      <td>sistemas</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"81.0...</td>
     </tr>
     <tr>
-      <th>4609</th>
-      <td>101805</td>
-      <td>informatica</td>
-      <td>{"materias":[{"id":"CBC","nota":0}]}</td>
+      <th>4627</th>
+      <td>99568</td>
+      <td>industrial</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"81.0...</td>
     </tr>
     <tr>
-      <th>4623</th>
-      <td>42116191</td>
-      <td>informatica</td>
+      <th>4628</th>
+      <td>97589</td>
+      <td>quimica</td>
       <td>{"materias":[{"id":"CBC","nota":0},{"id":"61.0...</td>
     </tr>
   </tbody>
@@ -449,24 +447,24 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>4527</th>
-      <td>106028</td>
-      <td>informatica</td>
-      <td>Gestión Industrial de Sistemas</td>
-      <td>tesis</td>
-    </tr>
-    <tr>
-      <th>8851</th>
-      <td>89789</td>
+      <th>7125</th>
+      <td>106124</td>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
-      <td>tesis</td>
+      <td>tpp</td>
     </tr>
     <tr>
-      <th>1791</th>
-      <td>91351</td>
+      <th>3956</th>
+      <td>102443</td>
+      <td>mecanica</td>
+      <td>Termomecánica</td>
+      <td>tpp</td>
+    </tr>
+    <tr>
+      <th>875</th>
+      <td>104639</td>
       <td>informatica</td>
-      <td>Gestión Industrial de Sistemas</td>
+      <td>Sistemas Distribuidos</td>
       <td>tpp</td>
     </tr>
   </tbody>
@@ -517,26 +515,26 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>956</th>
-      <td>testdoble</td>
-      <td>informatica</td>
-      <td>Gestión Industrial de Sistemas</td>
-      <td>tesis</td>
-      <td>{"materias":[{"id":"CBC","nota":0,"cuatri":-1}...</td>
-    </tr>
-    <tr>
-      <th>180</th>
-      <td>97576</td>
+      <th>2550</th>
+      <td>105567</td>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
-      <td>{"materias":[{"id":"CBC","nota":0},{"id":"62.0...</td>
+      <td>{"materias":[{"id":"CBC","nota":0},{"id":"61.0...</td>
     </tr>
     <tr>
-      <th>662</th>
-      <td>96963</td>
+      <th>1713</th>
+      <td>92968</td>
       <td>informatica</td>
       <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>{"materias":[{"id":"CBC","nota":7},{"id":"61.0...</td>
+    </tr>
+    <tr>
+      <th>2373</th>
+      <td>98559</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
       <td>tpp</td>
       <td>{"materias":[{"id":"CBC","nota":0},{"id":"62.0...</td>
     </tr>
@@ -579,35 +577,35 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>count</th>
-      <td>1028</td>
-      <td>1028</td>
-      <td>601</td>
-      <td>620</td>
-      <td>1028</td>
+      <td>4607</td>
+      <td>4607</td>
+      <td>712</td>
+      <td>1762</td>
+      <td>4607</td>
     </tr>
     <tr>
       <th>unique</th>
-      <td>1028</td>
-      <td>1</td>
-      <td>3</td>
+      <td>3833</td>
+      <td>15</td>
+      <td>5</td>
       <td>2</td>
-      <td>921</td>
+      <td>3894</td>
     </tr>
     <tr>
       <th>top</th>
-      <td>109164</td>
-      <td>informatica</td>
+      <td>4444</td>
+      <td>industrial</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
       <td>{"materias":[{"id":"CBC","nota":0,"cuatri":-1}...</td>
     </tr>
     <tr>
       <th>freq</th>
-      <td>1</td>
-      <td>1028</td>
+      <td>13</td>
+      <td>1198</td>
       <td>306</td>
-      <td>487</td>
-      <td>38</td>
+      <td>1390</td>
+      <td>158</td>
     </tr>
   </tbody>
 </table>
@@ -631,9 +629,10 @@ title="Print to PDF"
         <span class="k">else</span><span class="p">:</span>
             <span class="n">df_json</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">json_mapa</span><span class="p">[</span><span class="n">k</span><span class="p">]]})</span>
         <span class="n">df_json</span><span class="p">[</span><span class="s2">&quot;Padron&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="s1">&#39;Padron&#39;</span><span class="p">]</span>
+        <span class="n">df_json</span><span class="p">[</span><span class="s2">&quot;Carrera&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span>
         <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">new_df</span><span class="p">,</span> <span class="n">df_json</span><span class="p">])</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">new_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">new_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Padron&#39;</span><span class="p">,</span> <span class="s1">&#39;Carrera&#39;</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Mapa&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># Hace mucho tiempo, el fiuba map tenia un feature que se llamaba &quot;materia_cuatri&quot; (en vez del nuevo &quot;materia_cuatrimestre&quot;)</span>
 <span class="c1"># En donde el usuario seteaba en cuantos N cuatris iba a cursar X materia, en vez de setear el cuatri exacto</span>
@@ -645,7 +644,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6fb92282d38341ce9dcab28c890c26ea"}
+{"version_major": 2, "version_minor": 0, "model_id": "44c85ec67a1044989cc4f1705a20e99d"}
 </script><div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -672,43 +671,47 @@ title="Print to PDF"
       <th>materia_nota</th>
       <th>materia_cuatrimestre</th>
       <th>aplazos</th>
+      <th>checkboxes</th>
       <th>optativas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>17501</th>
-      <td>102264</td>
+      <th>66521</th>
+      <td>23456</td>
       <td>informatica</td>
       <td>Sistemas Distribuidos</td>
       <td>tpp</td>
-      <td>75.52</td>
-      <td>8.0</td>
-      <td>2022.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>13943</th>
-      <td>103755</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CBC40</td>
-      <td>7.0</td>
+      <td>75.10</td>
+      <td>4.0</td>
+      <td>2021.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>14216</th>
-      <td>101456</td>
-      <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
+      <th>42160</th>
+      <td>100990</td>
+      <td>electricista</td>
+      <td>NaN</td>
       <td>tpp</td>
-      <td>75.42</td>
-      <td>8.0</td>
-      <td>2020.5</td>
+      <td>82.01</td>
+      <td>6.0</td>
+      <td>2018.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7921</th>
+      <td>105537</td>
+      <td>quimica</td>
+      <td>NaN</td>
+      <td>tesis</td>
+      <td>75.01</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -719,7 +722,15 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exportamos todo a un hermoso pickle</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data-all.pickle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exportamos solo la información de la carrera a otro pickle</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Carrera&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">CARRERA</span><span class="p">]</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -728,7 +739,7 @@ title="Print to PDF"
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"3722bdf1c9dc4d8d91e1febe20bc9ad2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4a3efbdba7064a66b2cf6141ec3b2407": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "ad30828f2c5441bd917b42fd821f4c83": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3722bdf1c9dc4d8d91e1febe20bc9ad2", "max": 1028.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_4a3efbdba7064a66b2cf6141ec3b2407", "value": 1028.0}}, "12bf27c650cc49a58a86d9de94c4f293": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "40710377f3d54820b83cfacb1dcc4696": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "ca2af79c10434e3b8555322a5972d307": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_12bf27c650cc49a58a86d9de94c4f293", "placeholder": "\u200b", "style": "IPY_MODEL_40710377f3d54820b83cfacb1dcc4696", "value": "100%"}}, "8a4af1a38be84995a633be4ed94da014": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a1c97f72eb4c48e5bf9c5e9c620b3d74": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1cb50efd61124f018820fed16a995fef": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8a4af1a38be84995a633be4ed94da014", "placeholder": "\u200b", "style": "IPY_MODEL_a1c97f72eb4c48e5bf9c5e9c620b3d74", "value": " 1028/1028 [00:02&lt;00:00, 386.95it/s]"}}, "5cd555f0227e4d998cef77d6f752f73c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6fb92282d38341ce9dcab28c890c26ea": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ca2af79c10434e3b8555322a5972d307", "IPY_MODEL_ad30828f2c5441bd917b42fd821f4c83", "IPY_MODEL_1cb50efd61124f018820fed16a995fef"], "layout": "IPY_MODEL_5cd555f0227e4d998cef77d6f752f73c"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"d4f18a587f994f85a699ac41c43b5446": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ec7c219c758b4a13ba97227e2b9f3079": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "5dc8bf1d85284d2ba3d24ebbd2fc6aaf": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d4f18a587f994f85a699ac41c43b5446", "max": 4607.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_ec7c219c758b4a13ba97227e2b9f3079", "value": 4607.0}}, "9210e93f025b47a8a514e6c35ecc2c53": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b0c329218f9041b988de867fb0bbc037": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "86876097ecb14d35a4d2365270d8dafb": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9210e93f025b47a8a514e6c35ecc2c53", "placeholder": "\u200b", "style": "IPY_MODEL_b0c329218f9041b988de867fb0bbc037", "value": "100%"}}, "77f1f84031894c6984913d50aa0e1143": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f4f2ea0f20b443f1bf198dd9907f1a84": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "29f58c1f2f824499964efa57584760ff": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_77f1f84031894c6984913d50aa0e1143", "placeholder": "\u200b", "style": "IPY_MODEL_f4f2ea0f20b443f1bf198dd9907f1a84", "value": " 4607/4607 [00:22&lt;00:00, 156.26it/s]"}}, "4cdd1c99f5254eef93e92aa3c98d0e59": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "44c85ec67a1044989cc4f1705a20e99d": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_86876097ecb14d35a4d2365270d8dafb", "IPY_MODEL_5dc8bf1d85284d2ba3d24ebbd2fc6aaf", "IPY_MODEL_29f58c1f2f824499964efa57584760ff"], "layout": "IPY_MODEL_4cdd1c99f5254eef93e92aa3c98d0e59"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
