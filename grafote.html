@@ -578,52 +578,79 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data-all.pickle&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/pickle.py:190,</span> in <span class="ni">read_pickle</span><span class="nt">(filepath_or_buffer, compression, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd"> Load pickled pandas object (or any object) from file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span><span class="sd"> 4    4    9</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="n">excs_to_catch</span> <span class="o">=</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">190</span> <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">filepath_or_buffer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="s2">&quot;rb&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="p">)</span> <span class="k">as</span> <span class="n">handles</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span> 
-<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="c1"># 1) try standard library Pickle</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="c1"># 2) try pickle_compat (older pandas version) to handle subclass changes</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="c1"># 3) try pickle_compat with latin-1 encoding upon a UnicodeDecodeError</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="c1"># TypeError for Cython complaints about object.__new__ vs Tick.__new__</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="k">try</span><span class="p">:</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/common.py:866,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="c1"># Binary mode</span>
-<span class="ne">--&gt; </span><span class="mi">866</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">867</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;fiuba-map-data-all.pickle&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+      <th>materia_id</th>
+      <th>materia_nota</th>
+      <th>materia_cuatrimestre</th>
+      <th>aplazos</th>
+      <th>checkboxes</th>
+      <th>optativas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>108010</td>
+      <td>electricista</td>
+      <td>NaN</td>
+      <td>tpp</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>108010</td>
+      <td>electricista</td>
+      <td>NaN</td>
+      <td>tpp</td>
+      <td>81.01</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108010</td>
+      <td>electricista</td>
+      <td>NaN</td>
+      <td>tpp</td>
+      <td>82.01</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,6 +663,76 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>materia_id</th>
+      <th>materia_nota</th>
+      <th>materia_nombre</th>
+      <th>Carrera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>108010</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>Ciclo Básico Común</td>
+      <td>electricista</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>105413</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>Ciclo Básico Común</td>
+      <td>electricista</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>105590</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>Ciclo Básico Común</td>
+      <td>electricista</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>109301</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>Ciclo Básico Común</td>
+      <td>electricista</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>108301</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>Ciclo Básico Común</td>
+      <td>electricista</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,12 +754,29 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(43906, 8)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalizar notas de [-1 a 1]</span>
 <span class="n">df_notas</span><span class="p">[</span><span class="s1">&#39;materia_nota_norm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_notas</span><span class="p">[</span><span class="s1">&#39;materia_nota&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
 <span class="n">df_notas</span><span class="p">[</span><span class="s1">&#39;materia_nota_norm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.000000    9739
+ 0.333333    9370
+-0.333333    7324
+ 0.666667    6201
+-0.666667    4463
+-1.000000    3954
+ 1.000000    2855
+Name: materia_nota_norm, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -755,6 +869,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5c04a612a7524c2ab97bfe01fc496944"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "51f6e853b4f34534902cc8a9a80e4511"}
+</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,6 +920,124 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>materia_id</th>
+      <th>materia_nombre</th>
+      <th>F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>64901</th>
+      <td>76.27</td>
+      <td>Control Estadístico de Procesos</td>
+      <td>0.646321</td>
+    </tr>
+    <tr>
+      <th>5294</th>
+      <td>64.13</td>
+      <td>Estabilidad III B</td>
+      <td>0.653076</td>
+    </tr>
+    <tr>
+      <th>5562</th>
+      <td>71.01</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>0.658621</td>
+    </tr>
+    <tr>
+      <th>69318</th>
+      <td>91.09</td>
+      <td>Economía</td>
+      <td>0.659824</td>
+    </tr>
+    <tr>
+      <th>44458</th>
+      <td>91.25</td>
+      <td>Estadística Aplicada III</td>
+      <td>0.661769</td>
+    </tr>
+    <tr>
+      <th>90568</th>
+      <td>91.19</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>0.674077</td>
+    </tr>
+    <tr>
+      <th>99303</th>
+      <td>88.07</td>
+      <td>Tránsito</td>
+      <td>0.683670</td>
+    </tr>
+    <tr>
+      <th>86113</th>
+      <td>81.11</td>
+      <td>Matemática Discreta</td>
+      <td>0.689934</td>
+    </tr>
+    <tr>
+      <th>95188</th>
+      <td>86.57</td>
+      <td>Acústica</td>
+      <td>0.690898</td>
+    </tr>
+    <tr>
+      <th>95604</th>
+      <td>62.07</td>
+      <td>Mecánica II</td>
+      <td>0.701279</td>
+    </tr>
+    <tr>
+      <th>46175</th>
+      <td>91.31</td>
+      <td>Investigación Operativa II</td>
+      <td>0.706611</td>
+    </tr>
+    <tr>
+      <th>41583</th>
+      <td>91.07</td>
+      <td>Investigación Operativa I</td>
+      <td>0.707684</td>
+    </tr>
+    <tr>
+      <th>88217</th>
+      <td>76.48</td>
+      <td>Evaluación de Propiedades Físicas</td>
+      <td>0.710388</td>
+    </tr>
+    <tr>
+      <th>64379</th>
+      <td>63.14</td>
+      <td>Química Orgánica</td>
+      <td>0.715493</td>
+    </tr>
+    <tr>
+      <th>93554</th>
+      <td>97.03</td>
+      <td>Higiene y Seguridad en Obras Civiles</td>
+      <td>0.718439</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Las materias <em>justas</em> suelen asignar notas conservadoras que tienden de 6 a 8.</p>
 <div class="cell docutils container">
@@ -814,6 +1052,124 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>materia_id</th>
+      <th>materia_nombre</th>
+      <th>F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>81406</th>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>0.895993</td>
+    </tr>
+    <tr>
+      <th>99731</th>
+      <td>85.02</td>
+      <td>Electrotecnia</td>
+      <td>0.888166</td>
+    </tr>
+    <tr>
+      <th>80006</th>
+      <td>75.69</td>
+      <td>Sistemas Automáticos de Diagnóstico y Detección Fallas II</td>
+      <td>0.881699</td>
+    </tr>
+    <tr>
+      <th>92697</th>
+      <td>88.13</td>
+      <td>Puertos y Vías Navegables A</td>
+      <td>0.881123</td>
+    </tr>
+    <tr>
+      <th>45670</th>
+      <td>92.06</td>
+      <td>Automatización Industrial y Robótica</td>
+      <td>0.877706</td>
+    </tr>
+    <tr>
+      <th>92245</th>
+      <td>89.11</td>
+      <td>Ingeniería Sanitaria I</td>
+      <td>0.875229</td>
+    </tr>
+    <tr>
+      <th>101225</th>
+      <td>67.30</td>
+      <td>Combustión</td>
+      <td>0.874901</td>
+    </tr>
+    <tr>
+      <th>94105</th>
+      <td>94.13</td>
+      <td>Patología de la Construcción</td>
+      <td>0.873944</td>
+    </tr>
+    <tr>
+      <th>6156</th>
+      <td>67.50</td>
+      <td>Materiales Ferrosos y sus Aplicaciones</td>
+      <td>0.872559</td>
+    </tr>
+    <tr>
+      <th>88723</th>
+      <td>76.52</td>
+      <td>Operaciones Unitarias de Transferencia de Materia</td>
+      <td>0.871385</td>
+    </tr>
+    <tr>
+      <th>56948</th>
+      <td>75.10</td>
+      <td>Técnicas de Diseño</td>
+      <td>0.866062</td>
+    </tr>
+    <tr>
+      <th>98114</th>
+      <td>88.03</td>
+      <td>Puertos y Vías Navegables B</td>
+      <td>0.865643</td>
+    </tr>
+    <tr>
+      <th>92943</th>
+      <td>91.16</td>
+      <td>Legislación y Ejercicio Profesional de la Ingeniería Civil</td>
+      <td>0.865607</td>
+    </tr>
+    <tr>
+      <th>17493</th>
+      <td>83.02</td>
+      <td>Química Aplicada</td>
+      <td>0.864562</td>
+    </tr>
+    <tr>
+      <th>74598</th>
+      <td>86.03</td>
+      <td>Dispositivos Semiconductores</td>
+      <td>0.863779</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="goodness">
@@ -832,6 +1188,140 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>G_norm</th>
+      <th>nota_promedio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9450</th>
+      <td>103444</td>
+      <td>industrial</td>
+      <td>5.380429</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>10098</th>
+      <td>97478</td>
+      <td>industrial</td>
+      <td>5.410134</td>
+      <td>5.023256</td>
+    </tr>
+    <tr>
+      <th>62491</th>
+      <td>102950</td>
+      <td>quimica</td>
+      <td>5.520817</td>
+      <td>5.187500</td>
+    </tr>
+    <tr>
+      <th>27389</th>
+      <td>95536</td>
+      <td>informatica</td>
+      <td>5.592863</td>
+      <td>5.210526</td>
+    </tr>
+    <tr>
+      <th>9693</th>
+      <td>108112</td>
+      <td>industrial</td>
+      <td>5.621261</td>
+      <td>5.285714</td>
+    </tr>
+    <tr>
+      <th>58681</th>
+      <td>101309</td>
+      <td>civil</td>
+      <td>5.685145</td>
+      <td>5.384615</td>
+    </tr>
+    <tr>
+      <th>10419</th>
+      <td>99651</td>
+      <td>industrial</td>
+      <td>5.686190</td>
+      <td>5.388889</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>pelepelepele</td>
+      <td>electricista</td>
+      <td>5.696133</td>
+      <td>5.421053</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>gules</td>
+      <td>electricista</td>
+      <td>5.696133</td>
+      <td>5.421053</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>morsin</td>
+      <td>electricista</td>
+      <td>5.696133</td>
+      <td>5.421053</td>
+    </tr>
+    <tr>
+      <th>9762</th>
+      <td>104736</td>
+      <td>industrial</td>
+      <td>5.735283</td>
+      <td>5.428571</td>
+    </tr>
+    <tr>
+      <th>9691</th>
+      <td>106346</td>
+      <td>industrial</td>
+      <td>5.761902</td>
+      <td>5.428571</td>
+    </tr>
+    <tr>
+      <th>9696</th>
+      <td>104040</td>
+      <td>industrial</td>
+      <td>5.770544</td>
+      <td>5.500000</td>
+    </tr>
+    <tr>
+      <th>9612</th>
+      <td>103464</td>
+      <td>industrial</td>
+      <td>5.777436</td>
+      <td>5.444444</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>95568</td>
+      <td>electricista</td>
+      <td>5.780150</td>
+      <td>5.478261</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,6 +1335,140 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>G_norm</th>
+      <th>nota_promedio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>62573</th>
+      <td>100623</td>
+      <td>quimica</td>
+      <td>8.867080</td>
+      <td>9.280000</td>
+    </tr>
+    <tr>
+      <th>58552</th>
+      <td>105895</td>
+      <td>civil</td>
+      <td>8.728386</td>
+      <td>9.076923</td>
+    </tr>
+    <tr>
+      <th>27472</th>
+      <td>105646</td>
+      <td>informatica</td>
+      <td>8.708787</td>
+      <td>9.083333</td>
+    </tr>
+    <tr>
+      <th>71602</th>
+      <td>110456</td>
+      <td>electronica</td>
+      <td>8.637592</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>27812</th>
+      <td>105836</td>
+      <td>informatica</td>
+      <td>8.616623</td>
+      <td>8.950000</td>
+    </tr>
+    <tr>
+      <th>27519</th>
+      <td>108814</td>
+      <td>informatica</td>
+      <td>8.610492</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>71790</th>
+      <td>103839</td>
+      <td>electronica</td>
+      <td>8.554295</td>
+      <td>8.903226</td>
+    </tr>
+    <tr>
+      <th>27390</th>
+      <td>105798</td>
+      <td>informatica</td>
+      <td>8.548713</td>
+      <td>8.888889</td>
+    </tr>
+    <tr>
+      <th>89813</th>
+      <td>0</td>
+      <td>alimentos</td>
+      <td>8.545753</td>
+      <td>8.941176</td>
+    </tr>
+    <tr>
+      <th>62360</th>
+      <td>0</td>
+      <td>quimica</td>
+      <td>8.545753</td>
+      <td>8.833333</td>
+    </tr>
+    <tr>
+      <th>27772</th>
+      <td>102145</td>
+      <td>informatica</td>
+      <td>8.516628</td>
+      <td>8.823529</td>
+    </tr>
+    <tr>
+      <th>27391</th>
+      <td>102749</td>
+      <td>informatica</td>
+      <td>8.491953</td>
+      <td>8.827586</td>
+    </tr>
+    <tr>
+      <th>10093</th>
+      <td>4383567</td>
+      <td>industrial</td>
+      <td>8.484390</td>
+      <td>8.789474</td>
+    </tr>
+    <tr>
+      <th>58533</th>
+      <td>105536</td>
+      <td>civil</td>
+      <td>8.476747</td>
+      <td>8.760000</td>
+    </tr>
+    <tr>
+      <th>9821</th>
+      <td>4383568</td>
+      <td>industrial</td>
+      <td>8.467663</td>
+      <td>8.777778</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="reliability">
@@ -864,6 +1488,188 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>materia_id</th>
+      <th>materia_nombre</th>
+      <th>materia_nota</th>
+      <th>R</th>
+      <th>G_norm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>69628</th>
+      <td>105370</td>
+      <td>civil</td>
+      <td>91.09</td>
+      <td>Economía</td>
+      <td>4.0</td>
+      <td>0.499415</td>
+      <td>7.965966</td>
+    </tr>
+    <tr>
+      <th>5621</th>
+      <td>102538</td>
+      <td>mecanica</td>
+      <td>71.01</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.507419</td>
+      <td>7.862699</td>
+    </tr>
+    <tr>
+      <th>90640</th>
+      <td>103221</td>
+      <td>electronica</td>
+      <td>91.19</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.507530</td>
+      <td>7.954103</td>
+    </tr>
+    <tr>
+      <th>69328</th>
+      <td>104497</td>
+      <td>civil</td>
+      <td>91.09</td>
+      <td>Economía</td>
+      <td>4.0</td>
+      <td>0.510781</td>
+      <td>7.829576</td>
+    </tr>
+    <tr>
+      <th>69597</th>
+      <td>103365</td>
+      <td>civil</td>
+      <td>91.09</td>
+      <td>Economía</td>
+      <td>4.0</td>
+      <td>0.517268</td>
+      <td>7.751731</td>
+    </tr>
+    <tr>
+      <th>5590</th>
+      <td>103277</td>
+      <td>mecanica</td>
+      <td>71.01</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.517605</td>
+      <td>7.740467</td>
+    </tr>
+    <tr>
+      <th>39643</th>
+      <td>100735</td>
+      <td>industrial</td>
+      <td>97.01</td>
+      <td>Higiene y Seguridad Industrial</td>
+      <td>10.0</td>
+      <td>0.518014</td>
+      <td>5.800488</td>
+    </tr>
+    <tr>
+      <th>5613</th>
+      <td>94286</td>
+      <td>mecanica</td>
+      <td>71.01</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.518826</td>
+      <td>7.725819</td>
+    </tr>
+    <tr>
+      <th>69493</th>
+      <td>107756</td>
+      <td>civil</td>
+      <td>91.09</td>
+      <td>Economía</td>
+      <td>4.0</td>
+      <td>0.519672</td>
+      <td>7.722881</td>
+    </tr>
+    <tr>
+      <th>5604</th>
+      <td>102539</td>
+      <td>mecanica</td>
+      <td>71.01</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.520759</td>
+      <td>7.702616</td>
+    </tr>
+    <tr>
+      <th>64940</th>
+      <td>87699</td>
+      <td>quimica</td>
+      <td>76.27</td>
+      <td>Control Estadístico de Procesos</td>
+      <td>10.0</td>
+      <td>0.520895</td>
+      <td>6.372811</td>
+    </tr>
+    <tr>
+      <th>79221</th>
+      <td>103371</td>
+      <td>informatica</td>
+      <td>61.07</td>
+      <td>Matemática Discreta</td>
+      <td>4.0</td>
+      <td>0.522493</td>
+      <td>8.108379</td>
+    </tr>
+    <tr>
+      <th>90633</th>
+      <td>102176</td>
+      <td>electronica</td>
+      <td>91.19</td>
+      <td>Introducción a la Economía y Organización de la Empresa</td>
+      <td>4.0</td>
+      <td>0.523264</td>
+      <td>7.765291</td>
+    </tr>
+    <tr>
+      <th>97669</th>
+      <td>91218</td>
+      <td>electricista</td>
+      <td>81.03</td>
+      <td>Probabilidad y Estadística A</td>
+      <td>4.0</td>
+      <td>0.524016</td>
+      <td>8.094684</td>
+    </tr>
+    <tr>
+      <th>86220</th>
+      <td>100912</td>
+      <td>sistemas</td>
+      <td>81.11</td>
+      <td>Matemática Discreta</td>
+      <td>4.0</td>
+      <td>0.525321</td>
+      <td>7.835751</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Una nota confiable es la más esperable para asignarle al estudiante según su valor de G.</p>
 <div class="cell docutils container">
@@ -880,6 +1686,188 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>materia_id</th>
+      <th>materia_nombre</th>
+      <th>materia_nota</th>
+      <th>R</th>
+      <th>G_norm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>81648</th>
+      <td>100726</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.947632</td>
+      <td>6.995627</td>
+    </tr>
+    <tr>
+      <th>81455</th>
+      <td>100291</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>6.0</td>
+      <td>0.947439</td>
+      <td>5.993301</td>
+    </tr>
+    <tr>
+      <th>81662</th>
+      <td>97875</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>6.0</td>
+      <td>0.947316</td>
+      <td>5.991831</td>
+    </tr>
+    <tr>
+      <th>81506</th>
+      <td>104279</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>8.0</td>
+      <td>0.947103</td>
+      <td>7.989276</td>
+    </tr>
+    <tr>
+      <th>81622</th>
+      <td>102187</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>8.0</td>
+      <td>0.945762</td>
+      <td>7.973187</td>
+    </tr>
+    <tr>
+      <th>81651</th>
+      <td>100875</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.945579</td>
+      <td>7.029018</td>
+    </tr>
+    <tr>
+      <th>81659</th>
+      <td>94275</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.945542</td>
+      <td>7.029462</td>
+    </tr>
+    <tr>
+      <th>81690</th>
+      <td>103213</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.945373</td>
+      <td>6.968516</td>
+    </tr>
+    <tr>
+      <th>81650</th>
+      <td>105370</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>8.0</td>
+      <td>0.945161</td>
+      <td>7.965966</td>
+    </tr>
+    <tr>
+      <th>81686</th>
+      <td>100531</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.944591</td>
+      <td>6.959128</td>
+    </tr>
+    <tr>
+      <th>81480</th>
+      <td>103332</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.944532</td>
+      <td>7.041578</td>
+    </tr>
+    <tr>
+      <th>81485</th>
+      <td>102683</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.944409</td>
+      <td>7.043048</td>
+    </tr>
+    <tr>
+      <th>81700</th>
+      <td>101337</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>6.0</td>
+      <td>0.943931</td>
+      <td>6.048784</td>
+    </tr>
+    <tr>
+      <th>81547</th>
+      <td>99303</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.943174</td>
+      <td>6.942122</td>
+    </tr>
+    <tr>
+      <th>81668</th>
+      <td>102632</td>
+      <td>civil</td>
+      <td>94.01</td>
+      <td>Hormigón I</td>
+      <td>7.0</td>
+      <td>0.943066</td>
+      <td>6.940830</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="reliability-de-un-padron-particular">
@@ -899,10 +1887,98 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Padron</th>
+      <th>Carrera</th>
+      <th>materia_id</th>
+      <th>materia_nombre</th>
+      <th>materia_nota</th>
+      <th>R</th>
+      <th>G_norm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>79110</th>
+      <td>100029</td>
+      <td>informatica</td>
+      <td>61.07</td>
+      <td>Matemática Discreta</td>
+      <td>4.0</td>
+      <td>0.598400</td>
+      <td>7.1975</td>
+    </tr>
+    <tr>
+      <th>80711</th>
+      <td>100029</td>
+      <td>informatica</td>
+      <td>75.31</td>
+      <td>Teoría de Lenguaje</td>
+      <td>10.0</td>
+      <td>0.627503</td>
+      <td>7.1975</td>
+    </tr>
+    <tr>
+      <th>27455</th>
+      <td>100029</td>
+      <td>informatica</td>
+      <td>62.01</td>
+      <td>Física I A</td>
+      <td>4.0</td>
+      <td>0.636441</td>
+      <td>7.1975</td>
+    </tr>
+    <tr>
+      <th>77054</th>
+      <td>100029</td>
+      <td>informatica</td>
+      <td>66.02</td>
+      <td>Laboratorio</td>
+      <td>4.0</td>
+      <td>0.654790</td>
+      <td>7.1975</td>
+    </tr>
+    <tr>
+      <th>35120</th>
+      <td>100029</td>
+      <td>informatica</td>
+      <td>75.08</td>
+      <td>Sistemas Operativos</td>
+      <td>10.0</td>
+      <td>0.658492</td>
+      <td>7.1975</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
 </section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"3c0f4b53336e4eefad508cc5d451c5a7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b531fd6f10764616ba1727f8e22b8947": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "7477934db0654325aa87f27d3449e095": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3c0f4b53336e4eefad508cc5d451c5a7", "max": 43620.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_b531fd6f10764616ba1727f8e22b8947", "value": 43620.0}}, "1278afa95410465ea2d2e3cb55f5d01b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f5cc86339a3d4ea4a67b96aa977bf9d9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "85aa13948fd54f3c9bd2eb69a5045dfc": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1278afa95410465ea2d2e3cb55f5d01b", "placeholder": "\u200b", "style": "IPY_MODEL_f5cc86339a3d4ea4a67b96aa977bf9d9", "value": "Inicializando estructuras: 100%"}}, "233474fb17b542399b9151d623b3c41d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "69ba0326018d42ca8ed5df873a65574c": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d5877d3a3add4ae99ecb63587097ed35": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_233474fb17b542399b9151d623b3c41d", "placeholder": "\u200b", "style": "IPY_MODEL_69ba0326018d42ca8ed5df873a65574c", "value": " 43620/43620 [00:00&lt;00:00, 596583.78it/s]"}}, "8b69fd32668d40bdb11a22ba33781305": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5c04a612a7524c2ab97bfe01fc496944": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_85aa13948fd54f3c9bd2eb69a5045dfc", "IPY_MODEL_7477934db0654325aa87f27d3449e095", "IPY_MODEL_d5877d3a3add4ae99ecb63587097ed35"], "layout": "IPY_MODEL_8b69fd32668d40bdb11a22ba33781305"}}, "80f573ef48104e31b86e662e7ef0a099": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d33dd2a5991048d193403a0542f841c9": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "2577eea120bd4ea2bbdfa9a25a2a2496": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_80f573ef48104e31b86e662e7ef0a099", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_d33dd2a5991048d193403a0542f841c9", "value": 20.0}}, "244c33f704994789ab988ccb8f3551cb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dd7a575765304f59865990911a3edb23": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "47b9f015c7334539b1d0dc11be48dc4a": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_244c33f704994789ab988ccb8f3551cb", "placeholder": "\u200b", "style": "IPY_MODEL_dd7a575765304f59865990911a3edb23", "value": "Realizando iteraciones F/G/R: 100%"}}, "5d9cb808e55d426f8fd6ab6684287185": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7c73ebdd325840958a2dec7a851422c9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a0ba1b9b0664404e8b247ef0a9b3658d": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5d9cb808e55d426f8fd6ab6684287185", "placeholder": "\u200b", "style": "IPY_MODEL_7c73ebdd325840958a2dec7a851422c9", "value": " 20/20 [00:02&lt;00:00,  6.67it/s]"}}, "50956269f1f4499a9b800c8dcefe0492": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "51f6e853b4f34534902cc8a9a80e4511": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_47b9f015c7334539b1d0dc11be48dc4a", "IPY_MODEL_2577eea120bd4ea2bbdfa9a25a2a2496", "IPY_MODEL_a0ba1b9b0664404e8b247ef0a9b3658d"], "layout": "IPY_MODEL_50956269f1f4499a9b800c8dcefe0492"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {
