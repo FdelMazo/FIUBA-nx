@@ -123,12 +123,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grafazo.html">
-   Grafazo: Con que alumnos puedo hacer TPs en un futuro?
+   Grafazo: ¿Con que alumnos puedo hacer TPs en un futuro?
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grafon.html">
-   Grafón: Qué electivas me conviene cursar?
+   Grafón: ¿Qué electivas me conviene cursar?
   </a>
  </li>
  <li class="toctree-l1">
@@ -319,24 +319,24 @@ title="Print to PDF"
 <h1>FIUBA-nx<a class="headerlink" href="#fiuba-nx" title="Permalink to this headline">#</a></h1>
 <p>Análisis de los datos del FIUBA-Map.</p>
 <hr class="docutils" />
-<p><strong>Qué es esto?</strong></p>
-<p>El <a class="reference external" href="https://fede.dm/FIUBA-Map/">FIUBA-Map</a> es una herramienta de FIUBA para que los alumnos puedan ir marcando su carrera facultativa (que materias cursaron, que nota se sacaron, etc).</p>
-<p>Si bien no es una red social (en el sentido criollo de “red social”), no deja de ser una herramienta que contiene información de personas y de como estas personas se relacionan entre sí. Estos datos no son directos: en el FMap en ningún momento marcas tu relación con otros alumnos (no existe botón de “Yo hice un trabajo práctico con X”), pero si pueden empezar a inferirse (vos y yo hacemos la misma carrera, vos y ella cursaron la misma materia, etc). De eso se trata este trabajo práctico para la materia de redes sociales! Encontrar y descubrir las relaciones implicitas entre distintos alumnos de la misma carrera.</p>
-<p>El trabajo es más que nada un análisis exploratorio de que datos tenemos y como se relacionan entre sí, donde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responderle 3 preguntas a un alumno:</p>
+<p><strong>¿Qué es esto?</strong></p>
+<p>El <a class="reference external" href="https://fede.dm/FIUBA-Map/">FIUBA-Map</a> es una herramienta de FIUBA para que los alumnos puedan ir marcando su carrera facultativa (qué materias cursaron, qué nota se sacaron, etc).</p>
+<p>Si bien no es una red social (en el sentido criollo de “red social”), no deja de ser una herramienta que contiene información de personas y de cómo estas personas se relacionan entre sí. Estos datos no son directos: en el FMap en ningún momento marcás tu relación con otros alumnos (no existe botón de “Yo hice un trabajo práctico con X”), pero sí pueden empezar a inferirse (vos y yo hacemos la misma carrera, vos y ella cursaron la misma materia, etc). ¡De eso se trata este trabajo práctico para la materia de redes sociales! Encontrar y descubrir las relaciones implícitas entre distintos alumnos de la misma carrera.</p>
+<p>El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responderle 3 preguntas a un alumno:</p>
 <ul class="simple">
-<li><p>Con qué otros alumnos puedo hacer TPs en un futuro?</p></li>
-<li><p>Qué materias electivas me conviene cursar?</p></li>
-<li><p>Cómo puedo organizar mi siguiente cuatrimestre?</p></li>
+<li><p>¿Con qué otros alumnos puedo hacer TPs en un futuro?</p></li>
+<li><p>¿Qué materias electivas me conviene cursar?</p></li>
+<li><p>¿Cómo puedo organizar mi siguiente cuatrimestre?</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Cómo funciona?</strong></p>
+<p><strong>¿Cómo funciona?</strong></p>
 <p>El trabajo se divide en la infra y los grafos:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">infra.ipynb</span></code>: donde se levantan los datos del FMap, se parsean y se convierten en un dataframe de Pandas que pueda ser leído por NetworkX, para poder armar un grafo en base a eso.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{grafazo,graphito,grafon}.ipynb</span></code>: para cada una de las preguntas planteadas queremos ver que datos tenemos que puedan responderlas, que grafo podemos armar que nos ayude a contestarla, y efectivamente lograr contestarla.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{grafazo,graphito,grafon}.ipynb</span></code>: para cada una de las preguntas planteadas queremos ver qué datos tenemos que puedan responderlas, qué grafo podemos armar que nos ayude a contestarlas, y efectivamente lograr contestarlas.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Cómo lo corro localmente para poder ver que electivas me convienen, mis compañeros de TP, y demás?</strong></p>
+<p><strong>¿Cómo lo corro localmente para poder ver qué electivas me convienen, mis compañeros de TP, y demás?</strong></p>
 <p>Primero, instalar Poetry y setupear el repo.</p>
 <div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="c1"># (En algun virtualenv)</span>
 poetry install
@@ -344,7 +344,7 @@ poetry run pre-commit install
 poetry run jupyter lab
 </pre></div>
 </div>
-<p>Ahora si:</p>
+<p>Ahora sí:</p>
 <ul class="simple">
 <li><p>Modificar <code class="docutils literal notranslate"><span class="pre">config.py</span></code> para que tenga tu carrera y padrón</p></li>
 <li><p>Correr <code class="docutils literal notranslate"><span class="pre">infra.ipynb</span></code> primero, asi se genera el pickle de la base de datos</p></li>
