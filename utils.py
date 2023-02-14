@@ -8,6 +8,7 @@ import networkx as nx
 from config import PADRON, CARRERA
 from math import log, e, ceil
 from numpy import linalg as LA
+from scipy.optimize import curve_fit
 
 plt.rcParams['figure.figsize'] = (30,10)
 pd.set_option('mode.chained_assignment', None)
@@ -217,6 +218,26 @@ def plan_estudios(carrera):
     # Hardcodear los planes, por si algun dia el fiuba map sube los planes 2020
     return f'https://raw.githubusercontent.com/fdelmazo/FIUBA-Map/master/src/data/{PLANES[carrera]}.json'
 
+def plot_clustering(G):
+    local_clustering = [v for v in nx.clustering(G).values()]
+    plt.hist(local_clustering, bins  = 15, color = 'blue')
+    plt.title("Distribution of the clustering coefficient")
+    plt.ylabel("P(k)")
+    plt.xlabel("Clustering coefficient (k)")
+    plt.grid(True)
+    plt.show()
+    
+def plot_diametro(G, edge_width=0.005):
+    # Un plot que nos muestre el diametro en rojo
+    shortest_paths = nx.shortest_path(G, source=random.choice(list(G.nodes)))
+    target = max(shortest_paths, key=lambda i: len(shortest_paths[i]))
+    diameter = shortest_paths[target]
+    diameter_edges = list(zip(diameter, diameter[1:]))
+
+    pos = nx.spiral_layout(G)
+    nx.draw(G, pos=pos, with_labels=True, width=edge_width, node_size=5, font_size=6)
+    nx.draw_networkx_nodes(G, pos, nodelist=diameter, node_size=5, node_color='r')
+    nx.draw_networkx_edges(G, edge_color='r', width=2.0, edgelist=diameter_edges, pos=pos, node_size=30)
 
 def construir_df_pareando_padrones_por(df, sep):
     df_nodos = pd.merge(df, df, on=['materia_id', sep])
@@ -226,3 +247,35 @@ def construir_df_pareando_padrones_por(df, sep):
     df_nodos['Padron_min'] = df_nodos[['Padron_x', 'Padron_y']].min(axis=1)
     df_nodos['Padron_max'] = df_nodos[['Padron_x', 'Padron_y']].max(axis=1)
     return df_nodos
+
+def plot_evolucion_macroscopica(graphs):
+    x = [len(g[1]) for g in graphs]
+    y = [len(g[1].edges) for g in graphs]
+
+    # Escala logaritmica
+    plt.xscale("log")
+    plt.yscale("log")
+    plt.xlim(10, 100000)
+    plt.ylim(10, 100000)
+    plt.xlabel("Cantidad de nodos")
+    plt.ylabel("Cantidad de aristas")
+
+    # Scatter plot
+    plt.scatter(x, y)
+
+    # Ecuación de la trendline
+    def myExpFunc(x, a, b):
+        return a * np.power(x, b)
+
+    # Plot de la trendline
+    popt, pcov = curve_fit(myExpFunc, x, y)
+    newX = np.logspace(0, 3, base=10)
+    newY = myExpFunc(newX, *popt)
+    plt.plot(newX, newY, "r-")
+
+    # Tomo 2 puntos por los que pasa la recta de pendiente y calculo alfa
+    dy = y[11] - y[6]
+    dx = x[11] - x[6]
+
+    slope = (np.log10(dy)/np.log10(dx)).round(2)
+    print(f"Alpha es {slope}")
