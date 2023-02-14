@@ -12,6 +12,23 @@ from numpy import linalg as LA
 plt.rcParams['figure.figsize'] = (30,10)
 pd.set_option('mode.chained_assignment', None)
 
+
+PLANES = {
+    'informatica': 'informatica-1986',
+    'agrimensura': 'agrimensura-2006',
+    'alimentos': 'alimentos-2000',
+    'civil': 'civil-2009',
+    'electricista': 'electricista-2009',
+    'electronica': 'electronica-2009',
+    'industrial': 'industrial-2011',
+    'mecanica': 'mecanica-1986',
+    'naval': 'naval-1986',
+    'petroleo': 'petroleo-2015',
+    'quimica': 'quimica-1986',
+    'sistemas': 'sistemas-2014',
+    'sistemasviejo': 'sistemas-1986'
+}
+
 DIFFERENT_WALKS = { # incluye bucles
     2: 2,
     3: 5,
@@ -198,21 +215,6 @@ def plot_diametro(G, edge_width=0.005):
 # Traer el plan de estudios del FIUBA-Map (y rezar que nunca cambie tanto como para que se rompa la interfaz)
 def plan_estudios(carrera):
     # Hardcodear los planes, por si algun dia el fiuba map sube los planes 2020
-    PLANES = {
-        'informatica': 'informatica-1986',
-        'agrimensura': 'agrimensura-2006',
-        'alimentos': 'alimentos-2000',
-        'civil': 'civil-2009',
-        'electricista': 'electricista-2009',
-        'electronica': 'electronica-2009',
-        'industrial': 'industrial-2011',
-        'mecanica': 'mecanica-1986',
-        'naval': 'naval-1986',
-        'petroleo': 'petroleo-2015',
-        'quimica': 'quimica-1986',
-        'sistemas': 'sistemas-2014',
-        'sistemasviejo': 'sistemas-1986'
-    }
     return f'https://raw.githubusercontent.com/fdelmazo/FIUBA-Map/master/src/data/{PLANES[carrera]}.json'
 
 
