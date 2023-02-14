@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Grafazo: Con que alumnos puedo hacer TPs en un futuro?" href="grafazo.html" />
@@ -320,12 +322,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evolucion-del-fiuba-map">
+   Evolución del FIUBA Map
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evolucion-macroscopica">
+   Evolución macroscópica
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -337,6 +368,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evolucion-del-fiuba-map">
+   Evolución del FIUBA Map
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evolucion-macroscopica">
+   Evolución macroscópica
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -346,13 +395,14 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="graphito-podemos-decir-que-fiuba-es-una-red-social">
 <h1>Graphito: ¿Podemos decir que FIUBA es una red social?<a class="headerlink" href="#graphito-podemos-decir-que-fiuba-es-una-red-social" title="Permalink to this headline">#</a></h1>
-<p>A lo largo del trabajo práctico vamos a generar diferentes grafos con el set de datos de alumnos de FIUBA. Pero para dar un primer pantallazo, vamos a conectar a aquellos alumnos que cursaron juntos alguna materia en un mismo cuatrimestre y vamos a hacer un análisis general de la misma:</p>
+<p>A lo largo del trabajo práctico vamos a generar diferentes grafos con el set de datos de alumnos de FIUBA. Pero para dar un primer pantallazo, vamos a conectar a aquellos alumnos que cursaron juntos alguna materia en un mismo cuatrimestre, de manera tal que los alumnos (<strong>nodos</strong>) se conectan si alguna vez cursaron juntos una materia (<strong>aristas</strong>), y a partir de ello vamos a hacer un análisis general de la misma:</p>
 <ul class="simple">
 <li><p>¿Cuál es su diámetro(largo máximo de todos los caminos mínimos)?</p></li>
 <li><p>¿Cuál es el grado promedio? ¿Les alumnes tienden a tener muchas conexiones, es decir que tienden a hacer las mismas materias con las mismas personas? ¿Cómo se distribuyen los grados?</p></li>
 <li><p>¿Cuál es el coeficiente de clustering? ¿Mis amigues son amigues entre sí?</p></li>
 <li><p>¿Tiene una componente gigante?</p></li>
 <li><p>¿Es una red aleatoria?</p></li>
+<li><p>¿Cómo evoluciona nuestra red, considerando el factor temporal de los cuatrimestres?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -389,48 +439,48 @@ title="Print to PDF"
       <th>Final de Carrera</th>
       <th>materia_id</th>
       <th>materia_nota</th>
-      <th>checkboxes</th>
       <th>materia_cuatrimestre</th>
-      <th>aplazos</th>
       <th>optativas</th>
+      <th>checkboxes</th>
+      <th>aplazos</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>29755</th>
-      <td>96105</td>
+      <th>67017</th>
+      <td>108244</td>
       <td>informatica</td>
-      <td>Gestión Industrial de Sistemas</td>
-      <td>tpp</td>
-      <td>63.01</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>2015.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>65313</th>
-      <td>102784</td>
-      <td>informatica</td>
-      <td>Sistemas de Producción</td>
-      <td>tpp</td>
-      <td>78.xx</td>
-      <td>8.0</td>
-      <td>NaN</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tesis</td>
+      <td>66.69</td>
+      <td>-2.0</td>
+      <td>2026.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>42815</th>
-      <td>98275</td>
+      <th>8960</th>
+      <td>105103</td>
       <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>62.01</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>75.06</td>
-      <td>0.0</td>
       <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>46193</th>
+      <td>tplink</td>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>75.42</td>
+      <td>-2.0</td>
+      <td>2021.5</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -441,7 +491,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_nodos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">&amp;</span> <span class="p">[</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="s2">&quot;materia_id&quot;</span><span class="p">,</span> <span class="s2">&quot;materia_cuatrimestre&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_nodos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="s2">&quot;materia_id&quot;</span><span class="p">,</span> <span class="s2">&quot;materia_cuatrimestre&quot;</span><span class="p">]]</span>
 
 <span class="c1"># Sacamos a aquellos que no ordenan su carrera por cuatrimestres</span>
 <span class="n">df_nodos</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -453,10 +503,6 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2190/2328134690.py:1: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
-  df_nodos = df[df.columns &amp; [&quot;Padron&quot;, &quot;materia_id&quot;, &quot;materia_cuatrimestre&quot;]]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -482,22 +528,22 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>89539</th>
-      <td>103973</td>
-      <td>75.52</td>
+      <th>12114</th>
+      <td>99846</td>
+      <td>61.09</td>
+      <td>2020.0</td>
+    </tr>
+    <tr>
+      <th>5327</th>
+      <td>102150</td>
+      <td>78.xx</td>
+      <td>2018.5</td>
+    </tr>
+    <tr>
+      <th>40612</th>
+      <td>103783</td>
+      <td>71.14</td>
       <td>2021.5</td>
-    </tr>
-    <tr>
-      <th>38259</th>
-      <td>104393</td>
-      <td>75.44</td>
-      <td>2022.5</td>
-    </tr>
-    <tr>
-      <th>68180</th>
-      <td>100972</td>
-      <td>75.41</td>
-      <td>2020.5</td>
     </tr>
   </tbody>
 </table>
@@ -543,25 +589,25 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>8264</th>
-      <td>100566</td>
-      <td>105604</td>
-      <td>75.15</td>
-      <td>2024.0</td>
-    </tr>
-    <tr>
-      <th>6624</th>
-      <td>107705</td>
-      <td>104244</td>
-      <td>61.09</td>
-      <td>2022.0</td>
-    </tr>
-    <tr>
-      <th>20681</th>
-      <td>106295</td>
-      <td>108056</td>
-      <td>66.70</td>
+      <th>18450</th>
+      <td>104728</td>
+      <td>102361</td>
+      <td>75.10</td>
       <td>2022.5</td>
+    </tr>
+    <tr>
+      <th>7637</th>
+      <td>108298</td>
+      <td>108127</td>
+      <td>75.09</td>
+      <td>2023.0</td>
+    </tr>
+    <tr>
+      <th>7595</th>
+      <td>106699</td>
+      <td>108244</td>
+      <td>75.09</td>
+      <td>2023.0</td>
     </tr>
   </tbody>
 </table>
@@ -674,9 +720,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Red aleatoria Erdös-Renyi
   El diámetro de la red: 2
-  El grado promedio de la red: 230.04
-  La distancia promedio de la red: 1.4024897382410335
-  Clustering promedio: 0.5970
+  El grado promedio de la red: 229.67
+  La distancia promedio de la red: 1.4034452594038087
+  Clustering promedio: 0.5965
   Puentes globales: []
   Es conexa
 </pre></div>
@@ -699,9 +745,9 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Red aleatoria Preferential Attachment
-  El diámetro de la red: 15
+  El diámetro de la red: 17
   El grado promedio de la red: 1.99
-  La distancia promedio de la red: 6.133382679496669
+  La distancia promedio de la red: 5.6277235717650225
   Clustering promedio: 0.0
   Es conexa
 </pre></div>
@@ -735,9 +781,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Las leyes de potencias aparecen de la <span class=" -Color -Color-Bold"> ventaja acumulativa</span>. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de 0.9824127971820114. 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Las leyes de potencias aparecen de la <span class=" -Color -Color-Bold"> ventaja acumulativa</span>. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de 0.979606949762755. 
 
-En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontrar más similitudes. A diferencia del anterior, todos los nodos tienen probabilidad de contar con muchas aristas, dejando un grafo más real y parecido a una red de una Universidad en donde todos los alumnos tienden a cursar materias similares. La distancia de coseno entre los mismos 3.947686506677872e-05
+En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontrar más similitudes. A diferencia del anterior, todos los nodos tienen probabilidad de contar con muchas aristas, dejando un grafo más real y parecido a una red de una Universidad en donde todos los alumnos tienden a cursar materias similares. La distancia de coseno entre los mismos 4.0626367451612744e-05
 </pre></div>
 </div>
 </div>
@@ -752,6 +798,144 @@ En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontr
 <img alt="_images/graphito_14_0.png" src="_images/graphito_14_0.png" />
 </div>
 </div>
+<section id="evolucion-del-fiuba-map">
+<h2>Evolución del FIUBA Map<a class="headerlink" href="#evolucion-del-fiuba-map" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tomamos los cuatrimestres hasta la actualidad, sin tener en cuenta cuatrimestres que no pasaron porque la cantidad de nodos se mantiene constante</span>
+<span class="n">curr_year</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+<span class="n">curr_month</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">month</span>
+<span class="n">curr_cuatri</span> <span class="o">=</span> <span class="n">curr_year</span> <span class="k">if</span> <span class="n">curr_month</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="n">curr_year</span> <span class="o">+</span> <span class="mf">0.5</span>
+<span class="n">df_red</span> <span class="o">=</span> <span class="n">df_red</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">])</span>
+<span class="n">cuatris</span> <span class="o">=</span> <span class="n">df_red</span><span class="p">[</span><span class="n">df_red</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">curr_cuatri</span><span class="p">][</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">cuatris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2016.5, 2017. , 2018. , 2018.5, 2019. , 2019.5, 2020. , 2020.5,
+       2021. , 2021.5, 2022. , 2022.5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">cuatri</span> <span class="ow">in</span> <span class="n">cuatris</span><span class="p">:</span>
+    <span class="n">df_cuatri</span> <span class="o">=</span> <span class="n">df_red</span><span class="p">[</span><span class="n">df_red</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">cuatri</span><span class="p">]</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_cuatri</span><span class="p">,</span> 
+                                <span class="n">source</span><span class="o">=</span><span class="s1">&#39;src_padron&#39;</span><span class="p">,</span> 
+                                <span class="n">target</span><span class="o">=</span><span class="s1">&#39;dst_padron&#39;</span><span class="p">,</span>
+                                <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">())</span>
+    <span class="n">graphs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cuatri</span><span class="p">,</span> <span class="n">G</span><span class="p">))</span>
+    <span class="n">diameter</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;No conexo&quot;</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">cuatri</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">),</span>  <span class="n">diameter</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">])</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cuatrimestre&#39;</span><span class="p">,</span><span class="s1">&#39;Nodos&#39;</span><span class="p">,</span><span class="s1">&#39;Aristas&#39;</span><span class="p">,</span> <span class="s1">&#39;Diametro&#39;</span><span class="p">,</span> <span class="s1">&#39;Grado promedio&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cuatris</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">graphs</span><span class="p">)</span><span class="o">//</span><span class="n">n</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graphs</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Cuatrimestre  Nodos  Aristas  Diametro Grado promedio
+       2016.5      2        1         1           1.00
+       2017.0      8        5 No conexo           1.25
+       2018.0     21       32         6           3.05
+       2018.5     66      128         4           3.88
+       2019.0    126     1897         5          30.11
+       2019.5    150     2308         5          30.77
+       2020.0    216     5215         5          48.29
+       2020.5    245     6010         5          49.06
+       2021.0    271     7364         4          54.35
+       2021.5    286     9604         4          67.16
+       2022.0    318    12744         4          80.15
+       2022.5    359    19528         4         108.79
+</pre></div>
+</div>
+<img alt="_images/graphito_18_1.png" src="_images/graphito_18_1.png" />
+</div>
+</div>
+<p>Lo primero que podemos notar es que, a lo largo del tiempo, las aristas crecen mucho más rápido que los nodos (ya veremos en qué proporción), y a su vez, el diámetro se mantiene constante casi durante toda la evolución del grafo. De la mano con esto, el grado promedio de la red va en aumento, a cada paso de la evolución.</p>
+</section>
+<section id="evolucion-macroscopica">
+<h2>Evolución macroscópica<a class="headerlink" href="#evolucion-macroscopica" title="Permalink to this headline">#</a></h2>
+<p>Para entender más en profundidad esta evolución, analizaremos algunos de los indicadores principales como la cantidad de nodos y aristas, el diámetro y los grados de los nodos a lo largo del tiempo.</p>
+<p>A continuación analizaremos la relación entre la cantidad de nodos y la cantidad de aristas a lo largo del tiempo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">plot_evolucion_macroscopica</span><span class="p">(</span><span class="n">graphs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alpha es 1.93
+</pre></div>
+</div>
+<img alt="_images/graphito_22_1.png" src="_images/graphito_22_1.png" />
+</div>
+</div>
+<p>Sabemos que para la mayoría de las redes reales, la evolución de las aristas con respecto a la evolución de los nodos sigue la ley de potencia de densificación: $<span class="math notranslate nohighlight">\( E(t) \propto N(t)^\alpha \)</span><span class="math notranslate nohighlight">\( donde \)</span>\alpha<span class="math notranslate nohighlight">\( es el exponente de densificación en el rango de [1, 2]. En nuestro caso, \)</span>\alpha$ es mucho mayor a 1, lo que significa que a medida que evoluciona la red, el grado promedio de los nodos va vertiginosamente en aumento. Esto se condice con los grados promedios que salen de la tabla de evolución obtenida más arriba.</p>
+<p>Para obtener más información, analicemos el diámetro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminamos 2017.0 que se trata de un grafo no conexo, teniendo en cuenta que no es de suma relevancia ya que la cantidad de nodos es muy chica</span>
+<span class="n">diam_graphs</span> <span class="o">=</span> <span class="n">graphs</span>
+<span class="k">del</span> <span class="n">diam_graphs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">diam_graphs</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">diam_graphs</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Cuatrimestre&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Diámetro&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/graphito_24_0.png" src="_images/graphito_24_0.png" />
+</div>
+</div>
+<p>En primer lugar, como se mencionaba en el comentario, no es de suma relevancia lo que sucede previamente al 2017 porque la cantidad de nodos es muy chica. A partir de allí, se observa que el diámetro se mantiene casi constante en 4.</p>
+<p>Si tuviéramos un grafo de Erdös-Rényi, el diámetro crecería a pesar de una alta densificación, por lo cual, para esclarecer este asunto, estudiaremos también la distribución de los grados de los nodos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degrees</span> <span class="o">=</span> <span class="p">[(</span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">degree</span><span class="p">()),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">graphs</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">graphs</span><span class="p">)</span><span class="o">//</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">degree</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">degrees</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Grado del nodo&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cantidad de nodos&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">degree</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">degree</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/graphito_26_0.png" src="_images/graphito_26_0.png" />
+</div>
+</div>
+<p>Si vemos cómo evoluciona la cantidad de nodos en relación al grado de los mismos, a partir de 2018.5, observamos que, si bien no se comporta exactamente como el modelo de Preferential Attachment, la mayoría de los nodos tienen un grado bajo y muy pocos tienen grado muy alto. A su vez, estos pocos con grado elevado siguen incrementándolo a lo largo del tiempo.</p>
+<p>Habiendo dicho esto, y en conjunto con la alta densificación, se explica por qué el diámetro en la evolución se mantiene constante a lo largo de la evolución en vez de seguir creciendo, como tal vez se esperaría.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
