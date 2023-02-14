@@ -223,5 +223,4 @@ def construir_df_pareando_padrones_por(df, sep):
 
     df_nodos['Padron_min'] = df_nodos[['Padron_x', 'Padron_y']].min(axis=1)
     df_nodos['Padron_max'] = df_nodos[['Padron_x', 'Padron_y']].max(axis=1)
-    df_nodos = df_nodos.drop_duplicates(['Padron_min', 'Padron_max']).reset_index()
     return df_nodos
