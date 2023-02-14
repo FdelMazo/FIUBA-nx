@@ -528,12 +528,25 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>9194</th>
-      <td>102995</td>
+      <th>6740</th>
+      <td>106895</td>
       <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>75.06</td>
+      <td>8.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37118</th>
+      <td>102671</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
       <td>tpp</td>
-      <td>66.70</td>
+      <td>CBC40</td>
       <td>7.0</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -541,27 +554,14 @@ title="Print to PDF"
       <td>NaN</td>
     </tr>
     <tr>
-      <th>20861</th>
-      <td>92702</td>
+      <th>102290</th>
+      <td>11211</td>
       <td>informatica</td>
-      <td>Sistemas de Producción</td>
-      <td>tpp</td>
-      <td>75.10</td>
-      <td>6.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>62456</th>
-      <td>106004</td>
-      <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
-      <td>tesis</td>
-      <td>75.52</td>
+      <td>75.07</td>
       <td>9.0</td>
-      <td>2022.0</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -578,7 +578,8 @@ title="Print to PDF"
         <span class="k">return</span> <span class="mi">7</span>
     <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;src_nota&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;dst_nota&#39;</span><span class="p">])</span>
 
-<span class="n">df_nodes_metadata</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">&amp;</span> <span class="p">[</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrera&quot;</span><span class="p">,</span> <span class="s2">&quot;aplazos&quot;</span><span class="p">,</span> <span class="s2">&quot;optativas&quot;</span><span class="p">,</span> <span class="s2">&quot;checkboxes&quot;</span><span class="p">]]</span>
+<span class="n">df_nodes_metadata</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrera&quot;</span><span class="p">,</span> <span class="s2">&quot;aplazos&quot;</span><span class="p">,</span> <span class="s2">&quot;optativas&quot;</span><span class="p">,</span> <span class="s2">&quot;checkboxes&quot;</span><span class="p">]]</span>
+<span class="n">df_nodes_metadata</span> <span class="o">=</span> <span class="n">df_nodes_metadata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 <span class="n">df_nodes_metadata</span> <span class="o">=</span> <span class="n">df_nodes_metadata</span><span class="p">[</span><span class="n">df_nodes_metadata</span><span class="p">[</span><span class="s2">&quot;aplazos&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">|</span> <span class="n">df_nodes_metadata</span><span class="p">[</span><span class="s2">&quot;optativas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
 <span class="n">df_nodes_metadata</span> <span class="o">=</span> <span class="n">df_nodes_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrera&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
 
@@ -592,7 +593,7 @@ title="Print to PDF"
 <span class="n">df_edges</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
      <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">])[[</span><span class="s1">&#39;Padron&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota&#39;</span><span class="p">]]</span>
      <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
-     <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+     <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">))</span>
      <span class="o">.</span><span class="n">stack</span><span class="p">()</span>
      <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Usuarios&#39;</span><span class="p">)</span>
 <span class="p">)</span>
@@ -615,44 +616,127 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1819/614348558.py:7: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
-  df_nodes_metadata = df[df.columns &amp; [&quot;Padron&quot;, &quot;Carrera&quot;, &quot;aplazos&quot;, &quot;optativas&quot;, &quot;checkboxes&quot;]]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">df_nodes</span> <span class="o">=</span> <span class="n">df_nodes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_nodes_metadata</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">df_nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Padron&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">display</span><span class="p">(</span><span class="n">df_nodes</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">df_edges</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>      <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">])[[</span><span class="s1">&#39;Padron&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_nota&#39;</span><span class="p">]]</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>      <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>      <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Usuarios&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/generic.py:5778,</span> in <span class="ni">NDFrame.sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5775</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5776</span>     <span class="n">weights</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">preprocess_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">5778</span> <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5779</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5781</span> <span class="k">if</span> <span class="n">ignore_index</span><span class="p">:</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/sample.py:150,</span> in <span class="ni">sample</span><span class="nt">(obj_len, size, replace, weights, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid weights: weights sum to zero&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">150</span> <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">replace</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="p">)</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Carrera</th>
+      <th>Orientacion</th>
+      <th>Final de Carrera</th>
+      <th>aplazos</th>
+      <th>optativas</th>
+    </tr>
+    <tr>
+      <th>Padron</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>96105</th>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>1.0</td>
+      <td>[{'id': 1, 'nombre': 'Aprendizaje Estadístico ...</td>
+    </tr>
+    <tr>
+      <th>100029</th>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>2.0</td>
+      <td>[{'id': 1, 'nombre': '[75.27] Algoritmos y Pro...</td>
+    </tr>
+    <tr>
+      <th>100566</th>
+      <td>informatica</td>
+      <td>Sistemas Distribuidos</td>
+      <td>tpp</td>
+      <td>1.0</td>
+      <td>[{'id': 1, 'nombre': 'Materia Optativa', 'cred...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File mtrand.pyx:909,</span> in <span class="ni">numpy.random.mtrand.RandomState.choice</span><span class="nt">()</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ne">ValueError</span>: a must be greater than 0 unless no samples are taken
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>src_padron</th>
+      <th>dst_padron</th>
+      <th>materia_cuatrimestre</th>
+      <th>materia_id</th>
+      <th>src_nota</th>
+      <th>dst_nota</th>
+      <th>corrnotas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>128528</th>
+      <td>100680</td>
+      <td>101483</td>
+      <td>2020.0</td>
+      <td>75.52</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>137505</th>
+      <td>102876</td>
+      <td>106004</td>
+      <td>2021.0</td>
+      <td>78.xx</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>33383</th>
+      <td>100866</td>
+      <td>102264</td>
+      <td>2019.0</td>
+      <td>63.01</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -672,6 +756,17 @@ title="Print to PDF"
 <span class="n">utils</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiGraph with 378 nodes and 76139 edges
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  El diámetro de la red: 5
+  El grado promedio de la red: 402.85
+  Puentes globales: [(&#39;100866&#39;, &#39;99796&#39;), (&#39;98600&#39;, &#39;109670&#39;)]
+</pre></div>
+</div>
+<img alt="_images/grafazo_4_2.png" src="_images/grafazo_4_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -698,6 +793,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/grafazo_5_0.png" src="_images/grafazo_5_0.png" />
 </div>
 </div>
 </section>
@@ -741,6 +839,63 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>src_padron</th>
+      <th>dst_padron</th>
+      <th>src_camada</th>
+      <th>dst_camada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>74782</th>
+      <td>105110</td>
+      <td>102208</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7082</th>
+      <td>108485</td>
+      <td>108298</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>92159</th>
+      <td>103855</td>
+      <td>103775</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>29465</th>
+      <td>104351</td>
+      <td>99846</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="valores-esperados">
 <h2>Valores Esperados<a class="headerlink" href="#valores-esperados" title="Permalink to this headline">#</a></h2>
@@ -800,6 +955,70 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dst_camada</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>src_camada</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>8034</td>
+      <td>6436</td>
+      <td>1426</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8355</td>
+      <td>16528</td>
+      <td>4601</td>
+      <td>157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1726</td>
+      <td>7464</td>
+      <td>13159</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>143</td>
+      <td>430</td>
+      <td>60</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,11 +1029,62 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>P(misma camada)</th>
+    </tr>
+    <tr>
+      <th>src_camada</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.036386</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.130517</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.187945</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000209</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">probabilidad_intercamada</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">df_prob</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Considerando 4 camadas, el threshold teórico que calculamos para de arista entre dos alumnos de distintas camadas es de </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">probabilidad_intercamada</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Considerando 4 camadas, el threshold teórico que calculamos para de arista entre dos alumnos de distintas camadas es de 0.64
 </pre></div>
 </div>
 </div>
@@ -835,6 +1105,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proporción existente de &quot;sin homofilia&quot;: 69.75%
+</pre></div>
+</div>
+</div>
 </div>
 <p>Esta proporción resulta alta en relación a lo que obtuvimos teóricamente, y creemos que se debe a que planteamos camadas muy grandes, que en la práctica deberían subdividirse en más camadas, y por lo tanto, resulta más difícil que haya tanta conexión entre camadas.</p>
 </section>
@@ -851,6 +1126,9 @@ title="Print to PDF"
 <span class="n">utils</span><span class="o">.</span><span class="n">plot_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">louvain</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/grafazo_17_0.png" src="_images/grafazo_17_0.png" />
 </div>
 </div>
 <section id="evaluacion-de-comunidades">
@@ -892,6 +1170,113 @@ title="Print to PDF"
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>padron</th>
+      <th>comunidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>172</th>
+      <td>106456</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>100188</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>102140</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">padron</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>comunidad</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>99896.229508</td>
+      <td>2816.161935</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102371.739583</td>
+      <td>3124.528482</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>104326.104478</td>
+      <td>2485.639599</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>106842.222222</td>
+      <td>2760.319604</td>
+      <td>126</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="_images/grafazo_19_2.png" src="_images/grafazo_19_2.png" />
 </div>
 </div>
 <p>Se puede observar una mínima correlación considerando el intervalo más frecuente de cada comunidad. Esto coincide con lo que se planteo con el concepto de homofilia.</p>
@@ -936,6 +1321,12 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Posibles compañeros de </span><span class="si">{</span><span class="n">PADRON</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">grupo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Posibles compañeros de 100029: {&#39;102103&#39;, &#39;100445&#39;, &#39;102674&#39;, &#39;102141&#39;, &#39;102654&#39;, &#39;102740&#39;, &#39;103371&#39;, &#39;102981&#39;, &#39;102342&#39;, &#39;98153&#39;, &#39;100016&#39;, &#39;102361&#39;, &#39;919191&#39;}
+</pre></div>
+</div>
+<img alt="_images/grafazo_22_1.png" src="_images/grafazo_22_1.png" />
 </div>
 </div>
 </section>
