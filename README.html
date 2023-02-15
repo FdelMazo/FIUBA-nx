@@ -118,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="graphito.html">
-   Graphito: ¿Podemos decir que FIUBA es una red social?
+   Graphito: ¿Podemos decir que el Fiuba Map es una red social?
   </a>
  </li>
  <li class="toctree-l1">
@@ -133,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grafote.html">
-   Grafote: Cuáles son mis notas menos confiables?
+   Grafote: ¿Cuáles son mis notas menos confiables?
   </a>
  </li>
 </ul>
@@ -322,11 +322,12 @@ title="Print to PDF"
 <p><strong>¿Qué es esto?</strong></p>
 <p>El <a class="reference external" href="https://fede.dm/FIUBA-Map/">FIUBA-Map</a> es una herramienta de FIUBA para que los alumnos puedan ir marcando su carrera facultativa (qué materias cursaron, qué nota se sacaron, etc).</p>
 <p>Si bien no es una red social (en el sentido criollo de “red social”), no deja de ser una herramienta que contiene información de personas y de cómo estas personas se relacionan entre sí. Estos datos no son directos: en el FMap en ningún momento marcás tu relación con otros alumnos (no existe botón de “Yo hice un trabajo práctico con X”), pero sí pueden empezar a inferirse (vos y yo hacemos la misma carrera, vos y ella cursaron la misma materia, etc). ¡De eso se trata este trabajo práctico para la materia de redes sociales! Encontrar y descubrir las relaciones implícitas entre distintos alumnos de la misma carrera.</p>
-<p>El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responderle 3 preguntas a un alumno:</p>
+<p>El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responder:</p>
 <ul class="simple">
+<li><p>¿Podemos decir que el Fiuba Map es una red social?</p></li>
 <li><p>¿Con qué otros alumnos puedo hacer TPs en un futuro?</p></li>
 <li><p>¿Qué materias electivas me conviene cursar?</p></li>
-<li><p>¿Cómo puedo organizar mi siguiente cuatrimestre?</p></li>
+<li><p>¿Cuáles son mis notas menos confiables?</p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>¿Cómo funciona?</strong></p>
@@ -338,7 +339,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p><strong>¿Cómo lo corro localmente para poder ver qué electivas me convienen, mis compañeros de TP, y demás?</strong></p>
 <p>Primero, instalar Poetry y setupear el repo.</p>
-<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="c1"># (En algun virtualenv)</span>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="c1"># (En algún virtualenv)</span>
 poetry install
 poetry run pre-commit install
 poetry run jupyter lab
@@ -347,7 +348,7 @@ poetry run jupyter lab
 <p>Ahora sí:</p>
 <ul class="simple">
 <li><p>Modificar <code class="docutils literal notranslate"><span class="pre">config.py</span></code> para que tenga tu carrera y padrón</p></li>
-<li><p>Correr <code class="docutils literal notranslate"><span class="pre">infra.ipynb</span></code> primero, asi se genera el pickle de la base de datos</p></li>
+<li><p>Correr <code class="docutils literal notranslate"><span class="pre">infra.ipynb</span></code> primero, así se genera el pickle de la base de datos</p></li>
 <li><p>Correr cualquiera de los notebooks de análisis</p></li>
 </ul>
 <div class="toctree-wrapper compound">

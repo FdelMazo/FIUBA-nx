@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Grafote: Cuáles son mis notas menos confiables?" href="grafote.html" />
+    <link rel="next" title="Grafote: ¿Cuáles son mis notas menos confiables?" href="grafote.html" />
     <link rel="prev" title="Grafazo: ¿Con qué alumnos puedo hacer TPs en un futuro?" href="grafazo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="graphito.html">
-   Graphito: ¿Podemos decir que FIUBA es una red social?
+   Graphito: ¿Podemos decir que el Fiuba Map es una red social?
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grafote.html">
-   Grafote: Cuáles son mis notas menos confiables?
+   Grafote: ¿Cuáles son mis notas menos confiables?
   </a>
  </li>
 </ul>
@@ -347,13 +347,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#como-es-el-grafo">
    ¿Cómo es el grafo?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
-     Dos formas de armar el análisis
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comunidades">
@@ -383,13 +376,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#como-es-el-grafo">
    ¿Cómo es el grafo?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dos-formas-de-armar-el-analisis">
-     Dos formas de armar el análisis
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comunidades">
@@ -416,7 +402,7 @@ title="Print to PDF"
 <p>El grafo analizado va a ser un grafo simple, y no un multigrafo: entre cada par de alumnos solo puede haber una arista. Manejamos la cardinalidad en el peso, en vez de tener múltiples aristas.</p>
 <ul class="simple">
 <li><p>Nodos: alumnos</p></li>
-<li><p>Aristas: conectar dos alumnos que hayan cursado misma materia y “les fue parecido”.</p>
+<li><p>Aristas: conectar dos alumnos que hayan cursado la misma materia y “les fue parecido”.</p>
 <ul>
 <li><p>A los dos nos fue muy bien (nos sacamos entre 8 y 10)</p></li>
 <li><p>A los dos nos fue más o menos (nos sacamos un 6 o un 7)</p></li>
@@ -425,15 +411,7 @@ title="Print to PDF"
 </li>
 <li><p>Peso: La inversa* de la cantidad de materias en donde somos similares</p></li>
 </ul>
-<p>* Calculamos la inversa porque mientras mas similares son, menor peso queremos que haya entre la arista, para que más cercanos esten</p>
-<section id="dos-formas-de-armar-el-analisis">
-<h3>Dos formas de armar el análisis<a class="headerlink" href="#dos-formas-de-armar-el-analisis" title="Permalink to this headline">#</a></h3>
-<p>// ToDo: que hacemos aca? Elegimos uno, o presentamos ambos en el mismo notebook?
-// Miti miti? la parte de abajo mas enfocada en solo electivas¨</p>
-<ul class="simple">
-<li><p>sólo correr sobre materias electivas</p></li>
-<li><p>correr sobre todas las materias, pero filtrar el output por electivas</p></li>
-</ul>
+<p>* Calculamos la inversa porque mientras más similares son, menor peso queremos que haya entre la arista, para que más cercanos estén</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -469,48 +447,48 @@ title="Print to PDF"
       <th>Final de Carrera</th>
       <th>materia_id</th>
       <th>materia_nota</th>
+      <th>aplazos</th>
       <th>materia_cuatrimestre</th>
       <th>checkboxes</th>
-      <th>aplazos</th>
       <th>optativas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>66252</th>
-      <td>1015909</td>
+      <th>4544</th>
+      <td>106699</td>
       <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>61.07</td>
+      <td>-1.0</td>
+      <td>NaN</td>
+      <td>2022.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>40486</th>
+      <td>92968</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
       <td>tpp</td>
-      <td>71.14</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>31982</th>
-      <td>107262</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>24601</th>
-      <td>105853</td>
-      <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
-      <td>tesis</td>
-      <td>78.xx</td>
+      <td>66.70</td>
       <td>7.0</td>
-      <td>2021.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>54953</th>
+      <td>104289</td>
+      <td>informatica</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>75.07</td>
+      <td>-1.0</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -550,7 +528,6 @@ title="Print to PDF"
 <span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil_sinagg</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">cant_materias_similares</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;materia_id&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
 <span class="n">df_simil</span> <span class="o">=</span> <span class="n">df_simil</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-<span class="c1"># ToDo: fijarse si elevar a un K acá</span>
 <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_simil</span><span class="p">[</span><span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">df_simil</span><span class="p">[[</span><span class="s1">&#39;Padron_x&#39;</span><span class="p">,</span> <span class="s1">&#39;Padron_y&#39;</span><span class="p">,</span> <span class="s1">&#39;cant_materias_similares&#39;</span><span class="p">,</span> <span class="s1">&#39;inv_cant_materias_similares&#39;</span><span class="p">]]</span>
 
@@ -588,25 +565,25 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>214542</th>
-      <td>107690</td>
-      <td>104413</td>
+      <th>215554</th>
+      <td>107705</td>
+      <td>99469</td>
+      <td>9</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>268377</th>
+      <td>109442</td>
+      <td>101187</td>
       <td>2</td>
       <td>34</td>
     </tr>
     <tr>
-      <th>333967</th>
-      <td>99118</td>
-      <td>105098</td>
+      <th>133382</th>
+      <td>105318</td>
+      <td>106338</td>
       <td>3</td>
       <td>33</td>
-    </tr>
-    <tr>
-      <th>226256</th>
-      <td>107976</td>
-      <td>101826</td>
-      <td>2</td>
-      <td>34</td>
     </tr>
   </tbody>
 </table>
@@ -748,11 +725,11 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-</section>
 <section id="comunidades">
 <h2>Comunidades<a class="headerlink" href="#comunidades" title="Permalink to this headline">#</a></h2>
-<p># ToDo: explicar que pretendemos ver acá
-# ToDo: Explicar que a diferencia de grafazo, aca estamos viendo cosas un poco mas subjetivas, entonces no tenemos validación de homofilia para hacer</p>
+<p>Este análisis de comunidades que vamos a realizar no está basado en una hipótesis previa de homofilia o similitud entre los nodos, como lo visto en grafazo. En lugar de ello, el objetivo del análisis es explorar los patrones de conexión que existen en el grafo y agrupar los nodos en comunidades para tener un mejor entendimiento de los mismos.</p>
+<p>Este enfoque exploratorio es útil cuando se tiene un conjunto de datos desconocido o no se cuenta con una hipótesis clara sobre los patrones de relación entre los nodos(como se tenía en grafazo con respecto a las camadas). El análisis de comunidades puede ayudarnos a identificar grupos de nodos que presentan patrones similares de conexión, lo que puede llevar a la identificación de relaciones interesantes entre los nodos y a la formulación de nuevas hipótesis sobre el grafo.</p>
+<p>A partir del modelado de grafon, vamos a poder identificar comunidades de alumnos que han tenido un desempeño similar en sus materias y que, por lo tanto, podrían compartir intereses académicos. Es por eso que tomaremos esto como base para poder identificar qué cursaron las personas similares a mi con el fin de otorgar un listado de recomendaciones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="kn">import</span> <span class="n">community</span>
@@ -764,13 +741,6 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/grafon_7_0.png" src="_images/grafon_7_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ToDo: Ver de agregarle logica a las subcomunidades, para que no se sienta que es nada mas correr el algoritmo generico original hasta que nos de algo que nos guste</span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -846,71 +816,71 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
+      <td>61.10</td>
+      <td>Análisis Matemático III A</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>62.15</td>
+      <td>Física III D</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
       <td>66.20</td>
       <td>Organización de Computadoras</td>
       <td>6</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>3</th>
       <td>78.xx</td>
       <td>Idioma</td>
       <td>4</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>62.15</td>
-      <td>Física III D</td>
-      <td>4</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>66.69</td>
-      <td>Criptografía y Seguridad Informática</td>
-      <td>6</td>
-      <td>2</td>
-    </tr>
-    <tr>
       <th>4</th>
-      <td>66.71</td>
-      <td>Sistemas Gráficos</td>
-      <td>6</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>5</th>
       <td>71.18</td>
       <td>Estructura Económica Argentina</td>
       <td>4</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>61.10</td>
-      <td>Análisis Matemático III A</td>
-      <td>6</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
+      <th>5</th>
       <td>66.06</td>
       <td>Análisis de Circuitos</td>
       <td>10</td>
       <td>1</td>
     </tr>
     <tr>
+      <th>6</th>
+      <td>66.69</td>
+      <td>Criptografía y Seguridad Informática</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>66.71</td>
+      <td>Sistemas Gráficos</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <th>8</th>
-      <td>66.17</td>
-      <td>Sistemas Digitales</td>
+      <td>66.74</td>
+      <td>Señales y Sistemas</td>
       <td>6</td>
       <td>1</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>75.50</td>
-      <td>Introducción a los Sistemas Inteligentes</td>
+      <td>71.12</td>
+      <td>Estructura de las Organizaciones</td>
       <td>6</td>
       <td>1</td>
     </tr>
@@ -958,7 +928,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="grafote.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Grafote: Cuáles son mis notas menos confiables?</p>
+        <p class="prev-next-title">Grafote: ¿Cuáles son mis notas menos confiables?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Grafote: Cuáles son mis notas menos confiables? &#8212; FIUBA-nx</title>
+    <title>Grafote: ¿Cuáles son mis notas menos confiables? &#8212; FIUBA-nx</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -118,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="graphito.html">
-   Graphito: ¿Podemos decir que FIUBA es una red social?
+   Graphito: ¿Podemos decir que el Fiuba Map es una red social?
   </a>
  </li>
  <li class="toctree-l1">
@@ -133,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Grafote: Cuáles son mis notas menos confiables?
+   Grafote: ¿Cuáles son mis notas menos confiables?
   </a>
  </li>
 </ul>
@@ -344,7 +344,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-es-el-grafo">
-   Cómo es el grafo?
+   ¿Cómo es el grafo?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -393,7 +393,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Grafote: Cuáles son mis notas menos confiables?</h1>
+                <h1>Grafote: ¿Cuáles son mis notas menos confiables?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -405,7 +405,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-es-el-grafo">
-   Cómo es el grafo?
+   ¿Cómo es el grafo?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -456,7 +456,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="grafote-cuales-son-mis-notas-menos-confiables">
-<h1>Grafote: Cuáles son mis notas menos confiables?<a class="headerlink" href="#grafote-cuales-son-mis-notas-menos-confiables" title="Permalink to this headline">#</a></h1>
+<h1>Grafote: ¿Cuáles son mis notas menos confiables?<a class="headerlink" href="#grafote-cuales-son-mis-notas-menos-confiables" title="Permalink to this headline">#</a></h1>
 <p>Este grafo se encarga de analizar las notas asignadas por parte de las materias hacia estudiantes con el objetivo de identificar las materias injustas, notas confiables, mejores estudiantes, y más. Para esto se utiliza el algoritmo <em>REV2</em>.</p>
 <p><em>REV2</em> tiene como objetivo encontrar usuarios fraudulentos en plataformas que tengan ratings hacia ciertos productos.</p>
 <p>Bajo el contexto de FIUBA, podríamos pensar a las materias como “usuarios”, a los estudiantes como “productos”, y las notas de final como “calificaciones” con el objetivo de aplicar REV2 <em>con algunos supuestos</em>:</p>
@@ -466,7 +466,7 @@ title="Print to PDF"
 </ul>
 <p>No esperamos encontrar <em>materias fraudulentas</em>, pero de cualquier forma podemos analizar los valores F, G y R para materias, usuarios y notas que devuelve el algoritmo.</p>
 <section id="como-es-el-grafo">
-<h2>Cómo es el grafo?<a class="headerlink" href="#como-es-el-grafo" title="Permalink to this headline">#</a></h2>
+<h2>¿Cómo es el grafo?<a class="headerlink" href="#como-es-el-grafo" title="Permalink to this headline">#</a></h2>
 <p>El grafo va a ser bipartito</p>
 <ul class="simple">
 <li><p>Nodos: Materias por un lado, estudiantes por el otro</p></li>
@@ -608,33 +608,20 @@ title="Print to PDF"
       <th>Final de Carrera</th>
       <th>materia_id</th>
       <th>materia_nota</th>
+      <th>aplazos</th>
       <th>materia_cuatrimestre</th>
       <th>checkboxes</th>
-      <th>aplazos</th>
       <th>optativas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>107629</td>
-      <td>electronica</td>
-      <td>NaN</td>
-      <td>tpp</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>107629</td>
-      <td>electronica</td>
-      <td>NaN</td>
-      <td>tpp</td>
-      <td>82.01</td>
+      <td>98942</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tesis</td>
+      <td>CBC28</td>
       <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -642,13 +629,26 @@ title="Print to PDF"
       <td>NaN</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>107629</td>
-      <td>electronica</td>
+      <th>1</th>
+      <td>98942</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tesis</td>
+      <td>CBC27</td>
+      <td>8.0</td>
       <td>NaN</td>
-      <td>tpp</td>
-      <td>81.01</td>
-      <td>-1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>98942</td>
+      <td>informatica</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tesis</td>
+      <td>CBC24</td>
+      <td>6.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -698,43 +698,43 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>107629</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>Ciclo Básico Común</td>
-      <td>electronica</td>
+      <td>98942</td>
+      <td>CBC28</td>
+      <td>4.0</td>
+      <td>Análisis Matemático</td>
+      <td>informatica</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>102142</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>Ciclo Básico Común</td>
-      <td>electronica</td>
+      <td>109585</td>
+      <td>CBC28</td>
+      <td>6.0</td>
+      <td>Análisis Matemático</td>
+      <td>informatica</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>106943</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>Ciclo Básico Común</td>
-      <td>electronica</td>
+      <td>102141</td>
+      <td>CBC28</td>
+      <td>10.0</td>
+      <td>Análisis Matemático</td>
+      <td>informatica</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>106324</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>Ciclo Básico Común</td>
-      <td>electronica</td>
+      <td>106248</td>
+      <td>CBC28</td>
+      <td>5.0</td>
+      <td>Análisis Matemático</td>
+      <td>informatica</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>106279</td>
-      <td>CBC</td>
-      <td>0.0</td>
-      <td>Ciclo Básico Común</td>
-      <td>electronica</td>
+      <td>106249</td>
+      <td>CBC28</td>
+      <td>6.0</td>
+      <td>Análisis Matemático</td>
+      <td>informatica</td>
     </tr>
   </tbody>
 </table>
@@ -761,7 +761,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44245, 8)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44246, 8)
 </pre></div>
 </div>
 </div>
@@ -780,7 +780,7 @@ title="Print to PDF"
 -0.333333    7369
  0.666667    6246
 -0.666667    4490
--1.000000    3988
+-1.000000    3989
  1.000000    2883
 Name: materia_nota_norm, dtype: int64
 </pre></div>
@@ -877,9 +877,9 @@ Name: materia_nota_norm, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5c92fc1b6a904810bd445ecd58f25e0e"}
+{"version_major": 2, "version_minor": 0, "model_id": "125c16bad4ad4be69b5cccaae9c4e0b2"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "54af46d7e47c45a6a9d9af78e5468cd3"}
+{"version_major": 2, "version_minor": 0, "model_id": "69f819ae4a994af9acaf89ef5708808f"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -952,91 +952,91 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>31604</th>
+      <th>37506</th>
       <td>76.27</td>
       <td>Control Estadístico de Procesos</td>
       <td>0.646438</td>
     </tr>
     <tr>
-      <th>97123</th>
+      <th>97125</th>
       <td>64.13</td>
       <td>Estabilidad III B</td>
       <td>0.651945</td>
     </tr>
     <tr>
-      <th>97395</th>
+      <th>97397</th>
       <td>71.01</td>
       <td>Introducción a la Economía y Organización de la Empresa</td>
       <td>0.658697</td>
     </tr>
     <tr>
-      <th>16438</th>
+      <th>22340</th>
       <td>91.09</td>
       <td>Economía</td>
       <td>0.661265</td>
     </tr>
     <tr>
-      <th>99055</th>
+      <th>99057</th>
       <td>91.25</td>
       <td>Estadística Aplicada III</td>
       <td>0.662457</td>
     </tr>
     <tr>
-      <th>51327</th>
+      <th>51329</th>
       <td>91.19</td>
       <td>Introducción a la Economía y Organización de la Empresa</td>
       <td>0.674050</td>
     </tr>
     <tr>
-      <th>101328</th>
+      <th>101330</th>
       <td>88.07</td>
       <td>Tránsito</td>
       <td>0.683710</td>
     </tr>
     <tr>
-      <th>99987</th>
+      <th>99989</th>
       <td>86.57</td>
       <td>Acústica</td>
       <td>0.690734</td>
     </tr>
     <tr>
-      <th>25033</th>
+      <th>30935</th>
       <td>81.11</td>
       <td>Matemática Discreta</td>
       <td>0.693216</td>
     </tr>
     <tr>
-      <th>80538</th>
+      <th>80540</th>
       <td>91.31</td>
       <td>Investigación Operativa II</td>
-      <td>0.697400</td>
+      <td>0.696247</td>
     </tr>
     <tr>
-      <th>100058</th>
+      <th>100060</th>
       <td>62.07</td>
       <td>Mecánica II</td>
       <td>0.701253</td>
     </tr>
     <tr>
-      <th>77756</th>
+      <th>77758</th>
       <td>91.07</td>
       <td>Investigación Operativa I</td>
-      <td>0.709398</td>
+      <td>0.709438</td>
     </tr>
     <tr>
-      <th>30268</th>
+      <th>36170</th>
       <td>76.48</td>
       <td>Evaluación de Propiedades Físicas</td>
       <td>0.710307</td>
     </tr>
     <tr>
-      <th>29184</th>
+      <th>35086</th>
       <td>63.14</td>
       <td>Química Orgánica</td>
       <td>0.716702</td>
     </tr>
     <tr>
-      <th>100773</th>
+      <th>100775</th>
       <td>70.02</td>
       <td>Geometría Descriptiva</td>
       <td>0.717278</td>
@@ -1084,94 +1084,94 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>16823</th>
+      <th>22725</th>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>0.896035</td>
     </tr>
     <tr>
-      <th>86800</th>
+      <th>86802</th>
       <td>85.02</td>
       <td>Electrotecnia</td>
       <td>0.888025</td>
     </tr>
     <tr>
-      <th>98565</th>
+      <th>98567</th>
       <td>75.69</td>
       <td>Sistemas Automáticos de Diagnóstico y Detección Fallas II</td>
       <td>0.881779</td>
     </tr>
     <tr>
-      <th>21101</th>
+      <th>27003</th>
       <td>88.13</td>
       <td>Puertos y Vías Navegables A</td>
       <td>0.880659</td>
     </tr>
     <tr>
-      <th>80050</th>
+      <th>80052</th>
       <td>92.06</td>
       <td>Automatización Industrial y Robótica</td>
       <td>0.877852</td>
     </tr>
     <tr>
-      <th>22804</th>
+      <th>28706</th>
       <td>94.13</td>
       <td>Patología de la Construcción</td>
       <td>0.877149</td>
     </tr>
     <tr>
-      <th>20174</th>
+      <th>26076</th>
       <td>89.11</td>
       <td>Ingeniería Sanitaria I</td>
       <td>0.875257</td>
     </tr>
     <tr>
-      <th>98181</th>
+      <th>98183</th>
       <td>67.30</td>
       <td>Combustión</td>
       <td>0.874920</td>
     </tr>
     <tr>
-      <th>97948</th>
+      <th>97950</th>
       <td>67.50</td>
       <td>Materiales Ferrosos y sus Aplicaciones</td>
       <td>0.872888</td>
     </tr>
     <tr>
-      <th>30774</th>
+      <th>36676</th>
       <td>76.52</td>
       <td>Operaciones Unitarias de Transferencia de Materia</td>
       <td>0.871054</td>
     </tr>
     <tr>
-      <th>41145</th>
+      <th>42582</th>
       <td>75.10</td>
       <td>Técnicas de Diseño</td>
       <td>0.865804</td>
     </tr>
     <tr>
-      <th>100551</th>
+      <th>100553</th>
       <td>88.03</td>
       <td>Puertos y Vías Navegables B</td>
       <td>0.865582</td>
     </tr>
     <tr>
-      <th>21577</th>
+      <th>27479</th>
       <td>91.16</td>
       <td>Legislación y Ejercicio Profesional de la Ingeniería Civil</td>
       <td>0.865430</td>
     </tr>
     <tr>
-      <th>62803</th>
+      <th>62805</th>
       <td>83.02</td>
       <td>Química Aplicada</td>
-      <td>0.864594</td>
+      <td>0.864608</td>
     </tr>
     <tr>
-      <th>98308</th>
+      <th>98310</th>
       <td>85.20</td>
       <td>Energías Renovables</td>
-      <td>0.863696</td>
+      <td>0.863697</td>
     </tr>
   </tbody>
 </table>
@@ -1221,105 +1221,105 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>55730</th>
+      <th>55732</th>
       <td>103444</td>
       <td>industrial</td>
-      <td>5.380345</td>
+      <td>5.380340</td>
       <td>5.000000</td>
     </tr>
     <tr>
-      <th>56363</th>
+      <th>56365</th>
       <td>97478</td>
       <td>industrial</td>
-      <td>5.410366</td>
+      <td>5.410376</td>
       <td>5.023256</td>
     </tr>
     <tr>
-      <th>27297</th>
+      <th>33199</th>
       <td>102950</td>
       <td>quimica</td>
       <td>5.520664</td>
       <td>5.187500</td>
     </tr>
     <tr>
-      <th>55966</th>
+      <th>55968</th>
       <td>108112</td>
       <td>industrial</td>
-      <td>5.575027</td>
+      <td>5.575019</td>
       <td>5.250000</td>
     </tr>
     <tr>
-      <th>4903</th>
+      <th>3223</th>
       <td>95536</td>
       <td>informatica</td>
       <td>5.592512</td>
       <td>5.210526</td>
     </tr>
     <tr>
-      <th>55969</th>
+      <th>55971</th>
       <td>104040</td>
       <td>industrial</td>
-      <td>5.644066</td>
+      <td>5.644056</td>
       <td>5.333333</td>
     </tr>
     <tr>
-      <th>10149</th>
+      <th>16051</th>
       <td>101309</td>
       <td>civil</td>
-      <td>5.685079</td>
+      <td>5.685078</td>
       <td>5.384615</td>
     </tr>
     <tr>
-      <th>56681</th>
+      <th>56683</th>
       <td>99651</td>
       <td>industrial</td>
-      <td>5.686206</td>
+      <td>5.686195</td>
       <td>5.388889</td>
     </tr>
     <tr>
-      <th>86180</th>
+      <th>86182</th>
       <td>morsin</td>
       <td>electricista</td>
       <td>5.695645</td>
       <td>5.421053</td>
     </tr>
     <tr>
-      <th>86179</th>
+      <th>86181</th>
       <td>gules</td>
       <td>electricista</td>
       <td>5.695645</td>
       <td>5.421053</td>
     </tr>
     <tr>
-      <th>86178</th>
+      <th>86180</th>
       <td>pelepelepele</td>
       <td>electricista</td>
       <td>5.695645</td>
       <td>5.421053</td>
     </tr>
     <tr>
-      <th>56032</th>
+      <th>56034</th>
       <td>104736</td>
       <td>industrial</td>
-      <td>5.734995</td>
+      <td>5.734990</td>
       <td>5.428571</td>
     </tr>
     <tr>
-      <th>55964</th>
+      <th>55966</th>
       <td>106346</td>
       <td>industrial</td>
       <td>5.761642</td>
       <td>5.428571</td>
     </tr>
     <tr>
-      <th>55886</th>
+      <th>55888</th>
       <td>103464</td>
       <td>industrial</td>
-      <td>5.777454</td>
+      <td>5.777446</td>
       <td>5.444444</td>
     </tr>
     <tr>
-      <th>86124</th>
+      <th>86126</th>
       <td>95568</td>
       <td>electricista</td>
       <td>5.779899</td>
@@ -1368,108 +1368,108 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>27379</th>
+      <th>33281</th>
       <td>100623</td>
       <td>quimica</td>
       <td>8.867091</td>
       <td>9.280000</td>
     </tr>
     <tr>
-      <th>10024</th>
+      <th>15926</th>
       <td>105895</td>
       <td>civil</td>
-      <td>8.728295</td>
+      <td>8.728296</td>
       <td>9.076923</td>
     </tr>
     <tr>
-      <th>10011</th>
+      <th>15913</th>
       <td>109522</td>
       <td>civil</td>
-      <td>8.715754</td>
+      <td>8.715755</td>
       <td>9.125000</td>
     </tr>
     <tr>
-      <th>4981</th>
+      <th>3301</th>
       <td>105646</td>
       <td>informatica</td>
       <td>8.708981</td>
       <td>9.083333</td>
     </tr>
     <tr>
-      <th>377</th>
+      <th>12703</th>
       <td>110456</td>
       <td>electronica</td>
       <td>8.637567</td>
       <td>9.000000</td>
     </tr>
     <tr>
-      <th>5318</th>
+      <th>3637</th>
       <td>105836</td>
       <td>informatica</td>
       <td>8.617092</td>
       <td>8.950000</td>
     </tr>
     <tr>
-      <th>5028</th>
+      <th>3348</th>
       <td>108814</td>
       <td>informatica</td>
       <td>8.610916</td>
       <td>9.000000</td>
     </tr>
     <tr>
-      <th>560</th>
+      <th>12886</th>
       <td>103839</td>
       <td>electronica</td>
       <td>8.554361</td>
       <td>8.903226</td>
     </tr>
     <tr>
-      <th>4904</th>
+      <th>3224</th>
       <td>105798</td>
       <td>informatica</td>
       <td>8.549312</td>
       <td>8.888889</td>
     </tr>
     <tr>
-      <th>32269</th>
+      <th>38171</th>
       <td>0</td>
       <td>alimentos</td>
       <td>8.548761</td>
       <td>8.941176</td>
     </tr>
     <tr>
-      <th>27175</th>
+      <th>33077</th>
       <td>0</td>
       <td>quimica</td>
       <td>8.548761</td>
       <td>8.833333</td>
     </tr>
     <tr>
-      <th>56358</th>
+      <th>56360</th>
       <td>4383567</td>
       <td>industrial</td>
-      <td>8.532355</td>
+      <td>8.532359</td>
       <td>8.850000</td>
     </tr>
     <tr>
-      <th>5279</th>
+      <th>3598</th>
       <td>102145</td>
       <td>informatica</td>
       <td>8.516726</td>
       <td>8.823529</td>
     </tr>
     <tr>
-      <th>4905</th>
+      <th>3225</th>
       <td>102749</td>
       <td>informatica</td>
       <td>8.491999</td>
       <td>8.827586</td>
     </tr>
     <tr>
-      <th>10005</th>
+      <th>15907</th>
       <td>105536</td>
       <td>civil</td>
-      <td>8.476716</td>
+      <td>8.476717</td>
       <td>8.760000</td>
     </tr>
   </tbody>
@@ -1524,7 +1524,7 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>16753</th>
+      <th>22655</th>
       <td>105370</td>
       <td>civil</td>
       <td>91.09</td>
@@ -1534,7 +1534,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.965886</td>
     </tr>
     <tr>
-      <th>97456</th>
+      <th>97458</th>
       <td>102538</td>
       <td>mecanica</td>
       <td>71.01</td>
@@ -1544,17 +1544,17 @@ Name: materia_nota_norm, dtype: int64
       <td>7.862748</td>
     </tr>
     <tr>
-      <th>51400</th>
+      <th>51402</th>
       <td>103221</td>
       <td>electronica</td>
       <td>91.19</td>
       <td>Introducción a la Economía y Organización de la Empresa</td>
       <td>4.0</td>
-      <td>0.507529</td>
-      <td>7.953945</td>
+      <td>0.507530</td>
+      <td>7.953944</td>
     </tr>
     <tr>
-      <th>16453</th>
+      <th>22355</th>
       <td>104497</td>
       <td>civil</td>
       <td>91.09</td>
@@ -1564,7 +1564,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.829465</td>
     </tr>
     <tr>
-      <th>97425</th>
+      <th>97427</th>
       <td>103277</td>
       <td>mecanica</td>
       <td>71.01</td>
@@ -1574,7 +1574,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.740319</td>
     </tr>
     <tr>
-      <th>16722</th>
+      <th>22624</th>
       <td>103365</td>
       <td>civil</td>
       <td>91.09</td>
@@ -1584,17 +1584,17 @@ Name: materia_nota_norm, dtype: int64
       <td>7.751487</td>
     </tr>
     <tr>
-      <th>74667</th>
+      <th>74669</th>
       <td>100735</td>
       <td>industrial</td>
       <td>97.01</td>
       <td>Higiene y Seguridad Industrial</td>
       <td>10.0</td>
-      <td>0.518093</td>
-      <td>5.799992</td>
+      <td>0.518084</td>
+      <td>5.799989</td>
     </tr>
     <tr>
-      <th>97448</th>
+      <th>97450</th>
       <td>94286</td>
       <td>mecanica</td>
       <td>71.01</td>
@@ -1604,7 +1604,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.725949</td>
     </tr>
     <tr>
-      <th>16617</th>
+      <th>22519</th>
       <td>107756</td>
       <td>civil</td>
       <td>91.09</td>
@@ -1614,7 +1614,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.722612</td>
     </tr>
     <tr>
-      <th>97439</th>
+      <th>97441</th>
       <td>102539</td>
       <td>mecanica</td>
       <td>71.01</td>
@@ -1624,7 +1624,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.702297</td>
     </tr>
     <tr>
-      <th>31643</th>
+      <th>37545</th>
       <td>87699</td>
       <td>quimica</td>
       <td>76.27</td>
@@ -1634,7 +1634,7 @@ Name: materia_nota_norm, dtype: int64
       <td>6.372356</td>
     </tr>
     <tr>
-      <th>42288</th>
+      <th>11071</th>
       <td>103371</td>
       <td>informatica</td>
       <td>61.07</td>
@@ -1644,27 +1644,27 @@ Name: materia_nota_norm, dtype: int64
       <td>8.108501</td>
     </tr>
     <tr>
-      <th>51393</th>
+      <th>51395</th>
       <td>102176</td>
       <td>electronica</td>
       <td>91.19</td>
       <td>Introducción a la Economía y Organización de la Empresa</td>
       <td>4.0</td>
       <td>0.523007</td>
-      <td>7.768212</td>
+      <td>7.768211</td>
     </tr>
     <tr>
-      <th>86577</th>
+      <th>86579</th>
       <td>91218</td>
       <td>electricista</td>
       <td>81.03</td>
       <td>Probabilidad y Estadística A</td>
       <td>4.0</td>
-      <td>0.523846</td>
-      <td>8.094373</td>
+      <td>0.523847</td>
+      <td>8.094372</td>
     </tr>
     <tr>
-      <th>13383</th>
+      <th>19285</th>
       <td>103789</td>
       <td>civil</td>
       <td>81.03</td>
@@ -1722,7 +1722,7 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>17066</th>
+      <th>22968</th>
       <td>100726</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1732,17 +1732,17 @@ Name: materia_nota_norm, dtype: int64
       <td>6.995274</td>
     </tr>
     <tr>
-      <th>17080</th>
+      <th>22982</th>
       <td>97875</td>
       <td>civil</td>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>6.0</td>
       <td>0.947321</td>
-      <td>5.991648</td>
+      <td>5.991647</td>
     </tr>
     <tr>
-      <th>16925</th>
+      <th>22827</th>
       <td>104279</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1752,17 +1752,17 @@ Name: materia_nota_norm, dtype: int64
       <td>7.989414</td>
     </tr>
     <tr>
-      <th>17040</th>
+      <th>22942</th>
       <td>102187</td>
       <td>civil</td>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>8.0</td>
       <td>0.945792</td>
-      <td>7.973294</td>
+      <td>7.973293</td>
     </tr>
     <tr>
-      <th>16873</th>
+      <th>22775</th>
       <td>100291</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1772,7 +1772,7 @@ Name: materia_nota_norm, dtype: int64
       <td>5.971711</td>
     </tr>
     <tr>
-      <th>17069</th>
+      <th>22971</th>
       <td>100875</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1782,7 +1782,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.028721</td>
     </tr>
     <tr>
-      <th>17077</th>
+      <th>22979</th>
       <td>94275</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1792,17 +1792,17 @@ Name: materia_nota_norm, dtype: int64
       <td>7.029827</td>
     </tr>
     <tr>
-      <th>17107</th>
+      <th>23009</th>
       <td>103213</td>
       <td>civil</td>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>7.0</td>
       <td>0.945384</td>
-      <td>6.968402</td>
+      <td>6.968401</td>
     </tr>
     <tr>
-      <th>17068</th>
+      <th>22970</th>
       <td>105370</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1812,7 +1812,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.965886</td>
     </tr>
     <tr>
-      <th>17103</th>
+      <th>23005</th>
       <td>100531</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1822,27 +1822,27 @@ Name: materia_nota_norm, dtype: int64
       <td>6.960452</td>
     </tr>
     <tr>
-      <th>16899</th>
+      <th>22801</th>
       <td>103332</td>
       <td>civil</td>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>7.0</td>
       <td>0.944561</td>
-      <td>7.041477</td>
+      <td>7.041476</td>
     </tr>
     <tr>
-      <th>17117</th>
+      <th>23019</th>
       <td>101337</td>
       <td>civil</td>
       <td>94.01</td>
       <td>Hormigón I</td>
       <td>6.0</td>
       <td>0.943957</td>
-      <td>6.048724</td>
+      <td>6.048722</td>
     </tr>
     <tr>
-      <th>17086</th>
+      <th>22988</th>
       <td>102632</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1852,7 +1852,7 @@ Name: materia_nota_norm, dtype: int64
       <td>6.940595</td>
     </tr>
     <tr>
-      <th>17033</th>
+      <th>22935</th>
       <td>101327</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1862,7 +1862,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.065053</td>
     </tr>
     <tr>
-      <th>16842</th>
+      <th>22744</th>
       <td>102246</td>
       <td>civil</td>
       <td>94.01</td>
@@ -1923,7 +1923,7 @@ Name: materia_nota_norm, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>42176</th>
+      <th>10960</th>
       <td>100029</td>
       <td>informatica</td>
       <td>61.07</td>
@@ -1933,7 +1933,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.197539</td>
     </tr>
     <tr>
-      <th>43630</th>
+      <th>11659</th>
       <td>100029</td>
       <td>informatica</td>
       <td>75.31</td>
@@ -1943,7 +1943,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.197539</td>
     </tr>
     <tr>
-      <th>4964</th>
+      <th>3284</th>
       <td>100029</td>
       <td>informatica</td>
       <td>62.01</td>
@@ -1953,7 +1953,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.197539</td>
     </tr>
     <tr>
-      <th>42874</th>
+      <th>43616</th>
       <td>100029</td>
       <td>informatica</td>
       <td>66.02</td>
@@ -1963,7 +1963,7 @@ Name: materia_nota_norm, dtype: int64
       <td>7.197539</td>
     </tr>
     <tr>
-      <th>38059</th>
+      <th>40030</th>
       <td>100029</td>
       <td>informatica</td>
       <td>75.08</td>
@@ -1982,7 +1982,7 @@ Name: materia_nota_norm, dtype: int64
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"5856cf2720054b99b7fb0f26bf251a82": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6c53ef37ee03436b9780cf8aa8f2a74a": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "5cd77d030bc44c6989927e4825c3c749": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5856cf2720054b99b7fb0f26bf251a82", "max": 43936.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_6c53ef37ee03436b9780cf8aa8f2a74a", "value": 43936.0}}, "2b2d41e64c274679a5896ca3907a9d1c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c48bf3745c3b4cf2a513422e65c037b7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "46e2743d9742424fa4f6a4ef00b57c89": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2b2d41e64c274679a5896ca3907a9d1c", "placeholder": "\u200b", "style": "IPY_MODEL_c48bf3745c3b4cf2a513422e65c037b7", "value": "Inicializando estructuras: 100%"}}, "ef6e8bec6eb6469d91df444084e7366b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2c4cb811bebf4dd2ad0b4fe3c92eea83": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "6ebdf2477dc34f428c165aedbc40abb5": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ef6e8bec6eb6469d91df444084e7366b", "placeholder": "\u200b", "style": "IPY_MODEL_2c4cb811bebf4dd2ad0b4fe3c92eea83", "value": " 43936/43936 [00:00&lt;00:00, 661123.63it/s]"}}, "8759659cd4564f50acf65ca26299325b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5c92fc1b6a904810bd445ecd58f25e0e": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_46e2743d9742424fa4f6a4ef00b57c89", "IPY_MODEL_5cd77d030bc44c6989927e4825c3c749", "IPY_MODEL_6ebdf2477dc34f428c165aedbc40abb5"], "layout": "IPY_MODEL_8759659cd4564f50acf65ca26299325b"}}, "dc237b2868b549e08b8259be82e9639c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6863e253ef704dfd91e4ce9fe04fa836": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "e644691a2c684c8aadf454e98a70b434": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_dc237b2868b549e08b8259be82e9639c", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_6863e253ef704dfd91e4ce9fe04fa836", "value": 20.0}}, "c044b41a94364c009527d925f67e7ff8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0e46429d9baa428692d2c66a597c7486": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d3e29157bac44cb9a9e3523f27a44cbb": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c044b41a94364c009527d925f67e7ff8", "placeholder": "\u200b", "style": "IPY_MODEL_0e46429d9baa428692d2c66a597c7486", "value": "Realizando iteraciones F/G/R: 100%"}}, "01fc05061a5e4232abb33df3742d2c17": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "360b699875ad44b7be8248134542733d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a6eed87a0c8e4dd395fa246faab23d53": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_01fc05061a5e4232abb33df3742d2c17", "placeholder": "\u200b", "style": "IPY_MODEL_360b699875ad44b7be8248134542733d", "value": " 20/20 [00:03&lt;00:00,  6.35it/s]"}}, "2b8be854537444a7aa89da98ec1eb727": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "54af46d7e47c45a6a9d9af78e5468cd3": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d3e29157bac44cb9a9e3523f27a44cbb", "IPY_MODEL_e644691a2c684c8aadf454e98a70b434", "IPY_MODEL_a6eed87a0c8e4dd395fa246faab23d53"], "layout": "IPY_MODEL_2b8be854537444a7aa89da98ec1eb727"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"1ff6c7f2f3084c74a11e55b507e103f9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "58a538cde3444a9cb60f30181789ddcf": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "6fad960a108d4e68be75980220147ffc": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1ff6c7f2f3084c74a11e55b507e103f9", "max": 43937.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_58a538cde3444a9cb60f30181789ddcf", "value": 43937.0}}, "ed0401617bb249f3be007ec163a6b4b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "41b8ab3cf1574855b1dadf8c358dc364": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a01a37ca84bf40c09cef9b53b6c8ee2e": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ed0401617bb249f3be007ec163a6b4b7", "placeholder": "\u200b", "style": "IPY_MODEL_41b8ab3cf1574855b1dadf8c358dc364", "value": "Inicializando estructuras: 100%"}}, "2aeeeaf8ded942d69067c3de2e967513": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e2e92ed0e95444da9623ebee5ae10e7c": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e7e55466a39e4c9a8da2a1920ad6edaa": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2aeeeaf8ded942d69067c3de2e967513", "placeholder": "\u200b", "style": "IPY_MODEL_e2e92ed0e95444da9623ebee5ae10e7c", "value": " 43937/43937 [00:00&lt;00:00, 699093.10it/s]"}}, "61bd14fa9772429c9b5163502274959c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "125c16bad4ad4be69b5cccaae9c4e0b2": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_a01a37ca84bf40c09cef9b53b6c8ee2e", "IPY_MODEL_6fad960a108d4e68be75980220147ffc", "IPY_MODEL_e7e55466a39e4c9a8da2a1920ad6edaa"], "layout": "IPY_MODEL_61bd14fa9772429c9b5163502274959c"}}, "3b8a7955b3cd42af9761b49cbbb1dc45": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "11f4d684b336444cb8e2ccc0c68c3820": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "6caa61ea002e4b0194e8c3363872bb00": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3b8a7955b3cd42af9761b49cbbb1dc45", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_11f4d684b336444cb8e2ccc0c68c3820", "value": 20.0}}, "f339cee4294a4359b5e0f1dd2d88dd17": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "63bf648736eb490bbba11006eca66c45": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "da6eef3ce656419aa09f68b2a71b8485": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_f339cee4294a4359b5e0f1dd2d88dd17", "placeholder": "\u200b", "style": "IPY_MODEL_63bf648736eb490bbba11006eca66c45", "value": "Realizando iteraciones F/G/R: 100%"}}, "c21a249f67f143d2a77f4ecbb7b9993f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "694ae32d1954481f8d5e1372f1a62903": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "7226209538af45f7a09042f5f0f8a331": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c21a249f67f143d2a77f4ecbb7b9993f", "placeholder": "\u200b", "style": "IPY_MODEL_694ae32d1954481f8d5e1372f1a62903", "value": " 20/20 [00:03&lt;00:00,  6.49it/s]"}}, "87c605119abc44a788dfa579b964f9d4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "69f819ae4a994af9acaf89ef5708808f": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_da6eef3ce656419aa09f68b2a71b8485", "IPY_MODEL_6caa61ea002e4b0194e8c3363872bb00", "IPY_MODEL_7226209538af45f7a09042f5f0f8a331"], "layout": "IPY_MODEL_87c605119abc44a788dfa579b964f9d4"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
