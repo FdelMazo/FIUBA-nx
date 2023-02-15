@@ -10,7 +10,7 @@ from math import log, e, ceil
 from numpy import linalg as LA
 from scipy.optimize import curve_fit
 
-plt.rcParams['figure.figsize'] = (30,10)
+plt.rcParams['figure.figsize'] = (15,5)
 pd.set_option('mode.chained_assignment', None)
 
 from IPython.display import Markdown, display
@@ -79,7 +79,7 @@ def plot_communities(G, louvain):
                      node_color=list(draw_nodes.values()),
                      width=0.005,
                      pos=nx.kamada_kawai_layout(G),
-                     font_size=10)
+                     font_size=6)
 
 def ln(num):
     return log(num, e)
@@ -157,13 +157,14 @@ names=['Original', 'Erdös-Rényi', 'Preferential Attachment']
 
 def plot_anonymous_walks(graphs):
     colors = ['r', 'b', 'g']
-    fig = plt.figure("Anonymous walks")
+    markers = ['o', '*', 'x']
+    fig = plt.figure("Anonymous walks", figsize=(15, 15))
     axgrid = fig.add_gridspec(3, 3)
     i,j = 0, 0
     for l in LENGHTS:
         ax1 = fig.add_subplot(axgrid[j, :])
         for g in graphs:
-            ax1.plot(sorted(g[l]), colors[i], marker="o", label= names[i])
+            ax1.plot(sorted(g[l]), colors[i], marker=markers[i], label= names[i])
             i += 1
         ax1.set_title("Representación de AN largo " + str(l))
         ax1.set_ylabel("Probabilidad")
