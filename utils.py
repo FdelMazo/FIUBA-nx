@@ -83,7 +83,7 @@ def ln(num):
     return log(num, e)
 
 
-def _cant_annonymous_walks(length, error=0.1, delta=0.01):
+def _cant_anonymous_walks(length, error=0.1, delta=0.01):
     nu = DIFFERENT_WALKS[length]
     return ceil((ln(2**nu - 2) - ln(delta)) * (2 / (error**2)))
 
@@ -92,7 +92,7 @@ def _camino_a_clave(camino):
     return "-".join(map(lambda v: str(v), camino))
 
 
-def _annon_enum_rec(pasos_restantes, mapeo, camino=[], vs_en_camino=0, admite_bucles=False):
+def _anon_enum_rec(pasos_restantes, mapeo, camino=[], vs_en_camino=0, admite_bucles=False):
     if pasos_restantes == 0:
         mapeo[_camino_a_clave(camino)] = len(mapeo)
         return
@@ -103,13 +103,13 @@ def _annon_enum_rec(pasos_restantes, mapeo, camino=[], vs_en_camino=0, admite_bu
             continue
         camino.append(i)
         vs_en_este_camino = vs_en_camino + (1 if i == nuevo else 0)
-        _annon_enum_rec(pasos_restantes - 1, mapeo, camino, vs_en_este_camino)
+        _anon_enum_rec(pasos_restantes - 1, mapeo, camino, vs_en_este_camino)
         camino.pop()
 
 
 def _enumerar_anonymous_walks(length):
     mapeo = {}
-    _annon_enum_rec(length, mapeo)
+    _anon_enum_rec(length, mapeo)
     return mapeo
 
 
@@ -134,14 +134,14 @@ def _anonymize_walk(camino):
     return camino_trans
 
 
-def anoymous_walks(grafo):
+def anonymous_walks(grafo):
     '''
     :param grafo: Grafo a calcularle el embedding por anonymous_walk
     :return: diccionario: para cada largo N, su determinado arreglo de probabilidad
     '''
     AN = {}
     for n in LENGHTS:
-        cantidad = _cant_annonymous_walks(n)
+        cantidad = _cant_anonymous_walks(n)
         mapeo = _enumerar_anonymous_walks(n)
         contadores = [0] * len(mapeo)
         for i in range(cantidad):
@@ -153,7 +153,7 @@ def anoymous_walks(grafo):
 
 names=['Original', 'Erdös-Rényi', 'Preferential Attachment']
 
-def plot_anoymous_walks(graphs):
+def plot_anonymous_walks(graphs):
     colors = ['r', 'b', 'g']
     fig = plt.figure("Anonymous walks", figsize=(10, 10))
     axgrid = fig.add_gridspec(3, 3)
