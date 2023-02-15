@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="graphito.html">
-   Graphito: ¿Podemos decir que el Fiuba Map es una red social?
+   Graphito: ¿Podemos decir que el FIUBA-Map forma una red social?
   </a>
  </li>
  <li class="toctree-l1">
@@ -418,7 +418,9 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">utils</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -447,55 +449,54 @@ title="Print to PDF"
       <th>Final de Carrera</th>
       <th>materia_id</th>
       <th>materia_nota</th>
-      <th>aplazos</th>
       <th>materia_cuatrimestre</th>
-      <th>checkboxes</th>
+      <th>aplazos</th>
       <th>optativas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>4544</th>
-      <td>106699</td>
+      <th>68115</th>
+      <td>105711</td>
       <td>informatica</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>61.07</td>
-      <td>-1.0</td>
+      <td>61.08</td>
+      <td>10.0</td>
       <td>NaN</td>
-      <td>2022.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>40486</th>
-      <td>92968</td>
+      <th>100609</th>
+      <td>105375</td>
+      <td>informatica</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CBC</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>53472</th>
+      <td>99373</td>
       <td>informatica</td>
       <td>Gestión Industrial de Sistemas</td>
       <td>tpp</td>
-      <td>66.70</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>54953</th>
-      <td>104289</td>
-      <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>75.07</td>
-      <td>-1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>75.40</td>
+      <td>9.0</td>
+      <td>2018.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21727, 9)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -535,6 +536,7 @@ title="Print to PDF"
 <span class="c1"># Nota: Al no tener en cuenta el factor temporal en este grafo (en que cuatri cursó cada alumno), esta vez no se aplica el filtro de &quot;sacar todos los alumnos que no setean el cuatrimestre&quot;</span>
 <span class="c1"># Ese filtro es considerable, por lo que tiene sentido que este grafo sea bastante mas grande que grafazo</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_simil</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df_simil</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -565,29 +567,32 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>215554</th>
-      <td>107705</td>
-      <td>99469</td>
-      <td>9</td>
-      <td>27</td>
+      <th>315233</th>
+      <td>96722</td>
+      <td>104269</td>
+      <td>5</td>
+      <td>31</td>
     </tr>
     <tr>
-      <th>268377</th>
-      <td>109442</td>
-      <td>101187</td>
-      <td>2</td>
-      <td>34</td>
+      <th>112271</th>
+      <td>104609</td>
+      <td>93639</td>
+      <td>1</td>
+      <td>35</td>
     </tr>
     <tr>
-      <th>133382</th>
-      <td>105318</td>
-      <td>106338</td>
-      <td>3</td>
-      <td>33</td>
+      <th>26495</th>
+      <td>101483</td>
+      <td>109760</td>
+      <td>4</td>
+      <td>32</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(354644, 4)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,7 +733,7 @@ title="Print to PDF"
 <section id="comunidades">
 <h2>Comunidades<a class="headerlink" href="#comunidades" title="Permalink to this headline">#</a></h2>
 <p>Este análisis de comunidades que vamos a realizar no está basado en una hipótesis previa de homofilia o similitud entre los nodos, como lo visto en grafazo. En lugar de ello, el objetivo del análisis es explorar los patrones de conexión que existen en el grafo y agrupar los nodos en comunidades para tener un mejor entendimiento de los mismos.</p>
-<p>Este enfoque exploratorio es útil cuando se tiene un conjunto de datos desconocido o no se cuenta con una hipótesis clara sobre los patrones de relación entre los nodos(como se tenía en grafazo con respecto a las camadas). El análisis de comunidades puede ayudarnos a identificar grupos de nodos que presentan patrones similares de conexión, lo que puede llevar a la identificación de relaciones interesantes entre los nodos y a la formulación de nuevas hipótesis sobre el grafo.</p>
+<p>Este enfoque exploratorio es útil cuando se tiene un conjunto de datos desconocido o no se cuenta con una hipótesis clara sobre los patrones de relación entre los nodos los (como se tenía en grafazo con respecto a las camadas). El análisis de comunidades puede ayudarnos a identificar grupos de nodos que presentan patrones similares de conexión, lo que puede llevar a la identificación de relaciones interesantes entre los nodos y a la formulación de nuevas hipótesis sobre el grafo.</p>
 <p>A partir del modelado de grafon, vamos a poder identificar comunidades de alumnos que han tenido un desempeño similar en sus materias y que, por lo tanto, podrían compartir intereses académicos. Es por eso que tomaremos esto como base para poder identificar qué cursaron las personas similares a mi con el fin de otorgar un listado de recomendaciones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -816,71 +821,71 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>61.10</td>
-      <td>Análisis Matemático III A</td>
-      <td>6</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>62.15</td>
       <td>Física III D</td>
       <td>4</td>
-      <td>4</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>66.20</td>
       <td>Organización de Computadoras</td>
       <td>6</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>78.xx</td>
       <td>Idioma</td>
       <td>4</td>
       <td>3</td>
     </tr>
     <tr>
+      <th>3</th>
+      <td>61.10</td>
+      <td>Análisis Matemático III A</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+    <tr>
       <th>4</th>
-      <td>71.18</td>
-      <td>Estructura Económica Argentina</td>
-      <td>4</td>
+      <td>75.69</td>
+      <td>Sistemas Automáticos de Diagnóstico y Detecció...</td>
+      <td>6</td>
       <td>2</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>66.06</td>
-      <td>Análisis de Circuitos</td>
-      <td>10</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
       <td>66.69</td>
       <td>Criptografía y Seguridad Informática</td>
       <td>6</td>
       <td>1</td>
     </tr>
     <tr>
+      <th>6</th>
+      <td>71.12</td>
+      <td>Estructura de las Organizaciones</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <th>7</th>
-      <td>66.71</td>
-      <td>Sistemas Gráficos</td>
+      <td>71.13</td>
+      <td>Información en las Organizaciones</td>
       <td>6</td>
       <td>1</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>66.74</td>
-      <td>Señales y Sistemas</td>
-      <td>6</td>
+      <td>71.44</td>
+      <td>Recursos Humanos</td>
+      <td>4</td>
       <td>1</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>71.12</td>
-      <td>Estructura de las Organizaciones</td>
+      <td>71.46</td>
+      <td>Ingeniería Económica</td>
       <td>6</td>
       <td>1</td>
     </tr>

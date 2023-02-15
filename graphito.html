@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Graphito: ¿Podemos decir que el Fiuba Map es una red social? &#8212; FIUBA-nx</title>
+    <title>Graphito: ¿Podemos decir que el FIUBA-Map forma una red social? &#8212; FIUBA-nx</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Graphito: ¿Podemos decir que el Fiuba Map es una red social?
+   Graphito: ¿Podemos decir que el FIUBA-Map forma una red social?
   </a>
  </li>
  <li class="toctree-l1">
@@ -354,6 +354,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#set-up">
    Set up
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-del-grafo">
+   Datos del Grafo
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diametro">
@@ -389,13 +394,15 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evolucion-del-fiuba-map">
-   Evolución del FIUBA Map
+   Evolución del FIUBA-Map
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#evolucion-macroscopica">
-   Evolución macroscópica
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolucion-macroscopica">
+     Evolución macroscópica
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -406,7 +413,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Graphito: ¿Podemos decir que el Fiuba Map es una red social?</h1>
+                <h1>Graphito: ¿Podemos decir que el FIUBA-Map forma una red social?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -425,6 +432,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#set-up">
    Set up
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-del-grafo">
+   Datos del Grafo
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diametro">
@@ -460,13 +472,15 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evolucion-del-fiuba-map">
-   Evolución del FIUBA Map
+   Evolución del FIUBA-Map
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#evolucion-macroscopica">
-   Evolución macroscópica
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolucion-macroscopica">
+     Evolución macroscópica
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -478,11 +492,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="graphito-podemos-decir-que-el-fiuba-map-es-una-red-social">
-<h1>Graphito: ¿Podemos decir que el Fiuba Map es una red social?<a class="headerlink" href="#graphito-podemos-decir-que-el-fiuba-map-es-una-red-social" title="Permalink to this headline">#</a></h1>
-<p>A lo largo del trabajo práctico vamos a generar diferentes grafos con el set de datos de alumnos de FIUBA. Pero para dar un primer pantallazo, vamos a conectar a aquellos alumnos que cursaron juntos alguna materia en un mismo cuatrimestre, de manera tal que los alumnos (<strong>nodos</strong>) se conectan si alguna vez cursaron juntos una materia (<strong>aristas</strong>), y a partir de ello vamos a hacer un análisis general de la misma:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="graphito-podemos-decir-que-el-fiuba-map-forma-una-red-social">
+<h1>Graphito: ¿Podemos decir que el FIUBA-Map forma una red social?<a class="headerlink" href="#graphito-podemos-decir-que-el-fiuba-map-forma-una-red-social" title="Permalink to this headline">#</a></h1>
+<p>A lo largo del trabajo práctico vamos a generar diferentes grafos con el set de datos de alumnos de FIUBA. Pero para poder hacer estos análisis, queremos asegurarnos que los datos que tenemos se asemejen a los de una red social, para así poder utilizar los recursos que conocemos para análisis de redes sociales. Así que, para dar un primer pantallazo, vamos a conectar a aquellos alumnos que cursaron juntos alguna materia en un mismo cuatrimestre, de manera tal que los alumnos (<strong>nodos</strong>) se conectan si alguna vez cursaron juntos una materia (<strong>aristas</strong>), y a partir de ello vamos a hacer un análisis general de la misma:</p>
 <ul class="simple">
-<li><p>¿Cuál es su diámetro(largo máximo de todos los caminos mínimos)?</p></li>
+<li><p>¿Cuál es su diámetro (largo máximo de todos los caminos mínimos)?</p></li>
 <li><p>¿Cuál es el grado promedio? ¿Les alumnes tienden a tener muchas conexiones, es decir que tienden a hacer las mismas materias con las mismas personas? ¿Cómo se distribuyen los grados?</p></li>
 <li><p>¿Cuál es el coeficiente de clustering? ¿Mis amigues son amigues entre sí?</p></li>
 <li><p>¿Tiene una componente gigante?</p></li>
@@ -505,7 +519,9 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">utils</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;fiuba-map-data.pickle&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -534,55 +550,54 @@ title="Print to PDF"
       <th>Final de Carrera</th>
       <th>materia_id</th>
       <th>materia_nota</th>
-      <th>aplazos</th>
       <th>materia_cuatrimestre</th>
-      <th>checkboxes</th>
+      <th>aplazos</th>
       <th>optativas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>24347</th>
-      <td>107964</td>
+      <th>34134</th>
+      <td>110363</td>
       <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
+      <td>Gestión Industrial de Sistemas</td>
       <td>tpp</td>
-      <td>78.xx</td>
+      <td>75.43</td>
       <td>-2.0</td>
-      <td>NaN</td>
-      <td>2024.5</td>
+      <td>2025.0</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>68054</th>
-      <td>105711</td>
+      <th>83879</th>
+      <td>95307</td>
       <td>informatica</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>75.40</td>
-      <td>9.0</td>
-      <td>NaN</td>
+      <td>Sistemas de Producción</td>
+      <td>tpp</td>
+      <td>75.06</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>4610</th>
-      <td>108183</td>
+      <th>50697</th>
+      <td>107394</td>
       <td>informatica</td>
-      <td>Sistemas Distribuidos</td>
+      <td>Gestión Industrial de Sistemas</td>
+      <td>tpp</td>
+      <td>CBC</td>
+      <td>0.0</td>
       <td>NaN</td>
-      <td>75.61</td>
-      <td>-2.0</td>
-      <td>NaN</td>
-      <td>2024.5</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21727, 9)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,10 +605,11 @@ title="Print to PDF"
 
 <span class="c1"># Sacamos a aquellos que no ordenan su carrera por cuatrimestres</span>
 <span class="n">df_nodos</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Sacamos a aquellos que solo agregaron 1 o 2 cuatrimetres a modo de prueba</span>
+<span class="c1"># Sacamos a aquellos que solo agregaron 1 o 2 materias a modo de prueba</span>
 <span class="n">df_nodos</span> <span class="o">=</span> <span class="n">df_nodos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Padron&#39;</span><span class="p">,</span> <span class="s1">&#39;materia_cuatrimestre&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">df_nodos</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_nodos</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df_nodos</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -623,26 +639,29 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>31727</th>
-      <td>106223</td>
-      <td>75.29</td>
+      <th>46610</th>
+      <td>tplink</td>
+      <td>75.42</td>
       <td>2021.5</td>
     </tr>
     <tr>
-      <th>30034</th>
-      <td>102876</td>
-      <td>66.06</td>
-      <td>2022.5</td>
+      <th>14075</th>
+      <td>103735</td>
+      <td>75.42</td>
+      <td>2020.5</td>
     </tr>
     <tr>
-      <th>35510</th>
-      <td>101508</td>
-      <td>75.07</td>
-      <td>2018.5</td>
+      <th>76533</th>
+      <td>101228</td>
+      <td>75.41</td>
+      <td>2019.0</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8504, 3)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,25 +703,25 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>6925</th>
-      <td>106032</td>
-      <td>68100</td>
-      <td>61.08</td>
-      <td>2021.0</td>
+      <th>6149</th>
+      <td>104644</td>
+      <td>105602</td>
+      <td>71.14</td>
+      <td>2023.0</td>
     </tr>
     <tr>
-      <th>3851</th>
-      <td>107938</td>
-      <td>107741</td>
-      <td>75.15</td>
-      <td>2023.5</td>
+      <th>9968</th>
+      <td>102896</td>
+      <td>104269</td>
+      <td>66.70</td>
+      <td>2020.0</td>
     </tr>
     <tr>
-      <th>16438</th>
-      <td>107990</td>
-      <td>105717</td>
-      <td>61.09</td>
-      <td>2022.0</td>
+      <th>12592</th>
+      <td>104415</td>
+      <td>101456</td>
+      <td>62.01</td>
+      <td>2019.0</td>
     </tr>
   </tbody>
 </table>
@@ -733,20 +752,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="datos-del-grafo">
+<h2>Datos del Grafo<a class="headerlink" href="#datos-del-grafo" title="Permalink to this headline">#</a></h2>
 <section id="diametro">
 <h3>Diámetro<a class="headerlink" href="#diametro" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El </span><span class="se">\033</span><span class="s2">[1mdiámetro</span><span class="se">\033</span><span class="s2">[0m de nuestra red es de </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">, y tiene mucho sentido que sea un número tan chico porque el Fiuba Map tiene cargadas las notas de alumnos desde el 2014 en adelante (aproximadamente), así que no hay tantas camadas de alumnos, sumado a que estamos filtrando por una carrera. Además de esto, los alumnos avanzan en la carrera a diferentes velocidades, por lo que hay recursantes que cursan con varias camadas. Teniendo en cuenta estos tres factores, hace que la mayoría de los nodos en el grafo están muy conectados. Es interesante también ver que la </span><span class="se">\033</span><span class="s2">[1mdistancia promedio de la red</span><span class="se">\033</span><span class="s2">[0m de nuestra red es de </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">, lo cual se relaciona mucho a tener un diámetro tan pequeño.</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">md</span>
+<span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El **diámetro** de nuestra red es de </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">, y tiene mucho sentido que sea un número tan chico porque el FIUBA Map tiene cargadas las notas de alumnos desde el 2014 en adelante (aproximadamente), así que no hay tantas camadas de alumnos, sumado a que estamos filtrando por una carrera. Además de esto, los alumnos avanzan en la carrera a diferentes velocidades, por lo que hay recursantes que cursan con varias camadas. Teniendo en cuenta estos tres factores, hace que la mayoría de los nodos en el grafo están muy conectados. Es interesante también ver que la **distancia promedio de la red** de nuestra red es de </span><span class="si">{</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">, lo cual se relaciona mucho a tener un diámetro tan pequeño.</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">utils</span><span class="o">.</span><span class="n">plot_diametro</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El <span class=" -Color -Color-Bold">diámetro</span> de nuestra red es de 3, y tiene mucho sentido que sea un número tan chico porque el Fiuba Map tiene cargadas las notas de alumnos desde el 2014 en adelante (aproximadamente), así que no hay tantas camadas de alumnos, sumado a que estamos filtrando por una carrera. Además de esto, los alumnos avanzan en la carrera a diferentes velocidades, por lo que hay recursantes que cursan con varias camadas. Teniendo en cuenta estos tres factores, hace que la mayoría de los nodos en el grafo están muy conectados. Es interesante también ver que la <span class=" -Color -Color-Bold">distancia promedio de la red</span> de nuestra red es de 1.6711392234708298, lo cual se relaciona mucho a tener un diámetro tan pequeño.
-</pre></div>
-</div>
+<p>El <strong>diámetro</strong> de nuestra red es de 3, y tiene mucho sentido que sea un número tan chico porque el FIUBA Map tiene cargadas las notas de alumnos desde el 2014 en adelante (aproximadamente), así que no hay tantas camadas de alumnos, sumado a que estamos filtrando por una carrera. Además de esto, los alumnos avanzan en la carrera a diferentes velocidades, por lo que hay recursantes que cursan con varias camadas. Teniendo en cuenta estos tres factores, hace que la mayoría de los nodos en el grafo están muy conectados. Es interesante también ver que la <strong>distancia promedio de la red</strong> de nuestra red es de 1.6711392234708298, lo cual se relaciona mucho a tener un diámetro tan pequeño.</p>
 <img alt="_images/graphito_8_1.png" src="_images/graphito_8_1.png" />
 </div>
 </div>
@@ -755,32 +776,28 @@ title="Print to PDF"
 <h3>Grado (Promedio y Distribución)<a class="headerlink" href="#grado-promedio-y-distribucion" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El </span><span class="se">\033</span><span class="s2">[1mgrado promedio de la red</span><span class="se">\033</span><span class="s2">[0m es de </span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. Sin embargo la distribución de los grados es uniforme, y eso se debe a que por un lado tenemos alumnes con gran antigüedad(los que escriben este TP) y por otro lado alumnes que recién arrancan las cursadas. Es interesante pensar, que a medida que los años pasen, la distribución va a inclinarse más a los números altos (que es algo que ya podemos notar).</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El **grado promedio de la red** es de </span><span class="si">{</span><span class="nb">sum</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. Sin embargo la distribución de los grados es uniforme, y eso se debe a que por un lado tenemos alumnes con gran antigüedad (los que escriben este TP) y por otro lado alumnes que recién arrancan las cursadas. Es interesante pensar, que a medida que los años pasen, la distribución va a inclinarse más a los números altos (que es algo que ya podemos notar).</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">utils</span><span class="o">.</span><span class="n">plot_distribucion_grados</span><span class="p">([</span><span class="n">G</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El <span class=" -Color -Color-Bold">grado promedio de la red</span> es de 135.28. Sin embargo la distribución de los grados es uniforme, y eso se debe a que por un lado tenemos alumnes con gran antigüedad(los que escriben este TP) y por otro lado alumnes que recién arrancan las cursadas. Es interesante pensar, que a medida que los años pasen, la distribución va a inclinarse más a los números altos (que es algo que ya podemos notar).
-</pre></div>
-</div>
+<p>El <strong>grado promedio de la red</strong> es de 135.28. Sin embargo la distribución de los grados es uniforme, y eso se debe a que por un lado tenemos alumnes con gran antigüedad (los que escriben este TP) y por otro lado alumnes que recién arrancan las cursadas. Es interesante pensar, que a medida que los años pasen, la distribución va a inclinarse más a los números altos (que es algo que ya podemos notar).</p>
 <img alt="_images/graphito_10_1.png" src="_images/graphito_10_1.png" />
 </div>
 </div>
 <p>### Clustering</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El </span><span class="se">\033</span><span class="s2">[1mclustering</span><span class="se">\033</span><span class="s2">[0m es la probabilidad de que dos vértices adyacentes de A sean adyacentes entre sí. El clustering promedio de esta red es </span><span class="si">{</span><span class="s2">&quot;</span><span class="si">%3.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">. En redes sociales tenemos en general un coeficiente de Clustering alto, aca podemos notar uno bastante alto. Un ejemplo claro es nuestra bella amistad con uno de los integrantes del trabajo. Un amigue A curso con B y nos presentó a B, desde entonces cursamos todas las materias juntes. &quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;El **clustering** es la probabilidad de que dos vértices adyacentes de A sean adyacentes entre sí. El clustering promedio de esta red es </span><span class="si">{</span><span class="s2">&quot;</span><span class="si">%3.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="si">}</span><span class="s2">. En redes sociales tenemos en general un coeficiente de Clustering alto, aca podemos notar uno bastante alto. Un ejemplo claro es nuestra bella amistad con uno de los integrantes del trabajo. Un amigue A curso con B y nos presentó a B, desde entonces cursamos todas las materias juntes. &quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">utils</span><span class="o">.</span><span class="n">plot_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El <span class=" -Color -Color-Bold">clustering</span> es la probabilidad de que dos vértices adyacentes de A sean adyacentes entre sí. El clustering promedio de esta red es 0.6892. En redes sociales tenemos en general un coeficiente de Clustering alto, aca podemos notar uno bastante alto. Un ejemplo claro es nuestra bella amistad con uno de los integrantes del trabajo. Un amigue A curso con B y nos presentó a B, desde entonces cursamos todas las materias juntes. 
-</pre></div>
-</div>
+<p>El <strong>clustering</strong> es la probabilidad de que dos vértices adyacentes de A sean adyacentes entre sí. El clustering promedio de esta red es 0.6892. En redes sociales tenemos en general un coeficiente de Clustering alto, aca podemos notar uno bastante alto. Un ejemplo claro es nuestra bella amistad con uno de los integrantes del trabajo. Un amigue A curso con B y nos presentó a B, desde entonces cursamos todas las materias juntes.</p>
 <img alt="_images/graphito_12_1.png" src="_images/graphito_12_1.png" />
 </div>
 </div>
@@ -789,14 +806,12 @@ title="Print to PDF"
 <h3>Componente conexa<a class="headerlink" href="#componente-conexa" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Por último, la componente </span><span class="si">{</span><span class="s2">&quot;es conexa&quot;</span> <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;no es conexa&quot;</span><span class="si">}</span><span class="s2">, es decir que tenemos una </span><span class="se">\033</span><span class="s2">[1mcomponente gigante</span><span class="se">\033</span><span class="s2">[0m.</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Por último, la componente </span><span class="si">{</span><span class="s2">&quot;es conexa&quot;</span> <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;no es conexa&quot;</span><span class="si">}</span><span class="s2">, es decir que tenemos una **componente gigante**.</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Por último, la componente es conexa, es decir que tenemos una <span class=" -Color -Color-Bold">componente gigante</span>.
-</pre></div>
-</div>
+<p>Por último, la componente es conexa, es decir que tenemos una <strong>componente gigante</strong>.</p>
 </div>
 </div>
 <p>## Simulación de modelados</p>
@@ -828,9 +843,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Red aleatoria Erdös-Renyi
   El diámetro de la red: 2
-  El grado promedio de la red: 230.02
-  La distancia promedio de la red: 1.4025570284637643
-  Clustering promedio: 0.5976
+  El grado promedio de la red: 230.33
+  La distancia promedio de la red: 1.4017495457909965
+  Clustering promedio: 0.5982
   Puentes globales: []
   Es conexa
 </pre></div>
@@ -858,7 +873,7 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Red aleatoria Preferential Attachment
   El diámetro de la red: 14
   El grado promedio de la red: 1.99
-  La distancia promedio de la red: 5.623753448623915
+  La distancia promedio de la red: 5.595706883789785
   Clustering promedio: 0.0
   Es conexa
 </pre></div>
@@ -870,11 +885,11 @@ title="Print to PDF"
 <h3>Anonymous Walks<a class="headerlink" href="#anonymous-walks" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aw_erdos</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anoymous_walks</span><span class="p">(</span><span class="n">g_erdos</span><span class="p">)</span>
-<span class="n">aw_preferential</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anoymous_walks</span><span class="p">(</span><span class="n">g_preferential_attachment</span><span class="p">)</span>
-<span class="n">aw_original</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anoymous_walks</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aw_erdos</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anonymous_walks</span><span class="p">(</span><span class="n">g_erdos</span><span class="p">)</span>
+<span class="n">aw_preferential</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anonymous_walks</span><span class="p">(</span><span class="n">g_preferential_attachment</span><span class="p">)</span>
+<span class="n">aw_original</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">anonymous_walks</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 
-<span class="n">utils</span><span class="o">.</span><span class="n">plot_anoymous_walks</span><span class="p">([</span><span class="n">aw_original</span><span class="p">,</span> <span class="n">aw_erdos</span><span class="p">,</span> <span class="n">aw_preferential</span><span class="p">])</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">plot_anonymous_walks</span><span class="p">([</span><span class="n">aw_original</span><span class="p">,</span> <span class="n">aw_erdos</span><span class="p">,</span> <span class="n">aw_preferential</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -887,19 +902,16 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Las leyes de potencias aparecen de la </span><span class="se">\033</span><span class="s2">[1m ventaja acumulativa</span><span class="se">\033</span><span class="s2">[0m. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de </span><span class="si">{</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span>  <span class="n">aw_preferential</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">*</span> <span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">aw_preferential</span><span class="p">[</span><span class="mi">7</span><span class="p">]))</span><span class="si">}</span><span class="s2">. </span><span class="se">\n</span><span class="s2"></span>
+<span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Las leyes de potencias aparecen de la **ventaja acumulativa**. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de </span><span class="si">{</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span>  <span class="n">aw_preferential</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">*</span> <span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">aw_preferential</span><span class="p">[</span><span class="mi">7</span><span class="p">]))</span><span class="si">}</span><span class="s2">. </span><span class="se">\n</span><span class="s2"></span>
 <span class="s2">En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontrar más similitudes. A diferencia del anterior, todos los nodos tienen probabilidad de contar con muchas aristas, dejando un grafo más real y parecido a una red de una Universidad en donde todos los alumnos tienden a cursar materias similares. La distancia de coseno entre los mismos </span><span class="si">{</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span>  <span class="n">aw_erdos</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">aw_original</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="o">*</span> <span class="n">LA</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">aw_erdos</span><span class="p">[</span><span class="mi">7</span><span class="p">]))</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Las leyes de potencias aparecen de la <span class=" -Color -Color-Bold"> ventaja acumulativa</span>. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de 0.9828926540148765. 
-
-En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontrar más similitudes. A diferencia del anterior, todos los nodos tienen probabilidad de contar con muchas aristas, dejando un grafo más real y parecido a una red de una Universidad en donde todos los alumnos tienden a cursar materias similares. La distancia de coseno entre los mismos 3.710417165092572e-05
-</pre></div>
-</div>
+<p>Las leyes de potencias aparecen de la <strong>ventaja acumulativa</strong>. Esto puede verse como un desbalance desproporcionado entre los que tienen muchos contactos, y los que tienen pocos. Es claro que el grafon no iba a ser similar a el grafo generado por Barabási–Albert, ya que no tiene sentido que un alumno tenga muchísimas aristas, mientras que otros tengan pocas ya que hay muchas materias en común. La distancia de coseno entre nuestro grafon y el grafo aleatorio es de 0.9880863107312131.</p>
+<p>En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontrar más similitudes. A diferencia del anterior, todos los nodos tienen probabilidad de contar con muchas aristas, dejando un grafo más real y parecido a una red de una Universidad en donde todos los alumnos tienden a cursar materias similares. La distancia de coseno entre los mismos 3.723463513816139e-05</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -915,7 +927,7 @@ En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontr
 </section>
 </section>
 <section id="evolucion-del-fiuba-map">
-<h2>Evolución del FIUBA Map<a class="headerlink" href="#evolucion-del-fiuba-map" title="Permalink to this headline">#</a></h2>
+<h2>Evolución del FIUBA-Map<a class="headerlink" href="#evolucion-del-fiuba-map" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
@@ -974,23 +986,22 @@ En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontr
        2017.0      8        5 No conexo           1.25
        2018.0     21       32         6           3.05
        2018.5     66      126         4           3.82
-       2019.0    126     2186         5          34.70
-       2019.5    150     2661         4          35.48
-       2020.0    216     5100         5          47.22
-       2020.5    245     5974         4          48.77
-       2021.0    270     7127         5          52.79
-       2021.5    286     9098         4          63.62
-       2022.0    318    12352         4          77.69
-       2022.5    359    18910         4         105.35
+       2019.0    126     2117         5          33.60
+       2019.5    150     2588         4          34.51
+       2020.0    216     4913         5          45.49
+       2020.5    245     5971         4          48.74
+       2021.0    268     7182         5          53.60
+       2021.5    286     9263         4          64.78
+       2022.0    318    12592         4          79.19
+       2022.5    359    18918         4         105.39
 </pre></div>
 </div>
 <img alt="_images/graphito_27_1.png" src="_images/graphito_27_1.png" />
 </div>
 </div>
 <p>Lo primero que podemos notar es que, a lo largo del tiempo, las aristas crecen mucho más rápido que los nodos (ya veremos en qué proporción), y a su vez, el diámetro se mantiene constante casi durante toda la evolución del grafo. De la mano con esto, el grado promedio de la red va en aumento, a cada paso de la evolución.</p>
-</section>
 <section id="evolucion-macroscopica">
-<h2>Evolución macroscópica<a class="headerlink" href="#evolucion-macroscopica" title="Permalink to this headline">#</a></h2>
+<h3>Evolución macroscópica<a class="headerlink" href="#evolucion-macroscopica" title="Permalink to this headline">#</a></h3>
 <p>Para entender más en profundidad esta evolución, analizaremos algunos de los indicadores principales como la cantidad de nodos y aristas, el diámetro y los grados de los nodos a lo largo del tiempo.</p>
 <p>A continuación analizaremos la relación entre la cantidad de nodos y la cantidad de aristas a lo largo del tiempo</p>
 <div class="cell docutils container">
@@ -1051,6 +1062,7 @@ En cambio, al compararlo con el grafo generado con Erdös Renyi, podemos encontr
 </div>
 <p>Si vemos cómo evoluciona la cantidad de nodos en relación al grado de los mismos, a partir de 2018.5, observamos que, si bien no se comporta exactamente como el modelo de Preferential Attachment, la mayoría de los nodos tienen un grado bajo y muy pocos tienen grado muy alto. A su vez, estos pocos con grado elevado siguen incrementándolo a lo largo del tiempo.</p>
 <p>Habiendo dicho esto, y en conjunto con la alta densificación, se explica por qué el diámetro en la evolución se mantiene constante a lo largo de la evolución en vez de seguir creciendo, como tal vez se esperaría.</p>
+</section>
 </section>
 </section>
 

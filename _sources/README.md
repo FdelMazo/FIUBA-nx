@@ -12,7 +12,7 @@ Si bien no es una red social (en el sentido criollo de "red social"), no deja de
 
 El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responder:
 
-- ¿Podemos decir que el Fiuba Map es una red social?
+- ¿Podemos decir que el FIUBA-Map forma una red social?
 - ¿Con qué otros alumnos puedo hacer TPs en un futuro?
 - ¿Qué materias electivas me conviene cursar?
 - ¿Cuáles son mis notas menos confiables?
@@ -24,7 +24,7 @@ El trabajo es más que nada un análisis exploratorio de qué datos tenemos y c�
 El trabajo se divide en la infra y los grafos:
 
 - `infra.ipynb`: donde se levantan los datos del FMap, se parsean y se convierten en un dataframe de Pandas que pueda ser leído por NetworkX, para poder armar un grafo en base a eso.
-- `{grafazo,graphito,grafon}.ipynb`: para cada una de las preguntas planteadas queremos ver qué datos tenemos que puedan responderlas, qué grafo podemos armar que nos ayude a contestarlas, y efectivamente lograr contestarlas.
+- `{grafazo,graphito,grafon,grafote}.ipynb`: para cada una de las preguntas planteadas queremos ver qué datos tenemos que puedan responderlas, qué grafo podemos armar que nos ayude a contestarlas, y efectivamente lograr contestarlas.
 
 ---
 
