@@ -13,6 +13,8 @@ from scipy.optimize import curve_fit
 plt.rcParams['figure.figsize'] = (30,10)
 pd.set_option('mode.chained_assignment', None)
 
+from IPython.display import Markdown, display
+md = lambda x: display(Markdown(x))
 
 PLANES = {
     'informatica': 'informatica-1986',
@@ -155,7 +157,7 @@ names=['Original', 'Erdös-Rényi', 'Preferential Attachment']
 
 def plot_anonymous_walks(graphs):
     colors = ['r', 'b', 'g']
-    fig = plt.figure("Anonymous walks", figsize=(10, 10))
+    fig = plt.figure("Anonymous walks")
     axgrid = fig.add_gridspec(3, 3)
     i,j = 0, 0
     for l in LENGHTS:
@@ -171,7 +173,7 @@ def plot_anonymous_walks(graphs):
         j += 1
 
 def plot_distribucion_grados(grafos):
-    fig = plt.figure("Distribución de grados", figsize=(10, 10))
+    fig = plt.figure("Distribución de grados")
     axgrid = fig.add_gridspec(4, 8)
 
     i = 0
