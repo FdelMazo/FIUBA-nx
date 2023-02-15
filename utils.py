@@ -79,13 +79,6 @@ def plot_communities(G, louvain):
                      pos=nx.kamada_kawai_layout(G),
                      font_size=10)
 
-def generar_subdf_materias_electivas(df):
-    df_materias = pd.read_json(plan_estudios(CARRERA))
-    df_alumnos = pd.merge(df, df_materias, left_on='materia_id', right_on="id")
-    df_alumnos = df_alumnos[df_alumnos['categoria'] == 'Materias Electivas'][['Padron', 'materia_id', 'materia_nota']]
-
-    return df_alumnos[['Padron', 'materia_id', 'materia_nota']].copy()
-
 def ln(num):
     return log(num, e)
 
