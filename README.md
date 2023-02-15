@@ -10,11 +10,12 @@ El [FIUBA-Map](https://fede.dm/FIUBA-Map/) es una herramienta de FIUBA para que 
 
 Si bien no es una red social (en el sentido criollo de "red social"), no deja de ser una herramienta que contiene información de personas y de cómo estas personas se relacionan entre sí. Estos datos no son directos: en el FMap en ningún momento marcás tu relación con otros alumnos (no existe botón de "Yo hice un trabajo práctico con X"), pero sí pueden empezar a inferirse (vos y yo hacemos la misma carrera, vos y ella cursaron la misma materia, etc). ¡De eso se trata este trabajo práctico para la materia de redes sociales! Encontrar y descubrir las relaciones implícitas entre distintos alumnos de la misma carrera.
 
-El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responderle 3 preguntas a un alumno:
+El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responder:
 
+- ¿Podemos decir que el Fiuba Map es una red social?
 - ¿Con qué otros alumnos puedo hacer TPs en un futuro?
 - ¿Qué materias electivas me conviene cursar?
-- ¿Cómo puedo organizar mi siguiente cuatrimestre?
+- ¿Cuáles son mis notas menos confiables?
 
 ---
 
@@ -32,7 +33,7 @@ El trabajo se divide en la infra y los grafos:
 Primero, instalar Poetry y setupear el repo.
 
 ```zsh
-# (En algun virtualenv)
+# (En algún virtualenv)
 poetry install
 poetry run pre-commit install
 poetry run jupyter lab
@@ -41,5 +42,5 @@ poetry run jupyter lab
 Ahora sí:
 
 - Modificar `config.py` para que tenga tu carrera y padrón
-- Correr `infra.ipynb` primero, asi se genera el pickle de la base de datos
+- Correr `infra.ipynb` primero, así se genera el pickle de la base de datos
 - Correr cualquiera de los notebooks de análisis
