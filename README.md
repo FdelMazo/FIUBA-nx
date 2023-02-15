@@ -12,7 +12,7 @@ Si bien no es una red social (en el sentido criollo de "red social"), no deja de
 
 El trabajo es más que nada un análisis exploratorio de qué datos tenemos y cómo se relacionan entre sí, dónde podemos ir utilizando conceptos teóricos de redes sociales, y concluye en poder responder:
 
-- ¿Podemos decir que el FIUBA-Map forma una red social?
+- ¿Qué características tiene el FIUBA-Map como red social?
 - ¿Con qué otros alumnos puedo hacer TPs en un futuro?
 - ¿Qué materias electivas me conviene cursar?
 - ¿Cuáles son mis notas menos confiables?
