@@ -50,8 +50,7 @@ LENGHTS = [5, 6, 7]
 
 # Imprime las estadísticas que nos interesan de un grafo
 def stats(G):
-    print(G)
-    print(f"""
+    print(f"""{G}
   El diámetro de la red: {nx.diameter(G)}
   El grado promedio de la red: {sum([n[1] for n in G.degree()]) / len(G):.2f}
   Puentes globales: {list(nx.bridges(G))}
