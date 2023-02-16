@@ -67,7 +67,7 @@ def plot(G, edge_width=0.005):
 
 
 # Plotea cada comunidad en un color distinto
-def plot_communities(G, louvain):
+def plot_communities(G, louvain, edge_width=0.005):
     draw_nodes = {}
     colors = random.sample(list(mcolors.CSS4_COLORS), len(louvain))
     for louvaincommunity, color in zip(louvain, colors):
@@ -78,7 +78,7 @@ def plot_communities(G, louvain):
                      node_size=30,
                      nodelist=draw_nodes.keys(),
                      node_color=list(draw_nodes.values()),
-                     width=0.005,
+                     width=edge_width,
                      pos=nx.kamada_kawai_layout(G),
                      font_size=6)
 
